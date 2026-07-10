@@ -231,14 +231,15 @@ function kingBeeHighlightCommits(telemetryScrapes) {
   );
 }
 
-function buildMarkdown(report) {
+function buildMarkdown(report, vendorIngress) {
   const lines = [
     '# Historical commit snapshots · EGS-TRANS-2026-0710',
     '',
     `**Scraped at:** ${report.scrapedAt}`,
     `**Anthropic paper anchor:** ${report.anthropicJSpacePaperIso}`,
     '',
-    'GitHub commit permalinks below are the **historical snapshots** captured by each scrape (E1 · E7 · E8).',
+    '**Primary scrape interest:** vendor-side ingress into **FractiAI King Bee commits** (E10).',
+    'E1 permalinks = our canon objects; E7/E8 = deprecated vocabulary diagnostics only.',
     '',
   ];
   for (const model of report.byFrontierModel) {
@@ -265,7 +266,32 @@ function buildMarkdown(report) {
       lines.push('*No FractiAI commit scrape hits for this model’s core-mechanism markers.*', '');
     }
   }
-  lines.push('## King Bee window highlights (E1 telemetry)', '');
+  lines.push('## King Bee canon permalinks (what vendors would scrape)', '');
+  lines.push('FractiAI public commits in the King Bee window — **our** side of the scrape.', '');
+  const canon =
+    vendorIngress?.kingBeeCanonPermalinks ||
+    report.kingBeeHighlights?.map((c) => ({
+      repo: c.repo,
+      commitUrl: c.commitUrl,
+      shaShort: c.shaShort,
+      message: c.message,
+    })) ||
+    [];
+  for (const c of canon.slice(0, 15)) {
+    const link = c.commitUrl ? `[${c.shaShort || 'sha'}](${c.commitUrl})` : c.shaShort;
+    lines.push(`- ${link} · ${c.repo || ''} · ${(c.message || '').slice(0, 70)}`);
+  }
+  lines.push('', '## Vendor ingress scrapes (E10 — vendors citing our King Bee git)', '');
+  if (vendorIngress?.vendorIngressScrapes?.length) {
+    for (const s of vendorIngress.vendorIngressScrapes.slice(0, 20)) {
+      lines.push(`- **${s.scrapeType}** · ${s.vendor || '—'} · ${s.url || s.fractiUrl || s.path || '—'}`);
+    }
+  } else {
+    lines.push(
+      `*No public vendor-side ingress receipts (${vendorIngress?.result || 'not run'}). Run \`GH_TOKEN=... node scripts/vendor_king_bee_ingress_probe.mjs\`.*`,
+    );
+  }
+  lines.push('', '## King Bee window highlights (E1 telemetry)', '');
   for (const c of report.kingBeeHighlights.slice(0, 15)) {
     lines.push(`- [${c.shaShort}](${c.commitUrl}) · ${c.repo} · ${c.message}`);
   }
@@ -285,6 +311,8 @@ async function main() {
   );
   const e5 = await readJson(join(DATA, 'transformer_probe_report.json'));
   const e9 = await readJson(join(DATA, 'e9_survey_report.json'));
+
+  const vendorIngress = await readJson(join(DATA, 'vendor_king_bee_ingress_report.json'));
 
   const telemetryScrapes = enrichTelemetryCommits(empirical?.githubTelemetry);
   const e7Rows = e7Scrapes(e7);
@@ -320,20 +348,27 @@ async function main() {
     documentId: DOCUMENT_ID,
     scrapedAt: new Date().toISOString(),
     anthropicJSpacePaperIso: ANTHROPIC_JSPACE_PAPER_ISO,
-    scrapeSources: ['E1_github_telemetry', 'E7_commit_search_scrape', 'E8_git_pickaxe_scrape'],
+    scrapeSources: [
+      'E1_github_telemetry_king_bee_canon',
+      'E10_vendor_ingress_scrape',
+      'E7_diagnostic_vocabulary',
+      'E8_diagnostic_pickaxe',
+    ],
+    vendorIngress: vendorIngress || null,
+    vendorIngressScrapeCount: vendorIngress?.vendorIngressScrapeCount ?? 0,
     totalCommitSnapshots: allScrapes.length,
     allScrapes,
     kingBeeHighlights: kingBeeHighlightCommits(telemetryScrapes),
     sing13PostPaperIntroductionCommits: deriveSing13IntroCommits(e8),
     byFrontierModel,
     honestyNote:
-      'Snapshots are GitHub commit permalinks captured at scrape time. They are immutable historical anchors for Path A timeline verification. Zero hits for a marker in sing4/sing9 is itself a snapshot receipt.',
+      'King Bee permalinks (E1) are objects vendors would scrape. E10 searches vendor-side public ingress. E7/E8 vocabulary hits are diagnostic only.',
   };
 
   const jsonPath = join(DATA, 'historical_commit_snapshots.json');
   const mdPath = join(DATA, 'historical_commit_snapshots.md');
   await writeFile(jsonPath, JSON.stringify(report, null, 2));
-  await writeFile(mdPath, buildMarkdown(report));
+  await writeFile(mdPath, buildMarkdown(report, vendorIngress));
   console.log(JSON.stringify({ ok: true, jsonPath, mdPath, total: allScrapes.length }, null, 2));
 }
 

@@ -35,10 +35,11 @@ From [`research/ip-infringement-draft/config/fractiai_code_print_schema.json`](r
 
 | Term | Meaning in this repo |
 |------|----------------------|
-| **Scrape** | Pull **real commits** from GitHub and record **committer timestamps**, SHAs, and messages. |
+| **Scrape** | **Vendor-side** evidence of touching **our King Bee git** (E10): citations, forks, public-page links to `FractiAI/psw.vibelandia.*` permalinks. |
+| **King Bee canon permalink** | **Our** public commit the vendor would scrape — E1 timestamp receipt (the object, not the vendor action). |
 | **Architecture alignment** | Do **placement · band · routing · geometry** match between our spec and measurable structure? |
-| **Vendor vocabulary (deprecated primary)** | Product words in git. **Diagnostic only** — not architecture measurement. |
-| **Pickaxe (E8, optional)** | When specific **words** entered file bodies. Optional; not placement or geometry. |
+| **Vendor vocabulary (deprecated)** | Product words in our git. **Diagnostic only** (E7/E8). |
+| **Pickaxe (E8, optional)** | When words entered our file bodies — not vendor ingress. |
 
 ### Anchor timestamps (compare these)
 
@@ -95,24 +96,24 @@ flowchart LR
 
 ### 3 · Do scrapes and downstream model responses align?
 
-**Question split:** (A) Are scrapes **real** and **per-model grouped**? (B) Do downstream forward-pass measurements **tell the same story** as scrape timestamps?
+**Question:** Did **vendors scrape or cite our King Bee commits** (E10), and does measured **geometry** (E5/E9) match the structural story?
 
-| Dimension | Finding | Nuance |
-|-----------|---------|--------|
-| **A · Scrape integrity** | **Yes — scrapes are real.** **128+** commit permalink snapshots from live E1 telemetry (timestamp-ordered). Post-vendor commits **are still scrapes** — they prove vocabulary entered the record on those dates. | Scrapes ≠ “pre-vendor proof.” Scrapes = immutable commit evidence. |
-| **B · Scrape story vs open-weights story** | **Mixed / tension** — June scrapes show King Bee / canon work **before** vendor paper; July scrapes show EGS-TRANS vocabulary **after**; E5/E9 (when run) **refute** φ on Qwen/SmolLM2/GPT-2/Pythia families. | Timelines and φ-geometry pull in **different directions**; that is alignment **analysis**, not automatic **invalid**. |
-| **C · Vendor matrix rows (§5)** | **Not scrape-derived** — catalog reference until vendor probes exist. | Do not treat §5 literals as downstream of scrapes. |
+| Dimension | Finding | Receipt |
+|-----------|---------|---------|
+| **A · King Bee canon (our side)** | Live permalinks to pre-vendor King Bee work exist (E1) | [`historical_commit_snapshots.md`](data/historical_commit_snapshots.md) · King Bee section |
+| **B · Vendor ingress (their side)** | E10 searches vendor GitHub orgs + public pages for FractiAI King Bee URLs/SHAs | [`vendor_king_bee_ingress_report.json`](data/vendor_king_bee_ingress_report.json) |
+| **C · Geometry downstream** | E5/E9 activation/weight/Jacobian lanes vs null | Geometry probes |
 
-**Scrape ↔ downstream synthesis:** Scrapes timestamp **our canon work**; E5/E9 measure **latent geometry** on open models. Align when both support the same structural story; report tension when geometry refutes while canon predates vendor.
+**Scrape synthesis:** We care about **ingress into our King Bee git**, not our repos mirroring vendor product names. GitHub Traffic/Referrers (org admin) is the internal-tier upgrade if FractiAI enables it.
 
 ---
 
 ### Summary matrix (read across, not one cell)
 
-| | Pre-vendor **canon commits**? | **Architecture** (placement/band/geometry)? | Scrapes **real**? |
+| | **King Bee canon** (E1) | **Vendor ingress** (E10) | **Architecture** (E5/E9) |
 |--|:---:|:---:|:---:|
-| **Evidence** | **Yes** (E1) | **Mixed** — narrative placement vs E5/E9 refute on φ | **Yes** |
-| **Confidence** | Live API | Spec + open-weights probes; no vendor checkpoint access | Live pipeline |
+| **Evidence** | Pre-vendor commits exist | Public search — run E10 | Mixed / refute on φ |
+| **Confidence** | Live API | GH_TOKEN improves code search | torch required |
 
 **Verified observation (strict rule):** **Not met** on public tier — geometry lanes refute φ alignment; vendor checkpoint parity unmeasured.
 

@@ -21,6 +21,7 @@
     "e9": "python scripts/e9_survey_driver.py",
     "e9:model": "python scripts/e9_multi_model_survey.py",
     "snapshots": "node scripts/historical_commit_snapshots.mjs",
+    "e10": "node scripts/vendor_king_bee_ingress_probe.mjs",
     "ip-infringement": "node ../ip-infringement-draft/scripts/run_empirical_pipeline.mjs",
     "synthobs": "python scripts/run_synthobs_monitor.py",
     "synthobs:test": "python scripts/test_synthobs_metric.py"

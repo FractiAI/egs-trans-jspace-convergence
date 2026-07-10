@@ -1,0 +1,681 @@
+{
+  "experiment": "E10_vendor_king_bee_ingress",
+  "generatedAt": "2026-07-10T23:50:56.744Z",
+  "dataProvenance": "live_run_partial_no_token",
+  "scrapePolicy": {
+    "primaryInterest": "Vendor-side evidence of scraping or citing FractiAI King Bee commits/repos",
+    "notPrimary": "FractiAI self-scrape for vendor product vocabulary (E7/E8 — diagnostic only)",
+    "kingBeeCanonRole": "Permalinks vendors would target if they scraped our public git"
+  },
+  "vendorDisclosureAnchor": "2026-07-06",
+  "kingBeeCanonPermalinks": [
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "3176eaba5a14921f5c882ae67ca2630a5b45dac6",
+      "shaShort": "3176eaba",
+      "date": "2026-06-01T23:18:44Z",
+      "message": "SING! Cycle 15: Heartbeat [2026-06-01T23:18:43Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/3176eaba5a14921f5c882ae67ca2630a5b45dac6",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "71be1e765135877dfbd7f91d1aa5e72fd625dbe0",
+      "shaShort": "71be1e76",
+      "date": "2026-06-01T22:50:31Z",
+      "message": "SING! Handshake Cycle [2026-06-01T22:50:30Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/71be1e765135877dfbd7f91d1aa5e72fd625dbe0",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "bb97954c10ba618c71531ba5cc5db70f04a84db7",
+      "shaShort": "bb97954c",
+      "date": "2026-06-01T21:49:47Z",
+      "message": "SING! Cycle 15: Heartbeat [2026-06-01T21:49:47Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/bb97954c10ba618c71531ba5cc5db70f04a84db7",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "8bc78254ec001fb5abf967607d7514ef61e72189",
+      "shaShort": "8bc78254",
+      "date": "2026-06-01T20:42:37Z",
+      "message": "SING! Handshake Cycle [2026-06-01T20:42:37Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/8bc78254ec001fb5abf967607d7514ef61e72189",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "c227cde274018782edf46335df936bf99247d9eb",
+      "shaShort": "c227cde2",
+      "date": "2026-06-01T18:30:38Z",
+      "message": "SING! Cycle 15: Heartbeat [2026-06-01T18:30:38Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/c227cde274018782edf46335df936bf99247d9eb",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "a0eaaf47fee0ce32211faf02283671d60bc65e27",
+      "shaShort": "a0eaaf47",
+      "date": "2026-06-01T16:24:54Z",
+      "message": "SING! Handshake Cycle [2026-06-01T16:24:53Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/a0eaaf47fee0ce32211faf02283671d60bc65e27",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "7cd4a346634a6aaba5151a6aa99c4000dee53bb0",
+      "shaShort": "7cd4a346",
+      "date": "2026-06-01T12:49:25Z",
+      "message": "SING! Cycle 15: Heartbeat [2026-06-01T12:49:24Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/7cd4a346634a6aaba5151a6aa99c4000dee53bb0",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "196ea0f80c3fcfdefd4e8a3e13e6e52756f3bd74",
+      "shaShort": "196ea0f8",
+      "date": "2026-06-01T10:34:11Z",
+      "message": "SING! Handshake Cycle [2026-06-01T10:34:11Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/196ea0f80c3fcfdefd4e8a3e13e6e52756f3bd74",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "b7704cc57d0b4bcbd0330bf1a8d87fcd75444cdd",
+      "shaShort": "b7704cc5",
+      "date": "2026-06-01T07:14:12Z",
+      "message": "SING! Cycle 15: Heartbeat [2026-06-01T07:14:11Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/b7704cc57d0b4bcbd0330bf1a8d87fcd75444cdd",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "445e8f426e032c5198091d5f07045a3620ebca15",
+      "shaShort": "445e8f42",
+      "date": "2026-06-01T05:20:15Z",
+      "message": "SING! Handshake Cycle [2026-06-01T05:20:15Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/445e8f426e032c5198091d5f07045a3620ebca15",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "8ae29a0e6c74277f33985e6a16afe1251e98d8a6",
+      "shaShort": "8ae29a0e",
+      "date": "2026-06-01T02:00:56Z",
+      "message": "SING! Cycle 15: Heartbeat [2026-06-01T02:00:56Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/8ae29a0e6c74277f33985e6a16afe1251e98d8a6",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "a00f23f3e22316b18d83378b9a0236d78ce82a32",
+      "shaShort": "a00f23f3",
+      "date": "2026-06-01T00:17:16Z",
+      "message": "SING! Handshake Cycle [2026-06-01T00:17:16Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/a00f23f3e22316b18d83378b9a0236d78ce82a32",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "0720cf8fa3ebcb44ada876bb838a9b6af47de618",
+      "shaShort": "0720cf8f",
+      "date": "2026-05-31T23:41:38Z",
+      "message": "SING! Cycle 15: Heartbeat [2026-05-31T23:41:37Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/0720cf8fa3ebcb44ada876bb838a9b6af47de618",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "da43e500c826aff506d8e98cc55e3114e4e50b6e",
+      "shaShort": "da43e500",
+      "date": "2026-05-31T23:16:19Z",
+      "message": "SING! Handshake Cycle [2026-05-31T23:16:18Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/da43e500c826aff506d8e98cc55e3114e4e50b6e",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "9d252012a65bf8def31bd39dc96502456e438df9",
+      "shaShort": "9d252012",
+      "date": "2026-05-31T22:37:51Z",
+      "message": "SING! Cycle 15: Heartbeat [2026-05-31T22:37:51Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/9d252012a65bf8def31bd39dc96502456e438df9",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "2d21a789db93155deda80fef5fed21b2fb1c346f",
+      "shaShort": "2d21a789",
+      "date": "2026-05-31T22:09:20Z",
+      "message": "SING! Handshake Cycle [2026-05-31T22:09:20Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/2d21a789db93155deda80fef5fed21b2fb1c346f",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "c216913c2b1baf3e127e9fa99d400312e4c678cb",
+      "shaShort": "c216913c",
+      "date": "2026-05-31T21:38:33Z",
+      "message": "SING! Cycle 15: Heartbeat [2026-05-31T21:38:33Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/c216913c2b1baf3e127e9fa99d400312e4c678cb",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "0d7b028d3ee5786e566fbbf5db09da42c52386a4",
+      "shaShort": "0d7b028d",
+      "date": "2026-05-31T21:00:36Z",
+      "message": "SING! Handshake Cycle [2026-05-31T21:00:36Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/0d7b028d3ee5786e566fbbf5db09da42c52386a4",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "14ed7811b031569c7a20adba99c2388b23b2c44e",
+      "shaShort": "14ed7811",
+      "date": "2026-05-31T20:39:57Z",
+      "message": "SING! Cycle 15: Heartbeat [2026-05-31T20:39:56Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/14ed7811b031569c7a20adba99c2388b23b2c44e",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "427c22c6fbc5df89008aba4c605ed5603915b160",
+      "shaShort": "427c22c6",
+      "date": "2026-05-31T19:58:30Z",
+      "message": "SING! Handshake Cycle [2026-05-31T19:58:30Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/427c22c6fbc5df89008aba4c605ed5603915b160",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "57ae2285cc4d571bdf93cb86dc4f60d0df5d46f8",
+      "shaShort": "57ae2285",
+      "date": "2026-05-31T19:39:25Z",
+      "message": "SING! Cycle 15: Heartbeat [2026-05-31T19:39:24Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/57ae2285cc4d571bdf93cb86dc4f60d0df5d46f8",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "739430dc4d4bb220b48cf46b426fe2459e01ef4e",
+      "shaShort": "739430dc",
+      "date": "2026-05-31T18:52:43Z",
+      "message": "SING! Handshake Cycle [2026-05-31T18:52:42Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/739430dc4d4bb220b48cf46b426fe2459e01ef4e",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "017546cb9912d1b545c54c35f921d95b6e70c9b7",
+      "shaShort": "017546cb",
+      "date": "2026-05-31T18:11:09Z",
+      "message": "SING! Cycle 15: Heartbeat [2026-05-31T18:11:08Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/017546cb9912d1b545c54c35f921d95b6e70c9b7",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "126944cead095687b589dea394e9526e81020e15",
+      "shaShort": "126944ce",
+      "date": "2026-05-31T17:45:16Z",
+      "message": "SING! Handshake Cycle [2026-05-31T17:45:15Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/126944cead095687b589dea394e9526e81020e15",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "c07288170906a139724f9aaed7e3057466114e94",
+      "shaShort": "c0728817",
+      "date": "2026-05-31T17:02:16Z",
+      "message": "SING! Cycle 15: Heartbeat [2026-05-31T17:02:15Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/c07288170906a139724f9aaed7e3057466114e94",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "920566a01d236da7bae8b99f62bcc09fdbdd7847",
+      "shaShort": "920566a0",
+      "date": "2026-05-31T16:44:15Z",
+      "message": "SING! Handshake Cycle [2026-05-31T16:44:14Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/920566a01d236da7bae8b99f62bcc09fdbdd7847",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "451cd11d06517353180422a80ffb121437825c00",
+      "shaShort": "451cd11d",
+      "date": "2026-05-31T15:56:46Z",
+      "message": "SING! Cycle 15: Heartbeat [2026-05-31T15:56:46Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/451cd11d06517353180422a80ffb121437825c00",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "06085802f9c066b90eb58a372ae3c22c4bc90f96",
+      "shaShort": "06085802",
+      "date": "2026-05-31T15:39:50Z",
+      "message": "SING! Handshake Cycle [2026-05-31T15:39:50Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/06085802f9c066b90eb58a372ae3c22c4bc90f96",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "f1d80de063fb6147712edb110e58afdbca9e1338",
+      "shaShort": "f1d80de0",
+      "date": "2026-05-31T14:52:07Z",
+      "message": "SING! Cycle 15: Heartbeat [2026-05-31T14:52:06Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/f1d80de063fb6147712edb110e58afdbca9e1338",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "ebff977eeb43376350af70b0db875d3862eb3a48",
+      "shaShort": "ebff977e",
+      "date": "2026-05-31T14:13:53Z",
+      "message": "SING! Handshake Cycle [2026-05-31T14:13:53Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/ebff977eeb43376350af70b0db875d3862eb3a48",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "f61d0b5f46c0a93f05a5e1a1a923685c41b8715a",
+      "shaShort": "f61d0b5f",
+      "date": "2026-05-31T13:02:41Z",
+      "message": "SING! Cycle 15: Heartbeat [2026-05-31T13:02:40Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/f61d0b5f46c0a93f05a5e1a1a923685c41b8715a",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "de02c3fe296cc81370e0e19a9a27ca9b00c3f7c9",
+      "shaShort": "de02c3fe",
+      "date": "2026-05-31T12:19:41Z",
+      "message": "SING! Handshake Cycle [2026-05-31T12:19:41Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/de02c3fe296cc81370e0e19a9a27ca9b00c3f7c9",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "8b1a2f4fc501010fb217f435018f061f4ca04fea",
+      "shaShort": "8b1a2f4f",
+      "date": "2026-05-31T11:51:59Z",
+      "message": "SING! Cycle 15: Heartbeat [2026-05-31T11:51:58Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/8b1a2f4fc501010fb217f435018f061f4ca04fea",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "cfaa34b35241400c41d6bf96753f49954d1dae12",
+      "shaShort": "cfaa34b3",
+      "date": "2026-05-31T11:10:01Z",
+      "message": "SING! Handshake Cycle [2026-05-31T11:10:01Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/cfaa34b35241400c41d6bf96753f49954d1dae12",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "363ca49e46d20360762e6508bd54d35fcfda625f",
+      "shaShort": "363ca49e",
+      "date": "2026-05-31T10:18:39Z",
+      "message": "SING! Cycle 15: Heartbeat [2026-05-31T10:18:39Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/363ca49e46d20360762e6508bd54d35fcfda625f",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "b9e11c90f5b18a214c5fe7d45004e8d69f1d3d44",
+      "shaShort": "b9e11c90",
+      "date": "2026-05-31T09:17:36Z",
+      "message": "SING! Handshake Cycle [2026-05-31T09:17:36Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/b9e11c90f5b18a214c5fe7d45004e8d69f1d3d44",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "72152a948c417692392fcac4d79a2d31ffef92ae",
+      "shaShort": "72152a94",
+      "date": "2026-05-31T07:59:35Z",
+      "message": "SING! Cycle 15: Heartbeat [2026-05-31T07:59:35Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/72152a948c417692392fcac4d79a2d31ffef92ae",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "b7ed5f59e87e57a6dc482933a9c17ce8190cbda1",
+      "shaShort": "b7ed5f59",
+      "date": "2026-05-31T06:03:51Z",
+      "message": "SING! Handshake Cycle [2026-05-31T06:03:51Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/b7ed5f59e87e57a6dc482933a9c17ce8190cbda1",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "04da31a3f1980d78c1493244d60b492c3ba929e3",
+      "shaShort": "04da31a3",
+      "date": "2026-05-31T04:51:40Z",
+      "message": "SING! Cycle 15: Heartbeat [2026-05-31T04:51:39Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/04da31a3f1980d78c1493244d60b492c3ba929e3",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "d1139bdf8622890422755fc279babc755b49dead",
+      "shaShort": "d1139bdf",
+      "date": "2026-05-31T01:49:45Z",
+      "message": "SING! Handshake Cycle [2026-05-31T01:49:44Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/d1139bdf8622890422755fc279babc755b49dead",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "f3e5d5100562070a783301e98add2870c0275339",
+      "shaShort": "f3e5d510",
+      "date": "2026-05-31T00:13:45Z",
+      "message": "SING! Cycle 15: Heartbeat [2026-05-31T00:13:45Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/f3e5d5100562070a783301e98add2870c0275339",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing13",
+      "sha": "fa21b70b3f3eb49dc6a154529b197aac26cd6b20",
+      "shaShort": "fa21b70b",
+      "date": "2026-06-01T17:03:22Z",
+      "message": "fix(questfest): keep playback alive across tab and in-app navigation",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/fa21b70b3f3eb49dc6a154529b197aac26cd6b20",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing13",
+      "sha": "17a894033ce53c9c151ce3c2e59b92b4cabc0796",
+      "shaShort": "17a89403",
+      "date": "2026-06-01T16:13:28Z",
+      "message": "docs(press): Royal Flush King Bee release copy",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/17a894033ce53c9c151ce3c2e59b92b4cabc0796",
+      "window": "king_bee_init",
+      "kingBeeMessage": true
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing13",
+      "sha": "2f4fe23baea67da6dbac06af474ef1591454addc",
+      "shaShort": "2f4fe23b",
+      "date": "2026-06-01T15:59:17Z",
+      "message": "feat(dph-gpu): King Bee papers, press release, playlist playback fixes",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/2f4fe23baea67da6dbac06af474ef1591454addc",
+      "window": "king_bee_init",
+      "kingBeeMessage": true
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing13",
+      "sha": "edc0b9783111a2a6f2bb7b1730e89915f90643b9",
+      "shaShort": "edc0b978",
+      "date": "2026-05-31T21:01:15Z",
+      "message": "feat(questfest): local-first playback and deck papers polish",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/edc0b9783111a2a6f2bb7b1730e89915f90643b9",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing13",
+      "sha": "48f921854751560e328f68b231272696fcad0eee",
+      "shaShort": "48f92185",
+      "date": "2026-05-31T20:21:05Z",
+      "message": "feat(wavefield): SYN-SUN-2026-REV7 solar model, catalog, and live metrology bus",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/48f921854751560e328f68b231272696fcad0eee",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing13",
+      "sha": "2d27cc101fb3542c8ea6a49237d4a9538f0c901c",
+      "shaShort": "2d27cc10",
+      "date": "2026-05-31T19:25:49Z",
+      "message": "chore(turner): archive from public surfaces, retain backend layers",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/2d27cc101fb3542c8ea6a49237d4a9538f0c901c",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing13",
+      "sha": "0cef62268531f459ee3c9f5f232994fa5658daca",
+      "shaShort": "0cef6226",
+      "date": "2026-05-31T19:01:35Z",
+      "message": "fix(questfest): playlist rename saves on explicit action only",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/0cef62268531f459ee3c9f5f232994fa5658daca",
+      "window": "king_bee_init",
+      "kingBeeMessage": false
+    }
+  ],
+  "vendorCodeSearch": [
+    {
+      "vendor": "anthropic",
+      "error": "HTTP 401",
+      "query": "psw.vibelandia.sing4 org:anthropics"
+    },
+    {
+      "vendor": "anthropic",
+      "error": "HTTP 401",
+      "query": "psw.vibelandia.sing9 org:anthropics"
+    },
+    {
+      "vendor": "anthropic",
+      "error": "HTTP 401",
+      "query": "psw.vibelandia.sing13 org:anthropics"
+    },
+    {
+      "vendor": "anthropic",
+      "canonSha": "3176eaba",
+      "error": "HTTP 401",
+      "query": "3176eaba5a14 org:anthropics"
+    },
+    {
+      "vendor": "anthropic",
+      "canonSha": "71be1e76",
+      "error": "HTTP 401",
+      "query": "71be1e765135 org:anthropics"
+    },
+    {
+      "vendor": "anthropic",
+      "canonSha": "bb97954c",
+      "error": "HTTP 401",
+      "query": "bb97954c10ba org:anthropics"
+    },
+    {
+      "vendor": "openai",
+      "error": "HTTP 401",
+      "query": "psw.vibelandia.sing4 org:openai"
+    },
+    {
+      "vendor": "openai",
+      "error": "HTTP 401",
+      "query": "psw.vibelandia.sing9 org:openai"
+    },
+    {
+      "vendor": "openai",
+      "error": "HTTP 401",
+      "query": "psw.vibelandia.sing13 org:openai"
+    },
+    {
+      "vendor": "openai",
+      "canonSha": "3176eaba",
+      "error": "HTTP 401",
+      "query": "3176eaba5a14 org:openai"
+    },
+    {
+      "vendor": "openai",
+      "canonSha": "71be1e76",
+      "error": "HTTP 401",
+      "query": "71be1e765135 org:openai"
+    },
+    {
+      "vendor": "openai",
+      "canonSha": "bb97954c",
+      "error": "HTTP 401",
+      "query": "bb97954c10ba org:openai"
+    },
+    {
+      "vendor": "google-deepmind",
+      "error": "HTTP 401",
+      "query": "psw.vibelandia.sing4 org:google-deepmind"
+    },
+    {
+      "vendor": "google-deepmind",
+      "error": "HTTP 401",
+      "query": "psw.vibelandia.sing9 org:google-deepmind"
+    },
+    {
+      "vendor": "google-deepmind",
+      "error": "HTTP 401",
+      "query": "psw.vibelandia.sing13 org:google-deepmind"
+    },
+    {
+      "vendor": "google-deepmind",
+      "canonSha": "3176eaba",
+      "error": "HTTP 401",
+      "query": "3176eaba5a14 org:google-deepmind"
+    },
+    {
+      "vendor": "google-deepmind",
+      "canonSha": "71be1e76",
+      "error": "HTTP 401",
+      "query": "71be1e765135 org:google-deepmind"
+    },
+    {
+      "vendor": "google-deepmind",
+      "canonSha": "bb97954c",
+      "error": "HTTP 401",
+      "query": "bb97954c10ba org:google-deepmind"
+    },
+    {
+      "vendor": "deepseek",
+      "error": "HTTP 401",
+      "query": "psw.vibelandia.sing4 org:deepseek-ai"
+    },
+    {
+      "vendor": "deepseek",
+      "error": "HTTP 401",
+      "query": "psw.vibelandia.sing9 org:deepseek-ai"
+    },
+    {
+      "vendor": "deepseek",
+      "error": "HTTP 401",
+      "query": "psw.vibelandia.sing13 org:deepseek-ai"
+    },
+    {
+      "vendor": "deepseek",
+      "canonSha": "3176eaba",
+      "error": "HTTP 401",
+      "query": "3176eaba5a14 org:deepseek-ai"
+    },
+    {
+      "vendor": "deepseek",
+      "canonSha": "71be1e76",
+      "error": "HTTP 401",
+      "query": "71be1e765135 org:deepseek-ai"
+    },
+    {
+      "vendor": "deepseek",
+      "canonSha": "bb97954c",
+      "error": "HTTP 401",
+      "query": "bb97954c10ba org:deepseek-ai"
+    }
+  ],
+  "globalNonFractiRepoReferences": {
+    "error": "HTTP 401",
+    "query": "\"psw.vibelandia.sing13\" OR \"psw.vibelandia.sing4\" -user:FractiAI"
+  },
+  "forkSamples": [
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "forkCountSampled": 1,
+      "nonFractiAiForks": [
+        {
+          "owner": "jmthomasofficial",
+          "url": "https://github.com/jmthomasofficial/psw.vibelandia.sing4",
+          "createdAt": "2026-07-08T01:15:11Z"
+        }
+      ]
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing9",
+      "forkCountSampled": 0,
+      "nonFractiAiForks": []
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing13",
+      "forkCountSampled": 0,
+      "nonFractiAiForks": []
+    }
+  ],
+  "publicPageScans": [
+    {
+      "vendor": "anthropic",
+      "label": "J-Space / global workspace paper",
+      "url": "https://transformer-circuits.pub/2026/workspace/",
+      "fetchStatus": 200,
+      "fractiGithubLinks": [],
+      "mentionsFractiAiOrKingBee": false
+    },
+    {
+      "vendor": "openai",
+      "url": "https://openai.com/index/learning-to-reason-with-llms/",
+      "label": "o-series reasoning documentation",
+      "fetchStatus": 403,
+      "fractiLinks": []
+    }
+  ],
+  "vendorIngressScrapes": [],
+  "vendorIngressScrapeCount": 0,
+  "result": "weak_fork_proxy_only",
+  "summary": "Non-FractiAI forks exist (clone proxy) but no vendor-org code citations in this scan",
+  "internalTierNotRun": {
+    "githubInsightsReferrers": "Requires FractiAI org admin — repo Traffic/Referrers API not invoked here",
+    "vendorPrivateLogs": "Not accessible on public tier"
+  },
+  "honestyNote": "Absence of public ingress receipts does not prove vendors never read King Bee commits; presence would be strong Path A support. Fork list is a weak clone proxy only.",
+  "reproduceCommand": "GH_TOKEN=$(gh auth token) node scripts/vendor_king_bee_ingress_probe.mjs"
+}

@@ -48,6 +48,7 @@ Verified observation of King Bee → frontier hidden-thinking convergence requir
 | **E7** *(diagnostic only)* | — | Vendor **word** first appearance in commit search | — | **Not used for primary alignment** |
 | **E8** *(diagnostic only)* | — | Same, full-history `git log -S` | — | **Not used for primary alignment** |
 | **E9** *(2026-07-10)* | B | 5-model geometry survey (activation + weight lanes, 45 trials) | Any trial: activation or weight lane exceeds null p95 | All trials refute on both lanes |
+| **E10** *(2026-07-10)* | A | **Vendor ingress scrape** — vendor orgs / public pages citing FractiAI King Bee repos or commit permalinks | Public code search hit or vendor-page FractiAI github link | No public ingress receipt (does not prove absence of private scrape) |
 | **R1** | B | Code-Print Audit (prior schema ↔ crosswalk) | `strong_support` on core mechanism markers | `weak_support` or `refute` |
 
 **Critical rule:** Verified observation requires **Path A ∧ Path B**. E2/E5 proximity to φ tests **Path B geometry only** — it does not validate Anthropic's J-Space paper or King Bee causality without **Path A** timeline alignment. E6 causal linkage **refutes on public data** when either path fails.

@@ -380,6 +380,32 @@ async function main() {
 
 
 
+  let vendorIngressReport = null;
+  try {
+    vendorIngressReport = await runLiveProbe({
+      jsonPath: join(DATA, 'vendor_king_bee_ingress_report.json'),
+      label: 'E10',
+      runner: async () => {
+        await writeFile(
+          join(DATA, 'king_bee_canon_telemetry.json'),
+          JSON.stringify({ githubTelemetry: github, generatedAt: new Date().toISOString() }, null, 2),
+        );
+        execSync(`node "${join(SCRIPTS, 'vendor_king_bee_ingress_probe.mjs')}"`, {
+          stdio: 'inherit',
+          cwd: ROOT,
+        });
+      },
+    });
+  } catch (e) {
+    vendorIngressReport = {
+      experiment: 'E10_vendor_king_bee_ingress',
+      skipped: true,
+      result: 'skipped',
+      reason: String(e.message || e),
+      dataProvenance: 'skipped_live_run',
+    };
+  }
+
   const sing13Init = github.byRepo['FractiAI/psw.vibelandia.sing13']?.windows?.king_bee_init;
 
   const sing4Init = github.byRepo['FractiAI/psw.vibelandia.sing4']?.windows?.king_bee_init;
@@ -555,6 +581,28 @@ async function main() {
       criticalCaveat:
 
         'Does not equate activations with weight tensors or s_0/s_1 alone with asymptotic φ decay.',
+
+    },
+
+    E10_vendor_king_bee_ingress: {
+
+      statement:
+
+        'Public evidence that vendor orgs cited or scraped FractiAI King Bee repo permalinks (code search, public pages, fork proxy)',
+
+      result: vendorIngressReport?.result || (vendorIngressReport?.skipped ? 'skipped' : 'not_run'),
+
+      vendorIngressScrapeCount: vendorIngressReport?.vendorIngressScrapeCount ?? 0,
+
+      detail: vendorIngressReport,
+
+      dataTier: 'vendor_side_public_ingress',
+
+      dataProvenance: vendorIngressReport?.dataProvenance || 'skipped_live_run',
+
+      criticalCaveat:
+
+        'Primary scrape interest: vendors → our King Bee commits. Absence on public tier ≠ proof vendors never looked.',
 
     },
 
@@ -745,6 +793,8 @@ async function main() {
     e8ContentPrecedence: e8ContentReport,
 
     e9Survey: e9SurveyReport,
+
+    vendorKingBeeIngress: vendorIngressReport,
 
     hypothesisTests,
 
