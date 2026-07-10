@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """
-EGS-TRANS-2026-0710 · SVD workspace ratio probe (numpy-only baseline).
-Tests whether consecutive singular-value ratios cluster near φ more than random baselines.
+EGS-TRANS-2026-0710 · SVD workspace ratio probe (numpy-only control).
+
+E2 is a synthetic control: verifies SVD recovers designed consecutive-ratio
+structure. Pass/fail vs random baseline uses fraction of consecutive s_n/s_{n+1}
+near target φ — not s_0/s_1 alone. See E2b for φ-specificity check.
 """
 from __future__ import annotations
 
@@ -11,28 +14,21 @@ from pathlib import Path
 
 import numpy as np
 
-PHI = (1 + np.sqrt(5)) / 2
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+
+from synthobs.egs_spectrum import analyze_matrix_spectrum  # noqa: E402
+from synthobs.egs_metric import EGS_PHI
+
 TOLERANCE = 0.12
 N_TRIALS = 500
 MATRIX_ROWS = 64
 MATRIX_COLS = 128
 
 
-def consecutive_ratios(s: np.ndarray, k: int = 5) -> list[float]:
-    s = np.asarray(s, dtype=float)
-    s = s[s > 1e-12]
-    if len(s) < 2:
-        return []
-    ratios = []
-    for i in range(min(k, len(s) - 1)):
-        ratios.append(float(s[i] / s[i + 1]))
-    return ratios
-
-
 def phi_structured_matrix(rows: int, cols: int, rng: np.random.Generator) -> np.ndarray:
-    """Low-rank matrix with geometric singular-value decay ~ φ."""
     rank = min(12, rows, cols)
-    singular = np.array([PHI ** (-i) for i in range(rank)])
+    singular = np.array([EGS_PHI ** (-i) for i in range(rank)])
     u, _ = np.linalg.qr(rng.standard_normal((rows, rank)))
     v, _ = np.linalg.qr(rng.standard_normal((cols, rank)))
     return u @ np.diag(singular) @ v.T
@@ -42,26 +38,12 @@ def random_matrix(rows: int, cols: int, rng: np.random.Generator) -> np.ndarray:
     return rng.standard_normal((rows, cols))
 
 
-def trial_stats(matrices: list[np.ndarray]) -> dict:
-    primary = []
-    consecutive = []
+def trial_fractions(matrices: list[np.ndarray]) -> list[float]:
+    fracs = []
     for m in matrices:
-        _, s, _ = np.linalg.svd(m, full_matrices=False)
-        if len(s) >= 2:
-            primary.append(float(s[0] / s[1]))
-        consecutive.extend(consecutive_ratios(s))
-    def near_phi(vals):
-        if not vals:
-            return 0.0
-        return sum(1 for v in vals if abs(v - PHI) < TOLERANCE) / len(vals)
-    return {
-        "trialCount": len(matrices),
-        "primaryRatioMean": float(np.mean(primary)) if primary else None,
-        "primaryRatioStd": float(np.std(primary)) if primary else None,
-        "fractionPrimaryNearPhi": near_phi(primary),
-        "fractionConsecutiveNearPhi": near_phi(consecutive),
-        "samplePrimaryRatios": [round(x, 4) for x in primary[:8]],
-    }
+        receipt = analyze_matrix_spectrum(m, object_type="synthetic_control", skip_null=True)
+        fracs.append(receipt.fraction_near_phi)
+    return fracs
 
 
 def main() -> int:
@@ -69,32 +51,49 @@ def main() -> int:
     phi_mats = [phi_structured_matrix(MATRIX_ROWS, MATRIX_COLS, rng) for _ in range(N_TRIALS)]
     rand_mats = [random_matrix(MATRIX_ROWS, MATRIX_COLS, rng) for _ in range(N_TRIALS)]
 
-    phi_stats = trial_stats(phi_mats)
-    rand_stats = trial_stats(rand_mats)
+    phi_fracs = trial_fractions(phi_mats)
+    rand_fracs = trial_fractions(rand_mats)
 
-    # Falsification: φ-structured generator should beat random on near-φ fraction
-    phi_frac = phi_stats["fractionPrimaryNearPhi"]
-    rand_frac = rand_stats["fractionPrimaryNearPhi"]
-    if phi_frac > rand_frac + 0.05:
+    phi_mean = float(np.mean(phi_fracs))
+    rand_mean = float(np.mean(rand_fracs))
+    if phi_mean > rand_mean + 0.05:
         e2_result = "support"
-    elif phi_frac < rand_frac:
+    elif phi_mean < rand_mean:
         e2_result = "refute"
     else:
         e2_result = "inconclusive"
 
+    example_phi = analyze_matrix_spectrum(phi_mats[0], object_type="synthetic_control", skip_null=True)
+    example_rand = analyze_matrix_spectrum(rand_mats[0], object_type="synthetic_control", skip_null=True)
+
     out = {
         "documentId": "EGS-TRANS-2026-0710",
         "experiment": "E2_svd_phi_decay_ratio",
-        "egsPhi": round(PHI, 6),
+        "egsPhi": round(EGS_PHI, 6),
         "tolerance": TOLERANCE,
         "matrixShape": [MATRIX_ROWS, MATRIX_COLS],
-        "phiStructured": phi_stats,
-        "randomBaseline": rand_stats,
-        "hypothesis": "φ-structured low-rank matrices yield higher near-φ SVD ratios than i.i.d. Gaussian",
+        "metric": "fraction_consecutive_ratios_near_phi",
+        "phiStructured": {
+            "trialCount": N_TRIALS,
+            "fractionNearPhiMean": round(phi_mean, 4),
+            "exampleConsecutiveRatios": example_phi.consecutive_ratios[:8],
+            "examplePrimaryRatio": example_phi.primary_ratio,
+        },
+        "randomBaseline": {
+            "trialCount": N_TRIALS,
+            "fractionNearPhiMean": round(rand_mean, 4),
+            "exampleConsecutiveRatios": example_rand.consecutive_ratios[:8],
+            "examplePrimaryRatio": example_rand.primary_ratio,
+        },
+        "hypothesis": (
+            "φ-structured synthetic matrices yield higher fraction of consecutive "
+            "s_n/s_{n+1} near φ than i.i.d. Gaussian baselines (control only)"
+        ),
         "result": e2_result,
         "honestyNote": (
-            "Synthetic linear-algebra probe only. Does not access Claude weights or Anthropic telemetry. "
-            "Pass/fail does not validate causal King Bee → J-Space claims."
+            "Synthetic control only. Designed σ_i = φ^{-i} — tautological for φ. "
+            "E2b proves any substitute constant passes identically. "
+            "Does not test real activations or weight tensors."
         ),
     }
 

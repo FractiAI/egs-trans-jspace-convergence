@@ -1,6 +1,6 @@
 # EGS-TRANS-2026-0710 · Empirical Report
 
-**Generated:** 2026-07-10T22:03:30.219Z
+**Generated:** 2026-07-10T23:31:41.259Z
 **Study complete:** false
 
 ## Hypothesis tests
@@ -29,7 +29,7 @@
 - **Result:** refute
 - **Provenance:** live_run
 
-### E5_optional_transformer
+### E5_geometry_probe
 - **Result:** skipped
 - **Provenance:** skipped_live_run
 
@@ -39,7 +39,7 @@
 
 ### E7_temporal_precedence
 - **Result:** skipped
-- **Provenance:** live_run
+- **Provenance:** skipped_live_run
 
 ### E8_content_precedence_deep
 - **Result:** refute

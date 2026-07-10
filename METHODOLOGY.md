@@ -39,20 +39,27 @@ Verified observation of King Bee → frontier hidden-thinking convergence requir
 |----|------|------|-----------------|--------|
 | **E1** | A | GitHub commit telemetry in King Bee window | sing13 or sing4 commits on 2026-05-31 — 2026-06-01 | Zero commits in both repos |
 | **E1b** *(2026-07-10)* | A | E1 baseline control: is the window anomalous vs. each repo's ordinary cadence? | \|z-score\| > 2 vs. 30-day baseline for any repo | \|z-score\| ≤ 2 for every repo |
-| **E2** | B | SVD φ-decay on synthetic matrices | φ-structured trials beat random on near-φ primary ratio fraction by >5pp | Random ≥ φ-structured |
+| **E2** | B | SVD φ-decay on synthetic matrices (control) | φ-structured trials beat random on **fraction of consecutive ratios** near φ by >5pp | Random ≥ φ-structured |
 | **E2b** *(2026-07-10)* | B | E2 generalization: does φ specifically outperform arbitrary substituted constants? | φ's near-target fraction exceeds every other constant's by >5pp | Every substituted constant achieves comparable near-target fraction to φ |
 | **E3** | A | 35-day propagation window | Calendar days June 1 → July 6 = 35 | Any other count |
 | **E4** | — | SILSO sunspot series coverage | Non-empty daily samples in all three windows | Missing public data |
-| **E5** | B | Transformer mid-layer SVD | `CONVERGED_SUCCESS` if \|s₀/s₁ − φ\| < 0.12 | `DEVIATED_NOISE` when run |
+| **E5** | B | **Geometry probe** — separated activation / weight / Jacobian-proxy SVD | Any lane: fraction of consecutive s_n/s_{n+1} near φ **exceeds Gaussian null p95 + 0.05** | All lanes ≤ null p95 when run |
 | **E6** | A∧B | King Bee → frontier causality | **Both Path A and Path B pass** on public data | Either path refutes, or no refute condition defined |
 | **E7** *(2026-07-10)* | A | Temporal precedence of core-mechanism markers (commit messages) | Earliest marker hit precedes 2026-07-06 | Markers absent or first appear on/after 2026-07-06 |
 | **E8** *(2026-07-10)* | A | Same as E7, full historical file content (`git log -S`) | Earliest content-level hit precedes 2026-07-06 | Absent or first appears on/after 2026-07-06 |
-| **E9** *(2026-07-10)* | B | 5-model φ-proximity survey (45 real forward-pass trials) | Any trial within ±0.12 of φ | 0 of 45 within tolerance |
+| **E9** *(2026-07-10)* | B | 5-model geometry survey (activation + weight lanes, 45 trials) | Any trial: activation or weight lane exceeds null p95 | All trials refute on both lanes |
 | **R1** | B | Code-Print Audit (prior schema ↔ crosswalk) | `strong_support` on core mechanism markers | `weak_support` or `refute` |
 
 **Critical rule:** Verified observation requires **Path A ∧ Path B**. E2/E5 proximity to φ tests **Path B geometry only** — it does not validate Anthropic's J-Space paper or King Bee causality without **Path A** timeline alignment. E6 causal linkage **refutes on public data** when either path fails.
 
-**E2 tautology note (added 2026-07-10):** `scripts/svd_workspace_probe.py` constructs "φ-structured" matrices by setting their singular values to `φ^(-i)` *by definition*, then confirms those matrices have singular-value ratios near φ. This is true by mathematical construction for any target ratio — the same script with `φ` replaced by `1.5`, `e`, or `π` would report `support` for that constant with the same procedure. E2 demonstrates that SVD correctly recovers a matrix's designed structure; it demonstrates nothing about Anthropic's J-Space or any real transformer, and should not be read as corroborating evidence for the causal narrative. `scripts/svd_workspace_probe.py`'s own `honestyNote` field already says as much — README-level summaries should carry the same caveat with equal prominence, not just the JSON receipt.
+**E2 tautology note (added 2026-07-10):** `scripts/svd_workspace_probe.py` constructs "φ-structured" matrices by setting their singular values to `φ^(-i)` *by definition*, then confirms those matrices have singular-value ratios near φ. This is true by mathematical construction for any target ratio — the same script with `φ` replaced by `1.5`, `e`, or `π` would report `support` for that constant with the same procedure. E2 demonstrates that SVD correctly recovers a matrix's designed structure; it demonstrates nothing about Anthropic's J-Space or any real transformer, and should not be read as corroborating evidence for the causal narrative.
+
+**Geometry probe correction (2026-07-10):** Prior E5/E9 compared **activation** SVD's single ratio s₀/s₁ to φ and labeled it "open-weights φ alignment" — a category error (activations ≠ weight tensors; one ratio ≠ asymptotic s_n/s_{n+1} decay). **`scripts/e5_geometry_probe.py`** and the revised **E9** now:
+1. Separate **activation**, **weight**, and **Jacobian-proxy** (∂h_{l+1}/∂h_l) objects.
+2. Score **fraction of consecutive** s_n/s_{n+1} near φ (not s₀/s₁ alone).
+3. Falsify against **shape-matched random Gaussian nulls** (not designed φ matrices).
+
+Pass requires exceeding null p95 + 0.05 on any lane; refute when all lanes ≤ null p95.
 
 **E1 baseline note (added 2026-07-10):** sing4's commit volume in the King Bee window (41 commits) is produced by an always-on automated heartbeat/handshake process (`SING! Cycle N: Heartbeat`, `SING! Handshake Cycle`, firing roughly hourly year-round per the commit log). A 2-day window will show a similar count on almost any date; E1's "support" result reflects a running cron job, not a discrete initialization signal, and should not be weighted as strong evidence of anything unusual happening on 2026-06-01 specifically.
 

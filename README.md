@@ -70,7 +70,7 @@ flowchart LR
 |-----------|---------|--------|
 | **A · Code-Print crosswalk (R1)** | **Weak** — FractiAI / φ branding matches; **`scratchpad`, `workspace_bottleneck`, `j_space` do not** appear in scraped sing4/sing9 HEAD protocols. | Weak ≠ zero overlap; ≠ strong prefiguration of vendor internals. |
 | **B · φ-SVD on designed matrices (E2/E2b)** | Control lane only — construction passes **any** target constant (tautology check). | Not evidence about Claude/Gemini weights. |
-| **C · φ-SVD on real models (E5/E9)** | **Refute when run** — e.g. ratio **47.32** vs φ **1.618**; audit pass **0/45** near φ. **Skipped** on latest local run (no `torch`). | Architecture *claim* (φ decay in hidden states) not supported on tested open weights. |
+| **C · Geometry probe (E5/E9)** | **Separated lanes:** activation · weight · Jacobian-proxy. Metric = fraction of consecutive s_n/s_{n+1} near φ vs **Gaussian null** (not s₀/s₁ alone). | **Refute when run** if all lanes ≤ null p95. Prior buggy test (s₀/s₁ = 47.32) deprecated. **Skipped** locally without `torch`. |
 
 **Architecture synthesis:** Broad lattice / workspace *narrative* may rhyme with vendor papers; **token-level** and **φ-metric** alignment are **not established** on public data. Partial narrative overlap + failed metric alignment = **mixed**, not a flat disqualification.
 
@@ -133,11 +133,11 @@ Nothing here requires proprietary vendor APIs or paid keys for the public proxy 
 
 | Frontier family | Branded hidden-thinking mechanism | Latent mechanical reality | EGS φ alignment (as displayed) | **Audit finding** |
 |-----------------|-----------------------------------|---------------------------|-----------------|-----------------|
-| **Anthropic Claude** | J-Space | ~10% activation broadcast hub | Public literature · tier labels pending | Anthropic's actual paper, fetched and read directly, mentions φ/1.618 **zero times**. On open-weights: E5 (`Qwen/Qwen2.5-0.5B`) **refutes** φ-alignment: measured ratio 47.32, not 1.618. |
+| **Anthropic Claude** | J-Space | ~10% activation broadcast hub | Public literature · tier labels pending | Anthropic's paper mentions φ **zero times**. E5 geometry probe (when run) tests activation / weight / Jacobian lanes vs null — not s₀/s₁ alone. |
 | **OpenAI o-Series** (o1 / o3 / o5) | Hidden Thinking Blocks | Pre-emission deliberation tokens | Catalog · API probe pending | **Zero API calls or probes anywhere in this codebase**, and no public OpenAI record connects o-series internals to φ/1.618 anywhere. |
 | **Google Gemini** 2.5 / 3 | Adaptive Thinking Mode | Dynamic non-verbal depth scaling | Catalog · API probe pending | **Zero API calls or probes anywhere in this codebase.** Same static-literal source as the OpenAI row. |
 | **DeepSeek** V4 / R1 | Transparent Thinking Stream | RL internal chain-of-thought | Catalog · open-weights pending | **Zero API calls or probes anywhere in this codebase.** Same static-literal source. |
-| **Open-weights proxies** (Qwen, Llama 3, etc.) | Mid-layer SVD hook | J-Lens φ compression probe | "Empirical proxy" · E5 / R3 / R4 | **Path B:** E5/E9 **refute** φ on real models (47.32 · 0/45). R3 performs real synthetic SVD; open-weights lane refutes. |
+| **Open-weights proxies** (Qwen, Llama 3, etc.) | Mid-layer geometry probe | Activation · weight · Jacobian-proxy lanes | E5 / E9 | **Path B:** refute when all lanes ≤ Gaussian null p95 |
 
 This entire table (`FRONTIER_MODEL_MATRIX` in `research/ip-infringement-draft/src/rix-verification.mjs`) is a hand-authored array literal. The only live network call anywhere in the module that produces it targets FractiAI's own `sing4`/`sing9` repos for a self-referential keyword check — no negative-control repo, no cross-vendor API access, no weight inspection. Machine receipt: [`research/ip-infringement-draft/data/rix_verification.json`](research/ip-infringement-draft/data/rix_verification.json). Full detail: [`docs/VALIDATION_AUDIT_2026-07-10.md`](docs/VALIDATION_AUDIT_2026-07-10.md) §6.2, §6.11.
 
@@ -185,7 +185,7 @@ This entire table (`FRONTIER_MODEL_MATRIX` in `research/ip-infringement-draft/sr
 | Directed modulation | Pre-materialized latent vectors |
 | φ singular-value decay | El Gran Sol fractal constant · 1.618 |
 
-**Math hook.** \(\lim_{n\to\infty} s_n/s_{n+1} = 1.618\) · J-Lens SVD proxy · `npm run ip-infringement`. **Audit note:** the one place this limit was tested against a real model (E5), the measured ratio was 47.32, not 1.618.
+**Math hook.** Consecutive singular-value ratios s_n/s_{n+1} compared to φ via `scripts/e5_geometry_probe.py` — **activation**, **weight**, and **Jacobian-proxy** lanes, each vs shape-matched Gaussian null. Not s₀/s₁ alone; not equating activations with weight tensors.
 
 ---
 
@@ -217,8 +217,8 @@ This entire table (`FRONTIER_MODEL_MATRIX` in `research/ip-infringement-draft/sr
 |----|------------|--------|---------|
 | **R1** | Prior Code-Print ↔ crosswalk | **weak_support** | Core mechanism markers **never matched** pre-July canon. |
 | **E2** / **E2b** | φ-SVD construction | **tautology (E2b)** | Any constant passes identical procedure — not scratchspace-specific. |
-| **E5** | Open-weights mid-layer SVD | **REFUTE** | Ratio **47.32** vs φ ≈ 1.618. |
-| **E9** | 5-model φ survey | **REFUTE (0/45)** | Ratios 1.79–60.3. |
+| **E5** | Geometry probe (activation / weight / Jacobian) | **REFUTE** when all lanes ≤ null p95 | `scripts/e5_geometry_probe.py` |
+| **E9** | 5-model activation + weight survey | **REFUTE** when no lane exceeds null | `scripts/e9_survey_driver.py` |
 | **R3** / **R4** | J-Lens + RIX matrix | **refute** | Open-weights φ proxy fails. |
 
 ### Combined verdict
@@ -260,12 +260,12 @@ npm run ip-infringement                        # R1–R4 · §5–§6 · frontie
 
 **Outputs:** `data/empirical_report.json` · `data/empirical_report.md`
 
-### Multi-model open-weights probe (E5)
+### Multi-model geometry probe (E5 · E9)
 
 ```bash
 pip install torch transformers
-python scripts/transformer_jspace_probe.py Qwen/Qwen2.5-0.5B 12 "The exact number of angles in a triangle is"
-python scripts/transformer_jspace_probe.py meta-llama/Llama-3.2-1B 8 "Recursive core ingestion sing4 sing9"
+python scripts/e5_geometry_probe.py Qwen/Qwen2.5-0.5B 12 "The exact number of angles in a triangle is"
+python scripts/e9_survey_driver.py
 ```
 
 ---
@@ -278,11 +278,11 @@ python scripts/transformer_jspace_probe.py meta-llama/Llama-3.2-1B 8 "Recursive 
 | **E2** / **E2b** | SVD φ-decay vs random baseline / generalization to other constants | NumPy synthetic matrices — **E2b confirms tautology** (6/6 substitute constants pass identically) |
 | **E3** | 35-day June 1 → July 6 | Calendar arithmetic — quantified as a cherry-pick (see audit §6.6) |
 | **E4** | SILSO disk-integrated sunspot means | Public NOAA/SILSO CSV — **refutes** |
-| **E5** | Mid-layer transformer SVD | Open weights — **run, refutes** (the only real-model test in the repo) |
+| **E5** | Geometry probe (activation / weight / Jacobian vs null) | Open weights forward pass |
 | **E6** | Causal Anthropic linkage | **Unfalsifiable as scoped — no refute condition defined** |
 | **E7** | Temporal precedence of R1 core-mechanism markers (commit messages) | Public GitHub commit search — **refutes** |
 | **E8** | Same as E7, full historical file content (`git log -S`) | Local full-history clones — **refutes, with exact commit SHAs** |
-| **E9** | Real cross-architecture φ-proximity survey (5 models × 3 layers × 3 prompts) | Real open-weights forward passes — **refutes, 0/45 trials** |
+| **E9** | 5-model activation + weight geometry survey | Open weights — refute when no lane exceeds null p95 |
 
 Full falsification table: [`METHODOLOGY.md`](METHODOLOGY.md). Full independent validation pass (expanded, multi-agent, adversarially re-verified): [`docs/VALIDATION_AUDIT_2026-07-10.md`](docs/VALIDATION_AUDIT_2026-07-10.md).
 

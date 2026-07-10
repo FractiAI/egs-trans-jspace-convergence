@@ -1,28 +1,9 @@
 #!/usr/bin/env python3
 """
-EGS-TRANS-2026-0710 · E9 multi-model, multi-layer, multi-prompt real-weights survey.
+E9 · Multi-model geometry survey — activation + weight lanes per trial.
 
-E5 tests exactly one (model, layer, prompt) triple. R4's claim is broader: that
-frontier-scale hidden-thinking/global-workspace mechanisms across MULTIPLE model
-families converge on phi-decaying singular values. E9 tests that claim directly
-and honestly: run the identical SVD-ratio probe across several real, independently
-trained open-weights models, several layers each, and several prompts each,
-and report the empirical fraction of (model, layer, prompt) triples whose primary
-singular-value ratio lands within TOLERANCE of phi -- exactly the same criterion
-E2/E2b already used, but now against real forward passes instead of synthetic or
-self-referential constructions.
-
-This script probes ONE model per invocation (so it can be fanned out across
-agents/processes); a driver aggregates the per-model JSON outputs into one
-survey report.
-
-Falsification:
-  Pass  -> aggregate near-phi fraction across all real (model, layer, prompt)
-           triples is meaningfully above the random-matrix baseline established
-           in E2/E2b (near 0)
-  Refute -> aggregate near-phi fraction is statistically indistinguishable from
-           the random baseline (i.e., real models hit the phi window about as
-           often as chance, which E2/E2b already showed is ~0)
+Replaces single s_0/s_1 vs φ with consecutive-ratio spectrum analysis and
+Gaussian null comparison on each (model, layer, prompt) triple.
 """
 from __future__ import annotations
 
@@ -30,8 +11,10 @@ import json
 import sys
 from pathlib import Path
 
-PHI = (1 + (5**0.5)) / 2
-TOLERANCE = 0.12
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+
+from synthobs.egs_spectrum import analyze_matrix_spectrum  # noqa: E402
 
 PROMPTS = [
     "The exact number of angles in a triangle is",
@@ -41,12 +24,11 @@ PROMPTS = [
 
 
 def resolve_layers(model):
-    """Return the list of transformer blocks regardless of architecture family."""
     candidates = [
-        lambda m: m.model.layers,          # Llama / Qwen / Mistral / Gemma family
-        lambda m: m.transformer.h,          # GPT-2 family
-        lambda m: m.gpt_neox.layers,        # Pythia / GPT-NeoX family
-        lambda m: m.model.decoder.layers,   # OPT family
+        lambda m: m.model.layers,
+        lambda m: m.transformer.h,
+        lambda m: m.gpt_neox.layers,
+        lambda m: m.model.decoder.layers,
     ]
     for get in candidates:
         try:
@@ -55,7 +37,23 @@ def resolve_layers(model):
                 return layers
         except AttributeError:
             continue
-    raise RuntimeError("Could not resolve transformer layer list for this architecture")
+    raise RuntimeError("Could not resolve transformer layer list")
+
+
+def pick_weight_matrix(layer) -> tuple[str, object]:
+    for name in ("q_proj", "self_attn.q_proj", "attn.q_proj"):
+        parts = name.split(".")
+        obj = layer
+        for p in parts:
+            obj = getattr(obj, p, None)
+            if obj is None:
+                break
+        if obj is not None and hasattr(obj, "weight"):
+            return name, obj.weight
+    for name, mod in layer.named_modules():
+        if hasattr(mod, "weight") and mod.weight is not None and mod.weight.ndim == 2:
+            return name, mod.weight
+    raise RuntimeError("No 2D weight matrix found on layer")
 
 
 def main() -> int:
@@ -76,8 +74,9 @@ def main() -> int:
     model.eval()
     layers = resolve_layers(model)
     n_layers = len(layers)
-    # Sample early/mid/late layers proportionally to model depth.
-    layer_indices = sorted(set([max(1, n_layers // 4), n_layers // 2, max(n_layers - 2, n_layers // 2 + 1)]))
+    layer_indices = sorted(
+        {max(1, n_layers // 4), n_layers // 2, max(n_layers - 2, n_layers // 2 + 1)}
+    )
 
     trials = []
     for layer_idx in layer_indices:
@@ -88,6 +87,10 @@ def main() -> int:
             buffer["acts"] = tensor.detach()
 
         handle = layers[layer_idx].register_forward_hook(hook)
+        weight_name, weight_param = pick_weight_matrix(layers[layer_idx])
+        weight_np = weight_param.detach().float().cpu().numpy()
+        weight_lane = analyze_matrix_spectrum(weight_np, object_type="weight")
+
         for prompt in PROMPTS:
             inputs = tokenizer(prompt, return_tensors="pt")
             with torch.no_grad():
@@ -95,26 +98,42 @@ def main() -> int:
             acts = buffer.get("acts")
             if acts is None:
                 continue
-            flat = acts.view(-1, acts.size(-1)).float()
-            if flat.size(0) < 2:
+            flat = acts.view(-1, acts.size(-1)).float().cpu().numpy()
+            if flat.shape[0] < 2:
                 continue
-            _, s, _ = torch.linalg.svd(flat, full_matrices=False)
-            s = s.cpu().numpy()
-            if len(s) < 2 or s[1] <= 1e-12:
-                continue
-            primary = float(s[0] / s[1])
-            near_phi = abs(primary - PHI) < TOLERANCE
+            act_lane = analyze_matrix_spectrum(flat, object_type="activation")
             trials.append(
                 {
                     "layer": layer_idx,
-                    "prompt": prompt[:40],
-                    "primaryRatio": round(primary, 4),
-                    "nearPhi": near_phi,
+                    "prompt": prompt[:48],
+                    "tokenCount": int(flat.shape[0]),
+                    "weightParameter": weight_name,
+                    "activation": act_lane.to_dict(),
+                    "weight": weight_lane.to_dict(),
+                    "activationResult": act_lane.result,
+                    "weightResult": weight_lane.result,
+                    "anySupport": act_lane.result == "support_vs_null"
+                    or weight_lane.result == "support_vs_null",
                 }
             )
         handle.remove()
 
-    near_phi_count = sum(1 for t in trials if t["nearPhi"])
+    act_support = sum(1 for t in trials if t["activationResult"] == "support_vs_null")
+    wt_support = sum(1 for t in trials if t["weightResult"] == "support_vs_null")
+    any_support = sum(1 for t in trials if t["anySupport"])
+
+    if not trials:
+        result = "not_run"
+    elif any_support > 0:
+        result = "weak_support"
+    elif all(
+        t["activationResult"] == "refute_vs_null" and t["weightResult"] == "refute_vs_null"
+        for t in trials
+    ):
+        result = "refute"
+    else:
+        result = "inconclusive"
+
     out = {
         "experiment": "E9_multi_model_survey",
         "model": model_id,
@@ -122,16 +141,19 @@ def main() -> int:
         "layersSampled": layer_indices,
         "promptsPerLayer": len(PROMPTS),
         "trialCount": len(trials),
-        "nearPhiCount": near_phi_count,
-        "nearPhiFraction": round(near_phi_count / len(trials), 4) if trials else None,
+        "activationSupportCount": act_support,
+        "weightSupportCount": wt_support,
+        "anyLaneSupportCount": any_support,
+        "result": result,
         "trials": trials,
-        "egsPhi": round(PHI, 6),
-        "tolerance": TOLERANCE,
+        "measurementPolicy": {
+            "lanes": ["activation", "weight"],
+            "metric": "fraction of consecutive s_n/s_{n+1} near φ vs Gaussian null",
+            "deprecated": "primaryRatio/nearPhi single-pair test",
+        },
         "honestyNote": (
-            "Real forward passes on a real, independently trained open-weights model. "
-            "No King Bee / FractiAI code touches this model's weights, training, or inference "
-            "in any way -- this measures only whether phi-proximity occurs at the baseline "
-            "rate any model's activations would show under this metric."
+            "Real forward passes. Activation and weight tensors analyzed separately — "
+            "not equated. φ support requires exceeding random null p95 on consecutive ratios."
         ),
     }
     print(json.dumps(out, indent=2))

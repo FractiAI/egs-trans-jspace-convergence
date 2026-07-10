@@ -7,41 +7,38 @@
     64,
     128
   ],
+  "metric": "fraction_consecutive_ratios_near_phi",
   "phiStructured": {
     "trialCount": 500,
-    "primaryRatioMean": 1.618033988749895,
-    "primaryRatioStd": 1.362058601475544e-15,
-    "fractionPrimaryNearPhi": 1.0,
-    "fractionConsecutiveNearPhi": 1.0,
-    "samplePrimaryRatios": [
-      1.618,
-      1.618,
-      1.618,
-      1.618,
-      1.618,
-      1.618,
-      1.618,
-      1.618
-    ]
+    "fractionNearPhiMean": 1.0,
+    "exampleConsecutiveRatios": [
+      1.618034,
+      1.618034,
+      1.618034,
+      1.618034,
+      1.618034,
+      1.618034,
+      1.618034,
+      1.618034
+    ],
+    "examplePrimaryRatio": 1.618034
   },
   "randomBaseline": {
     "trialCount": 500,
-    "primaryRatioMean": 1.034638379313249,
-    "primaryRatioStd": 0.018633548755429975,
-    "fractionPrimaryNearPhi": 0.0,
-    "fractionConsecutiveNearPhi": 0.0,
-    "samplePrimaryRatios": [
-      1.0293,
-      1.0491,
-      1.0218,
-      1.0467,
-      1.016,
-      1.0197,
-      1.0499,
-      1.0082
-    ]
+    "fractionNearPhiMean": 0.0,
+    "exampleConsecutiveRatios": [
+      1.029314,
+      1.008539,
+      1.023704,
+      1.007378,
+      1.032676,
+      1.020878,
+      1.022023,
+      1.013285
+    ],
+    "examplePrimaryRatio": 1.029314
   },
-  "hypothesis": "\u03c6-structured low-rank matrices yield higher near-\u03c6 SVD ratios than i.i.d. Gaussian",
+  "hypothesis": "\u03c6-structured synthetic matrices yield higher fraction of consecutive s_n/s_{n+1} near \u03c6 than i.i.d. Gaussian baselines (control only)",
   "result": "support",
-  "honestyNote": "Synthetic linear-algebra probe only. Does not access Claude weights or Anthropic telemetry. Pass/fail does not validate causal King Bee \u2192 J-Space claims."
+  "honestyNote": "Synthetic control only. Designed \u03c3_i = \u03c6^{-i} \u2014 tautological for \u03c6. E2b proves any substitute constant passes identically. Does not test real activations or weight tensors."
 }

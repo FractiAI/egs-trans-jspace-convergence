@@ -1,8 +1,8 @@
 {
-  "experiment": "E5_transformer_midlayer_svd",
+  "experiment": "E5_geometry_probe",
   "skipped": true,
   "reason": "No module named 'torch'",
   "install": "pip install torch transformers",
   "dataProvenance": "skipped_live_run",
-  "generatedAt": "2026-07-10T22:01:57.879Z"
+  "generatedAt": "2026-07-10T23:29:25.296Z"
 }

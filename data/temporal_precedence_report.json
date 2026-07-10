@@ -3,6 +3,6 @@
   "experiment": "E7_temporal_precedence",
   "result": "skipped",
   "reason": "No GH_TOKEN/GITHUB_TOKEN set; GitHub commit search requires auth.",
-  "dataProvenance": "live_run",
-  "generatedAt": "2026-07-10T22:01:58.034Z"
+  "dataProvenance": "skipped_live_run",
+  "generatedAt": "2026-07-10T23:29:25.445Z"
 }

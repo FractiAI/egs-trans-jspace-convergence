@@ -187,12 +187,13 @@ export function runJLensLiveProbe() {
 
   const syntheticTautology = phiNear > randNear + 0.05;
   const openWeightsRefute =
+    openWeights?.result === 'refute' ||
     openWeights?.status === 'DEVIATED_NOISE' ||
-    (e9?.trialsNearPhi === 0 && e9?.trialsTotal > 0);
+    e9?.result === 'refute';
 
   let result = 'synthetic_only_not_open_weights_evidence';
   if (openWeightsRefute) result = 'refute_open_weights';
-  else if (openWeights?.status === 'CONVERGED_SUCCESS') result = 'weak_open_weights';
+  else if (openWeights?.result === 'weak_support') result = 'weak_open_weights';
   else if (openWeights?.skipped) result = 'open_weights_not_run';
 
   return {
@@ -219,20 +220,36 @@ export function runJLensLiveProbe() {
       ? {
           model: openWeights.model,
           layer: openWeights.layer,
-          primaryRatio: openWeights.primaryRatio,
+          result: openWeights.result,
+          lanes: openWeights.lanes
+            ? Object.fromEntries(
+                Object.entries(openWeights.lanes).map(([k, v]) => [
+                  k,
+                  {
+                    objectType: v.object_type,
+                    fractionNearPhi: v.fraction_near_phi,
+                    result: v.result,
+                    primaryRatio: v.primary_ratio,
+                  },
+                ]),
+              )
+            : undefined,
+          legacyPrimaryRatio: openWeights.legacyPrimaryRatio ?? openWeights.primaryRatio,
           status: openWeights.status,
           dataProvenance: openWeights.dataProvenance,
-          command:
-            'python research/egs-trans-jspace-convergence/scripts/transformer_jspace_probe.py',
+          command: 'python scripts/e5_geometry_probe.py',
         }
       : {
           status: 'not_run',
           dataProvenance: 'missing',
-          command:
-            'pip install torch transformers && python research/egs-trans-jspace-convergence/scripts/transformer_jspace_probe.py',
+          command: 'pip install torch transformers && python scripts/e5_geometry_probe.py',
         },
     e9Survey: e9
-      ? { trialsNearPhi: e9.trialsNearPhi, trialsTotal: e9.trialsTotal, result: e9.result }
+      ? {
+          result: e9.result,
+          trialsTotal: e9.trialsTotal,
+          anyLaneSupportCount: e9.anyLaneSupportCount ?? e9.trialsNearPhi,
+        }
       : null,
     result,
     dataTier: 'synthetic_numpy + optional_open_weights',

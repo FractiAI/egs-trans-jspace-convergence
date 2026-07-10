@@ -1,7 +1,7 @@
 {
   "documentId": "EGS-TRANS-2026-0710",
   "experiment": "E1b_baseline_control",
-  "generatedAt": "2026-07-10T22:02:01.609Z",
+  "generatedAt": "2026-07-10T23:29:33.545Z",
   "dataProvenance": "live_run",
   "hypothesis": "King Bee window (2026-05-31--2026-06-02) commit activity is anomalous relative to each core repo's own baseline cadence over the preceding 30 days (|z| > 2).",
   "controlDays": 30,
@@ -12,17 +12,17 @@
         "since": "2026-05-01",
         "until": "2026-05-31",
         "days": 30,
-        "totalCommits": 757,
-        "dailyMean": 24.4,
-        "dailyStdev": 8.348
+        "totalCommits": 760,
+        "dailyMean": 25.333,
+        "dailyStdev": 7.512
       },
       "kingBeeWindow": {
         "since": "2026-05-31T00:00:00Z",
         "until": "2026-06-02T00:00:00Z",
-        "totalCommits": 28,
-        "perDay": 14
+        "totalCommits": 41,
+        "perDay": 20.5
       },
-      "zScore": -1.246,
+      "zScore": -0.643,
       "anomalousVsBaseline": false
     },
     "FractiAI/psw.vibelandia.sing9": {
@@ -33,7 +33,7 @@
         "days": 30,
         "totalCommits": 52,
         "dailyMean": 1.733,
-        "dailyStdev": 4.242
+        "dailyStdev": 4.068
       },
       "kingBeeWindow": {
         "since": "2026-05-31T00:00:00Z",
@@ -41,7 +41,7 @@
         "totalCommits": 0,
         "perDay": 0
       },
-      "zScore": -0.409,
+      "zScore": -0.426,
       "anomalousVsBaseline": false
     },
     "FractiAI/psw.vibelandia.sing13": {
@@ -50,9 +50,9 @@
         "since": "2026-05-01",
         "until": "2026-05-31",
         "days": 30,
-        "totalCommits": 184,
+        "totalCommits": 180,
         "dailyMean": 6,
-        "dailyStdev": 8.229
+        "dailyStdev": 8.179
       },
       "kingBeeWindow": {
         "since": "2026-05-31T00:00:00Z",
@@ -60,7 +60,7 @@
         "totalCommits": 7,
         "perDay": 3.5
       },
-      "zScore": -0.304,
+      "zScore": -0.306,
       "anomalousVsBaseline": false
     }
   },

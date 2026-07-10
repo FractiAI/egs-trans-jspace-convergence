@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""
-EGS-TRANS-2026-0710 · E9 survey driver.
-Runs live forward passes for every open-weights model and writes one aggregate receipt.
-No hardcoded trial counts or stub aggregates.
-"""
+"""E9 survey driver — aggregates per-model geometry surveys."""
 from __future__ import annotations
 
 import json
@@ -24,9 +20,6 @@ MODELS = [
     "distilgpt2",
     "EleutherAI/pythia-160m",
 ]
-
-PHI = (1 + (5**0.5)) / 2
-TOLERANCE = 0.12
 
 
 def main() -> int:
@@ -85,29 +78,42 @@ def main() -> int:
         for trial in model_report.get("trials", []):
             all_trials.append({**trial, "model": model_id})
 
-    near_phi = sum(1 for t in all_trials if t.get("nearPhi"))
-    ratios = [t["primaryRatio"] for t in all_trials if "primaryRatio" in t]
-    ratio_min = min(ratios) if ratios else None
-    ratio_max = max(ratios) if ratios else None
+    act_support = sum(1 for t in all_trials if t.get("activationResult") == "support_vs_null")
+    wt_support = sum(1 for t in all_trials if t.get("weightResult") == "support_vs_null")
+    any_support = sum(1 for t in all_trials if t.get("anySupport"))
+
+    if not all_trials:
+        result = "not_run"
+    elif any_support > 0:
+        result = "weak_support"
+    elif all(
+        t.get("activationResult") == "refute_vs_null" and t.get("weightResult") == "refute_vs_null"
+        for t in all_trials
+    ):
+        result = "refute"
+    else:
+        result = "inconclusive"
 
     out = {
         "experiment": "E9_multi_model_survey",
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "dataProvenance": "live_run",
-        "result": "refute" if near_phi == 0 and all_trials else ("weak" if near_phi > 0 else "not_run"),
+        "result": result,
         "trialsTotal": len(all_trials),
-        "trialsNearPhi": near_phi,
-        "tolerance": TOLERANCE,
-        "egsPhi": PHI,
-        "ratioRange": {"min": ratio_min, "max": ratio_max},
+        "activationSupportCount": act_support,
+        "weightSupportCount": wt_support,
+        "anyLaneSupportCount": any_support,
         "models": MODELS,
-        "layersPerModel": 3,
-        "promptsPerLayer": 3,
+        "measurementPolicy": {
+            "lanes": ["activation", "weight"],
+            "metric": "consecutive_ratio_fraction_near_phi_vs_null",
+            "deprecatedFields": ["trialsNearPhi", "primaryRatio", "nearPhi"],
+        },
         "perModelResults": per_model,
         "trials": all_trials,
         "honestyNote": (
-            f"{near_phi}/{len(all_trials)} trials within tolerance of phi from live forward passes. "
-            "Reproduce: python scripts/e9_survey_driver.py"
+            f"{any_support}/{len(all_trials)} trials had activation or weight lane exceed "
+            "Gaussian null p95 on consecutive φ ratios. Reproduce: python scripts/e9_survey_driver.py"
         ),
         "reproduceCommand": "python scripts/e9_survey_driver.py",
     }
