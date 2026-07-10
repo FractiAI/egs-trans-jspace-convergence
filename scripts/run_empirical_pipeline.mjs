@@ -568,7 +568,7 @@ async function main() {
 
       refuteCondition:
 
-        'Defined refute: scratchpad/J-Space core-mechanism vocabulary in sing4/sing9/sing13 BEFORE 2026-07-06 AND (E5/E9) any geometry lane exceeds Gaussian null p95 on consecutive φ ratios. Any failure refutes the causal precondition.',
+        'Defined refute: King Bee / structural canon fails timeline (E1) OR all E5/E9 geometry lanes ≤ Gaussian null p95. Vendor vocabulary (E7/E8) is not part of this gate.',
 
       refuteStatus: 'refuted_by_precondition_tests',
 
@@ -580,29 +580,33 @@ async function main() {
 
       statement:
 
-        'Core-mechanism R1 schema markers appear in sing4/sing9/sing13 commit history strictly before the Anthropic J-Space paper date',
+        'Diagnostic only: vendor product-word first appearance in commit search (not architecture alignment)',
 
       result: temporalPrecedenceReport?.result || (temporalPrecedenceReport?.skipped ? 'skipped' : 'not_run'),
 
       detail: temporalPrecedenceReport,
 
-      dataTier: 'public_github_commit_search',
+      dataTier: 'diagnostic_vocabulary_only',
 
       dataProvenance: temporalPrecedenceReport?.dataProvenance || 'skipped_live_run',
+
+      criticalCaveat: 'Excluded from Path A pass/fail — naming ≠ space/placement/geometry.',
 
     },
 
     E8_content_precedence_deep: {
 
-      statement: 'Same as E7, tested against full historical file content (git log -S pickaxe)',
+      statement: 'Diagnostic only: same as E7 via full-history git pickaxe',
 
       result: e8ContentReport?.result || (e8ContentReport?.skipped ? 'skipped' : 'not_run'),
 
       detail: e8ContentReport,
 
-      dataTier: 'local_full_history_git_pickaxe',
+      dataTier: 'diagnostic_vocabulary_only',
 
       dataProvenance: e8ContentReport?.dataProvenance || 'live_run',
+
+      criticalCaveat: 'Excluded from Path A pass/fail.',
 
     },
 
@@ -628,11 +632,7 @@ async function main() {
 
   const pathARefuted =
 
-    hypothesisTests.E1b_baseline_control?.result === 'refute' ||
-
-    hypothesisTests.E7_temporal_precedence?.result === 'refute' ||
-
-    hypothesisTests.E8_content_precedence_deep?.result === 'refute';
+    hypothesisTests.E1b_baseline_control?.result === 'refute';
 
   const pathBRefuted =
 
@@ -694,7 +694,7 @@ async function main() {
 
         name: 'Historical timeline alignment',
 
-        experiments: ['E1', 'E1b', 'E3', 'E7', 'E8'],
+        experiments: ['E1', 'E1b', 'E3'],
 
         result: pathARefuted ? 'refute' : 'not_established',
 

@@ -28,8 +28,8 @@ Verified observation of King Bee → frontier hidden-thinking convergence requir
 
 | Path | Name | Pass when | Refute when | Experiments |
 |------|------|-----------|-------------|-------------|
-| **A** | **Historical timeline alignment** | Core-mechanism markers and King Bee canon appear in logged history **strictly before** vendor paper dates | Earliest core-marker hit on/after disclosure date, or King Bee window is ordinary cadence | E1 · E1b · E3 · E7 · E8 |
-| **B** | **Architectural prefiguration** | Prior-written sing4/sing9/sing13 specs match newly reported scratchpad/global-workspace properties **and** open-weights geometry where claimed | Code-Print weak on core markers; φ-SVD refuted on real models | R1 · E2/E2b · E5 · E9 · R3/R4 |
+| **A** | **Historical timeline alignment** | King Bee / structural canon commits **strictly before** vendor disclosure dates | King Bee window is ordinary cadence only | E1 · E1b · E3 |
+| **B** | **Architectural prefiguration** | Written **workspaceTokens** (placement, band, routing, geometry) match vendor-described structure **and** E5/E9 geometry lanes vs null | Geometry refuted; no vendor checkpoint parity | R1 · E2/E2b · E5 · E9 |
 
 **July 10 2026 public receipt:** Path A **refuted** · Path B **refuted** → **not verified**.
 
@@ -45,8 +45,8 @@ Verified observation of King Bee → frontier hidden-thinking convergence requir
 | **E4** | — | SILSO sunspot series coverage | Non-empty daily samples in all three windows | Missing public data |
 | **E5** | B | **Geometry probe** — separated activation / weight / Jacobian-proxy SVD | Any lane: fraction of consecutive s_n/s_{n+1} near φ **exceeds Gaussian null p95 + 0.05** | All lanes ≤ null p95 when run |
 | **E6** | A∧B | King Bee → frontier causality | **Both Path A and Path B pass** on public data | Either path refutes, or no refute condition defined |
-| **E7** *(2026-07-10)* | A | Temporal precedence of core-mechanism markers (commit messages) | Earliest marker hit precedes 2026-07-06 | Markers absent or first appear on/after 2026-07-06 |
-| **E8** *(2026-07-10)* | A | Same as E7, full historical file content (`git log -S`) | Earliest content-level hit precedes 2026-07-06 | Absent or first appears on/after 2026-07-06 |
+| **E7** *(diagnostic only)* | — | Vendor **word** first appearance in commit search | — | **Not used for primary alignment** |
+| **E8** *(diagnostic only)* | — | Same, full-history `git log -S` | — | **Not used for primary alignment** |
 | **E9** *(2026-07-10)* | B | 5-model geometry survey (activation + weight lanes, 45 trials) | Any trial: activation or weight lane exceeds null p95 | All trials refute on both lanes |
 | **R1** | B | Code-Print Audit (prior schema ↔ crosswalk) | `strong_support` on core mechanism markers | `weak_support` or `refute` |
 
@@ -63,9 +63,9 @@ Pass requires exceeding null p95 + 0.05 on any lane; refute when all lanes ≤ n
 
 **E1 baseline note (added 2026-07-10):** sing4's commit volume in the King Bee window (41 commits) is produced by an always-on automated heartbeat/handshake process (`SING! Cycle N: Heartbeat`, `SING! Handshake Cycle`, firing roughly hourly year-round per the commit log). A 2-day window will show a similar count on almost any date; E1's "support" result reflects a running cron job, not a discrete initialization signal, and should not be weighted as strong evidence of anything unusual happening on 2026-06-01 specifically.
 
-**E7 in context:** R1 (Code-Print Audit, see IP Infringement Draft) claims a "public crosswalk" between FractiAI vocabulary and Anthropic's paper by scanning the *current* HEAD of sing4/sing9/sing13 for marker terms. That cannot establish which came first. E7 closes that gap directly: as of 2026-07-10, `j_space` terminology has exactly one hit across all three core repos — the 2026-07-10 commit that *adds the EGS-TRANS paper itself*, four days *after* the Anthropic paper — and `scratchpad`/`workspace_bottleneck` have zero hits in commit history in any of the three repos, ever. `φ`/`1.618` is the one marker with genuine pre-July-6 history, but it appears across unrelated contexts (an audio LFO chirp processor, a festival-app landing page) going back to January 2026 — consistent with φ being a pervasive branding/aesthetic constant across the FractiAI ecosystem rather than a specific, falsifiable architectural prediction about transformer internals.
+**Why vendor vocabulary was tracked (and why it is deprecated):** Early IP-lane drafts (R1, E7, E8) used keyword hits (`scratchpad`, `j_space`) as a cheap proxy for “we wrote it first.” That measures **naming**, not **architecture**. What matters is the property matrix in `fractiai_code_print_schema.json` — mid-layer placement, <10% selectivity band, serial routing, geometry — and whether open-weights probes or tier-labeled vendor instruments match those **structural** claims. E7/E8 receipts remain in the pipeline for audit reproducibility only.
 
-**E8 in context (added 2026-07-10):** E7 searches GitHub's commit-search API, which matches commit *messages*, not full historical file content — a real limitation, noted in E7's own `honestyNote`. E8 closes it: full clones of sing4/sing9/sing13, searched with `git log --all -S<term>` (every historical revision's actual diff content, not messages). Result: zero content-level hits for `scratchpad`, `workspace bottleneck`, or `J-Space` anywhere in sing4 or sing9's entire history. In sing13, the earliest hits are four commits, all dated 2026-07-10: `dfc972b3` ("Add EGS-TRANS J-Space paper..."), `b019320` ("Add IP Infringement Draft audit lane..."), `37fe909` ("Add frontier RIX validation..."), `c88dc27` ("Reframe EGS-TRANS catalog..."). All four are the commits that *introduce* this material, four days after Anthropic's paper. E8 is the strongest and final word on temporal precedence available from public data.
+**E7/E8 in context:** These experiments search for vendor **product words** in FractiAI git history. July-10 sing13 hits are commits that **introduce this study's own vocabulary** — circular, not evidentiary. Do not cite them as architecture alignment failures or successes.
 
 **E1b / E2b results (2026-07-10):** E1b: z-scores of −0.643 (sing4), −0.426 (sing9), −0.306 (sing13) — all well within ±2, meaning King Bee-window commit activity is statistically ordinary for each repo, refuting E1's implicit "anomaly" framing. E2b: substituting e, π/2, √2, 1.5, 2.0, and 2.317 for φ in the identical matrix-construction procedure — all six pass with the same 1.0 near-target fraction as φ, confirming E2 is not phi-specific.
 

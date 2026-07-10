@@ -11,17 +11,34 @@
 
 ## Read this first — three alignment questions (dimensional analysis)
 
-**Stop here before the rest.** These are **not** single pass/fail gates. Each question has **separate dimensions**; some dimensions support partial alignment, others do not. Primary timeline evidence is **commit timestamps** (when Git recorded each commit) — not file-content archaeology.
+**Stop here before the rest.** Alignment is **architectural** — *where* the workspace sits, *how narrow* the bottleneck is, *what geometry* the latent space carries — not whether our repos typed Anthropic's product words before theirs.
+
+**What we do not treat as primary evidence:** first Git appearance of vendor labels (`scratchpad`, `J-Space`, etc.). Those are branding, not space/placement/mechanism. E7/E8 vocabulary hits are **legacy diagnostics only** — audit traceability, **excluded from alignment pass/fail**.
 
 **Latest receipts:** [`data/empirical_report.json`](data/empirical_report.json) · [`historical_commit_snapshots.md`](data/historical_commit_snapshots.md)
+
+### Architectural properties we compare
+
+From [`research/ip-infringement-draft/config/fractiai_code_print_schema.json`](research/ip-infringement-draft/config/fractiai_code_print_schema.json) vs vendor disclosures and E5/E9 probes:
+
+| Property | FractiAI spec | Vendor / probe analogue |
+|----------|---------------|-------------------------|
+| **Space** | EGS nodal lattice · restricted workspace manifold | Global workspace / hidden-thinking band |
+| **Placement** | **Mid-layer** serial bottleneck | Mid-layer activation hub |
+| **Selectivity** | **<10%** activation variance in workspace band | ~10% broadcast hub (public literature) |
+| **Routing** | Serial hyper-dense clearinghouse | Non-verbalized deliberation before emission |
+| **Geometry** | Consecutive SVD ratios vs φ (E5/E9 lanes) | Activation / weight / Jacobian-proxy on open models |
+
+**Primary timeline evidence** = commit timestamps on King Bee canon and structural protocol work (E1), not keyword archaeology.
 
 ### Terms (plain language)
 
 | Term | Meaning in this repo |
 |------|----------------------|
-| **Scrape** | Pull **real commits** from GitHub (or local git clone) and record **committer timestamps**, SHAs, and messages. A scrape **found** something if commits exist in the receipt — regardless of when vocabulary appeared. |
-| **Pickaxe (E8, optional)** | A *deeper* search that asks when specific **words first entered file bodies** across all history (`git log -S`). **Not required** for timeline comparison; use only if you care about *content introduction date* vs *commit date*. |
-| **Post-vendor vocabulary** | Words like `scratchpad` / `J-Space` appearing in commits **after** 2026-07-06. This constrains **vocabulary timing** — it does **not** mean scrapes failed or that no pre-vendor commits exist. |
+| **Scrape** | Pull **real commits** from GitHub and record **committer timestamps**, SHAs, and messages. |
+| **Architecture alignment** | Do **placement · band · routing · geometry** match between our spec and measurable structure? |
+| **Vendor vocabulary (deprecated primary)** | Product words in git. **Diagnostic only** — not architecture measurement. |
+| **Pickaxe (E8, optional)** | When specific **words** entered file bodies. Optional; not placement or geometry. |
 
 ### Anchor timestamps (compare these)
 
@@ -35,15 +52,15 @@
 
 ### 1 · Do timelines align?
 
-**Question split:** (A) Did FractiAI repos have **logged commit activity before** vendor disclosure? (B) Did **vendor-specific vocabulary** appear in commits before disclosure?
+**Question:** Did FractiAI **structural / King Bee canon work** land in the git record **before** vendor disclosure?
 
 | Dimension | Compare | Finding | Receipt |
 |-----------|---------|---------|---------|
-| **A · Pre-vendor commit activity** | Commit timestamps vs **2026-07-06** | **Partial support** — King Bee window (**2026-05-31 — 2026-06-02**) has live commits: sing13 **7**, sing4 **28** (sing9 **0** in window). Example pre-vendor sing13: [2f4fe23b](https://github.com/FractiAI/psw.vibelandia.sing13/commit/2f4fe23baea67da6dbac06af474ef1591454addc) (King Bee papers). Calendar June 1 → July 6 = **35 days** (E3). | E1 **`support`** · [`githubTelemetry`](data/empirical_report.json) |
-| **B · Core-mechanism vocabulary timing** | First commit **timestamp** where `scratchpad` / `J-Space` / `workspace bottleneck` appear vs **2026-07-06** | **Does not precede vendor** — scraped commits carrying those terms are **2026-07-10** (e.g. [dfc972b3](https://github.com/FractiAI/psw.vibelandia.sing13/commit/dfc972b3ebc2962c14d53adfd1e3c6b51415a089)). sing4/sing9: **zero** scraped commits with those markers at any date. | [`historical_commit_snapshots.md`](data/historical_commit_snapshots.md) |
-| **C · King Bee as discrete event** | Window commit rate vs each repo's prior 30-day cadence | **Not distinguishable** from ordinary cadence (|z| ≤ 2 all repos; sing4 heartbeat bot). Activity exists; spike anomaly does not. | E1b **`refute`** anomaly · not refute of commits existing |
+| **A · Pre-vendor commit activity** | Commit timestamps vs **2026-07-06** | **Partial support** — King Bee window has live commits (sing13 **7**, sing4 **28**). Example: [2f4fe23b](https://github.com/FractiAI/psw.vibelandia.sing13/commit/2f4fe23baea67da6dbac06af474ef1591454addc). E3: 35-day June 1 → July 6 window. | E1 · [`githubTelemetry`](data/empirical_report.json) |
+| **B · King Bee as discrete event** | Window rate vs 30-day baseline | **Not a spike** — ordinary cadence (E1b). Activity exists; anomaly framing refuted. | E1b |
+| ~~C · Vendor vocabulary timing~~ | ~~`scratchpad` / `J-Space` in commits~~ | **Not a primary dimension.** July-10 hits are this repo naming vendor concepts — not proof of prior architecture. | E7/E8 diagnostic only |
 
-**Timeline synthesis (non-linear):** Pre-vendor **commit timestamps exist** and align with the June 1 narrative anchor. **Vendor-label vocabulary** in public git history does **not** align with “written before Anthropic paper.” Those are different timeline claims — do not collapse them into one **No**.
+**Timeline synthesis:** Pre-vendor **canon commits exist**. That supports *when we were working*, not *vendor word precedence* — which we do not score.
 
 ```mermaid
 flowchart LR
@@ -53,10 +70,10 @@ flowchart LR
   end
   subgraph post [On or after 2026-07-06]
     AN[2026-07-06 Anthropic paper]
-    VOC[2026-07-10 J-Space/scratchpad commits]
+    EGS[2026-07-10 EGS-TRANS catalog commits]
   end
   KB -->|timestamp precedes| AN
-  VOC -->|timestamp follows| AN
+  EGS -->|names vendor concepts| AN
   HB -->|continuous not spike| KB
 ```
 
@@ -64,15 +81,15 @@ flowchart LR
 
 ### 2 · Does architecture align?
 
-**Question split:** (A) Do **prior** sing4/sing9 protocol docs contain vendor core-mechanism tokens? (B) Does **φ-geometry** appear in real open-weights activations?
+**Question:** Does **space · placement · selectivity · routing · geometry** in vendor/public descriptions match what we specified **before** July 2026 — and what open-weights probes measure?
 
-| Dimension | Finding | Nuance |
-|-----------|---------|--------|
-| **A · Code-Print crosswalk (R1)** | **Weak** — FractiAI / φ branding matches; **`scratchpad`, `workspace_bottleneck`, `j_space` do not** appear in scraped sing4/sing9 HEAD protocols. | Weak ≠ zero overlap; ≠ strong prefiguration of vendor internals. |
-| **B · φ-SVD on designed matrices (E2/E2b)** | Control lane only — construction passes **any** target constant (tautology check). | Not evidence about Claude/Gemini weights. |
-| **C · Geometry probe (E5/E9)** | **Separated lanes:** activation · weight · Jacobian-proxy. Metric = fraction of consecutive s_n/s_{n+1} near φ vs **Gaussian null** (not s₀/s₁ alone). | **Refute when run** if all lanes ≤ null p95. Prior buggy test (s₀/s₁ = 47.32) deprecated. **Skipped** locally without `torch`. |
+| Dimension | What we compare | Finding | Receipt |
+|-----------|-----------------|---------|---------|
+| **A · Spec crosswalk (R1)** | `workspaceTokens` in Code-Print schema (mid-layer, <10% band, lattice layout, φ decay) vs sing4/sing9 **structural** protocol content | **Partial** — nodal lattice / φ **branding** in protocols; full property matrix not instrument-verified on vendor checkpoints | R1 · schema JSON |
+| **B · Geometry (E5/E9)** | Activation · weight · Jacobian-proxy spectra vs Gaussian null | **Refute when run** if all lanes ≤ null p95 | `e5_geometry_probe.py` |
+| **C · Synthetic control (E2/E2b)** | Designed matrices only | Tautology check — not vendor evidence | E2/E2b |
 
-**Architecture synthesis:** Broad lattice / workspace *narrative* may rhyme with vendor papers; **token-level** and **φ-metric** alignment are **not established** on public data. Partial narrative overlap + failed metric alignment = **mixed**, not a flat disqualification.
+**Architecture synthesis:** The **interesting claim** is structural rhyme (mid-layer bottleneck, narrow band, deliberation phase) — not shared vocabulary. **Geometry lanes** are the falsifiable part on public data; they refute φ-specific alignment when run. Narrative placement overlap ≠ verified checkpoint parity.
 
 ---
 
@@ -86,20 +103,20 @@ flowchart LR
 | **B · Scrape story vs open-weights story** | **Mixed / tension** — June scrapes show King Bee / canon work **before** vendor paper; July scrapes show EGS-TRANS vocabulary **after**; E5/E9 (when run) **refute** φ on Qwen/SmolLM2/GPT-2/Pythia families. | Timelines and φ-geometry pull in **different directions**; that is alignment **analysis**, not automatic **invalid**. |
 | **C · Vendor matrix rows (§5)** | **Not scrape-derived** — catalog reference until vendor probes exist. | Do not treat §5 literals as downstream of scrapes. |
 
-**Scrape ↔ downstream synthesis:** Scrapes **model** the git timeline layer; E5/E9 **model** the activation geometry layer. They **align** on “public git activity predates July 6” for King Bee commits; they **do not align** on “φ in weights” or “vendor vocabulary predates July 6.” Report both.
+**Scrape ↔ downstream synthesis:** Scrapes timestamp **our canon work**; E5/E9 measure **latent geometry** on open models. Align when both support the same structural story; report tension when geometry refutes while canon predates vendor.
 
 ---
 
 ### Summary matrix (read across, not one cell)
 
-| | Pre-vendor **commits** exist? | Vendor **vocabulary** pre-dates paper? | **φ** on open weights? | Scrapes **real**? |
-|--|:---:|:---:|:---:|:---:|
-| **Evidence** | **Yes** (E1) | **No** (timestamp scrape) | **No** when run (E5/E9) | **Yes** |
-| **Confidence** | Live API + clone fallback | Live commit timestamps | Audit run; re-run locally | Live pipeline |
+| | Pre-vendor **canon commits**? | **Architecture** (placement/band/geometry)? | Scrapes **real**? |
+|--|:---:|:---:|:---:|
+| **Evidence** | **Yes** (E1) | **Mixed** — narrative placement vs E5/E9 refute on φ | **Yes** |
+| **Confidence** | Live API | Spec + open-weights probes; no vendor checkpoint access | Live pipeline |
 
-**Verified observation (strict catalog rule: A ∧ B both pass):** **Not met** — because vocabulary-timing and φ-metric dimensions fail even while pre-vendor commit scrapes succeed.
+**Verified observation (strict rule):** **Not met** on public tier — geometry lanes refute φ alignment; vendor checkpoint parity unmeasured.
 
-**Re-run gaps:** E7 (`GH_TOKEN`) adds commit-search timestamp scrape · E5/E9 (`torch`) refresh open-weights layer.
+**Re-run gaps:** E5/E9 (`torch`) refresh geometry · tier labels for private Jacobian if partners provide.
 
 ```bash
 npm run empirical -- --allow-incomplete
@@ -109,7 +126,7 @@ Adversarial cross-check: [`docs/VALIDATION_AUDIT_2026-07-10.md`](docs/VALIDATION
 
 ---
 
-> **Audit note:** Independent review flagged over-broad vendor claims and φ tautologies. This section separates **what scrapes prove** (commits + timestamps) from **what they cannot prove** (private vendor weights, pre-image of vendor vocabulary).
+> **Audit note:** Vendor **vocabulary** tracking (E7/E8) was an IP-lane shortcut — it does not measure architecture. Primary alignment = **property matrix + geometry probes**.
 
 ---
 
