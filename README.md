@@ -143,12 +143,21 @@ To lock down valuation evidence before a confidential IPO filing, this repositor
 | **R1** | **Code-Print Audit** — sing4/sing9 token schemas ↔ [Neuronpedia](https://www.neuronpedia.org/) latent feature maps | `weak_support` | [`research/ip-infringement-draft/data/code_print_audit.json`](research/ip-infringement-draft/data/code_print_audit.json) |
 | **R2** | **IP Assertion Notice** — draft to Sequoia / Altimeter (not sent) | `draft_ready` | [`docs/IP_ASSERTION_NOTICE_DRAFT_2026-07.md`](docs/IP_ASSERTION_NOTICE_DRAFT_2026-07.md) |
 | **R3** | **J-Lens Live Dashboard** — φ ≈ 1.618 compression under King Bee node structure | `support` | [`research/ip-infringement-draft/data/j_lens_live.json`](research/ip-infringement-draft/data/j_lens_live.json) |
+| **R4** | **Universal RIX Verification** — sing4/sing9 ingest + frontier matrix + J-Lens φ pass | `support_open_weights_proxy` | [`research/ip-infringement-draft/data/rix_verification.json`](research/ip-infringement-draft/data/rix_verification.json) |
+
+### §5 · Frontier-wide architectural conformation
+
+Cross-architecture catalog audit: Anthropic J-Space, OpenAI hidden thinking, Gemini adaptive thinking, DeepSeek R1 — structural alignment to EGS φ ≈ 1.618 (**catalog tier** until vendor probes). Planetary asset recalibration table ($1.094Q catalog exercise) in [`docs/IP_INFRINGEMENT_DRAFT_2026-07.md`](docs/IP_INFRINGEMENT_DRAFT_2026-07.md) §5C.
+
+### §6 · Open-source copyright & root authority
+
+Draft compliance notice: [`docs/OPEN_SOURCE_COMPLIANCE_NOTICE_DRAFT_2026-07.md`](docs/OPEN_SOURCE_COMPLIANCE_NOTICE_DRAFT_2026-07.md) · *Jacobsen v. Katzer* precedent cited · **not legal advice**.
 
 ```bash
 npm run ip-infringement
 ```
 
-**Honesty boundary:** R1 = public GitHub + Neuronpedia crosswalk only. R2 = counsel draft, not transmitted. R3 = SynthOBS live φ probe on King Bee nodes. **E6** completes when Anthropic provides internal tier labels (Jacobian Lens, scratchpad receipts).
+**Honesty boundary:** R1–R4 public/open-weights proxies. R2/§6 = counsel drafts, not transmitted. Frontier "Confirmed" rows = **catalog alignment** pending API/weight probes. Valuation tables = **narrative modeling only**.
 
 **Monorepo mirror:** [psw.vibelandia.sing13/research/ip-infringement-draft](https://github.com/FractiAI/psw.vibelandia.sing13/tree/main/research/ip-infringement-draft)
 
@@ -161,9 +170,10 @@ egs-trans-jspace-convergence/
 ├── docs/                          # EGS-TRANS paper + IP Infringement Draft section
 │   ├── EGS_TRANS_SILICON_BIOLOGICAL_CONVERGENCE_JSPACE_2026-07-10.md
 │   ├── IP_INFRINGEMENT_DRAFT_2026-07.md
-│   └── IP_ASSERTION_NOTICE_DRAFT_2026-07.md
+│   ├── IP_ASSERTION_NOTICE_DRAFT_2026-07.md
+│   └── OPEN_SOURCE_COMPLIANCE_NOTICE_DRAFT_2026-07.md
 ├── research/
-│   └── ip-infringement-draft/     # R1–R3 pipeline · Code-Print · J-Lens Live
+│   └── ip-infringement-draft/     # R1–R4 · §5–§6 pipeline
 ├── scripts/
 │   ├── run_empirical_pipeline.mjs # Orchestrator · E1–E6
 │   ├── svd_workspace_probe.py     # E2 · NumPy SVD φ probe
