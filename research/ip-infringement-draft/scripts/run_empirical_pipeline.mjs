@@ -21,8 +21,8 @@ async function main() {
 
   const codePrint = await runCodePrintAudit();
   const jLens = runJLensLiveProbe();
-  const ipNotice = getIpAssertionNoticeDraft();
   const rix = await runRixVerificationProbe();
+  const ipNotice = getIpAssertionNoticeDraft({ codePrint });
 
   await writeFile(join(DATA, 'code_print_audit.json'), JSON.stringify(codePrint, null, 2));
   await writeFile(join(DATA, 'j_lens_live.json'), JSON.stringify(jLens, null, 2));
@@ -30,10 +30,11 @@ async function main() {
   await writeFile(join(DATA, 'rix_verification.json'), JSON.stringify(rix, null, 2));
 
   const report = {
-    schema: 'ip-infringement-draft/v1',
+    schema: 'ip-infringement-draft/v2',
     documentId: DOCUMENT_ID,
     generatedAt: new Date().toISOString(),
     operator: 'SynthOBS Autonomous Agent · Syntheverse Sandbox',
+    validationAudit: 'docs/VALIDATION_AUDIT_2026-07-10.md',
     section: 'IP Infringement Draft · Immediate Audit Recommendations · §5–§6',
     recommendations: {
       R1_code_print_audit: codePrint,
@@ -41,46 +42,43 @@ async function main() {
       R3_j_lens_live_dashboard: jLens,
       R4_universal_rix_verification: rix,
     },
+    summary: {
+      R1: codePrint.result,
+      R2: ipNotice.result,
+      R3: jLens.result,
+      R4: rix.result,
+      doNotSendR2: ipNotice.sendGate?.doNotSend ?? true,
+      doNotCiteSection5: rix.result === 'refute',
+    },
     e6TierRelabel: {
       prior: 'not_testable_in_repo',
-      current: 'testable_with_internal_tier_access',
+      current: 'unfalsifiable_as_scoped_with_refute_preconditions',
       note:
-        'Causal Anthropic J-Space ↔ King Bee linkage is testable when Anthropic provides internal tier labels (Jacobian Lens, scratchpad tier receipts).',
+        'E6 causal claim refuted on public data by E7/E8/E5/E9 preconditions. Internal tier labels may still be requested.',
     },
     reproduceCommands: {
       monorepo: 'npm run research:ip-infringement-draft',
+      egsTrans: 'npm run research:egs-trans-jspace-convergence',
       liveApi: '/api/ip-infringement-draft',
       jLensDashboard: '/special-projects/j-lens-live',
       audit: 'npm run audit:paper -- --id=ip-infringement-draft-2026-07',
     },
     honestyNote:
-      'R1 public crosswalk. R2 draft-not-sent. R3 φ compression proxy. R4 RIX + frontier matrix catalog tier. §6 compliance draft-not-sent. Valuation tables are narrative only.',
+      'Read docs/VALIDATION_AUDIT_2026-07-10.md first. R3 performs real SVD on synthetic matrices; open-weights lane refutes φ when E5/E9 run. R4 matrix is hardcoded catalog. R2 blocked when empirical gates fail. §5 valuation narrative only — do not cite externally.',
   };
 
   await writeFile(join(DATA, 'empirical_report.json'), JSON.stringify(report, null, 2));
   await writeFile(join(DATA, 'empirical_report.md'), buildMarkdown(report));
 
-  console.log(
-    JSON.stringify(
-      {
-        ok: true,
-        R1: codePrint.result,
-        R2: ipNotice.result,
-        R3: jLens.result,
-        R4: rix.jLensPass?.result,
-        e6: report.e6TierRelabel.current,
-      },
-      null,
-      2,
-    ),
-  );
+  console.log(JSON.stringify(report.summary, null, 2));
 }
 
 function buildMarkdown(r) {
-  const lines = [
+  return [
     '# IP Infringement Draft · Empirical Report',
     '',
     `**Generated:** ${r.generatedAt}`,
+    `**Validation audit:** ${r.validationAudit}`,
     '',
     '## Recommendations',
     '',
@@ -89,13 +87,12 @@ function buildMarkdown(r) {
     `| R1 Code-Print Audit | ${r.recommendations.R1_code_print_audit.result} |`,
     `| R2 IP Assertion Notice | ${r.recommendations.R2_ip_assertion_notice.result} |`,
     `| R3 J-Lens Live Dashboard | ${r.recommendations.R3_j_lens_live_dashboard.result} |`,
-    `| R4 Universal RIX Verification | ${r.recommendations.R4_universal_rix_verification?.jLensPass?.result || '—'} |`,
+    `| R4 Universal RIX Verification | ${r.recommendations.R4_universal_rix_verification.result} |`,
     '',
-    `**E6 relabel:** ${r.e6TierRelabel.current}`,
+    `**Do not send R2:** ${r.summary.doNotSendR2}`,
     '',
     r.honestyNote,
-  ];
-  return lines.join('\n');
+  ].join('\n');
 }
 
 main().catch((e) => {

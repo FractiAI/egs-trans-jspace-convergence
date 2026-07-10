@@ -1,0 +1,56 @@
+{
+  "documentId": "EGS-TRANS-2026-0710",
+  "experiment": "E2b_generalization_probe",
+  "tolerance": 0.12,
+  "matrixShape": [
+    64,
+    128
+  ],
+  "candidateConstants": {
+    "phi": {
+      "target": 1.618034,
+      "trialCount": 200,
+      "fractionNearOwnTarget": 1.0,
+      "meanRatio": 1.618034
+    },
+    "e": {
+      "target": 2.718282,
+      "trialCount": 200,
+      "fractionNearOwnTarget": 1.0,
+      "meanRatio": 2.718282
+    },
+    "pi_over_2": {
+      "target": 1.570796,
+      "trialCount": 200,
+      "fractionNearOwnTarget": 1.0,
+      "meanRatio": 1.570796
+    },
+    "sqrt2": {
+      "target": 1.414214,
+      "trialCount": 200,
+      "fractionNearOwnTarget": 1.0,
+      "meanRatio": 1.414214
+    },
+    "1.5": {
+      "target": 1.5,
+      "trialCount": 200,
+      "fractionNearOwnTarget": 1.0,
+      "meanRatio": 1.5
+    },
+    "2.0": {
+      "target": 2.0,
+      "trialCount": 200,
+      "fractionNearOwnTarget": 1.0,
+      "meanRatio": 2.0
+    },
+    "random_irrational_2.317": {
+      "target": 2.317,
+      "trialCount": 200,
+      "fractionNearOwnTarget": 1.0,
+      "meanRatio": 2.317
+    }
+  },
+  "result": "not_phi_specific_tautology_confirmed",
+  "hypothesis": "If E2's construction procedure is phi-specific evidence, substituting other constants for phi in the identical construction should NOT achieve comparably high near-target fractions. If every constant achieves ~1.0, the procedure is tautological: it verifies SVD recovers designed structure, not that anything in reality matches phi.",
+  "honestyNote": "This probe is entirely synthetic (no Anthropic, no King Bee, no real transformer involved) and exists only to test whether scripts/svd_workspace_probe.py's (E2) 'support' result carries any evidentiary weight specific to phi. See docs/VALIDATION_AUDIT_2026-07-10.md for how this bears on the overall claim."
+}

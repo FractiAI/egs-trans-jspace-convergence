@@ -3,17 +3,24 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "EGS-TRANS-2026-0710 · Frontier multi-model J-Space / global workspace convergence",
+  "description": "EGS-TRANS-2026-0710 · Frontier multi-model J-Space convergence",
   "repository": {
     "type": "git",
     "url": "https://github.com/FractiAI/egs-trans-jspace-convergence"
   },
   "scripts": {
     "empirical": "node scripts/run_empirical_pipeline.mjs",
-    "ip-infringement": "node research/ip-infringement-draft/scripts/run_empirical_pipeline.mjs",
     "test": "node scripts/run_empirical_pipeline.mjs",
     "svd": "python scripts/svd_workspace_probe.py",
     "transformer": "python scripts/transformer_jspace_probe.py",
+    "e1b": "node scripts/e1_baseline_probe.mjs",
+    "e2b": "python scripts/e2_generalization_probe.py",
+    "e7": "node scripts/temporal_precedence_probe.mjs",
+    "e8": "node scripts/e8_content_precedence_probe.mjs",
+    "e9": "python scripts/e9_survey_driver.py",
+    "e9:model": "python scripts/e9_multi_model_survey.py",
+    "snapshots": "node scripts/historical_commit_snapshots.mjs",
+    "ip-infringement": "node ../ip-infringement-draft/scripts/run_empirical_pipeline.mjs",
     "synthobs": "python scripts/run_synthobs_monitor.py",
     "synthobs:test": "python scripts/test_synthobs_metric.py"
   },

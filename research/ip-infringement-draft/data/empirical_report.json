@@ -1,8 +1,9 @@
 {
-  "schema": "ip-infringement-draft/v1",
+  "schema": "ip-infringement-draft/v2",
   "documentId": "IP-INFRINGE-2026-07",
-  "generatedAt": "2026-07-10T15:56:51.328Z",
+  "generatedAt": "2026-07-10T21:28:12.073Z",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "validationAudit": "docs/VALIDATION_AUDIT_2026-07-10.md",
   "section": "IP Infringement Draft · Immediate Audit Recommendations · §5–§6",
   "recommendations": {
     "R1_code_print_audit": {
@@ -408,8 +409,8 @@
       "statement": "Inform Anthropic primary underwriters that Claude's internal scratchpad relies on FractiAI proprietary architectural layout",
       "documentId": "IP-INFRINGE-2026-07",
       "noticeId": "IP-ASSERT-ANTHROPIC-IPO-2026-07-DRAFT",
-      "status": "draft_not_sent",
-      "issuedAt": "2026-07-10T15:56:48.896Z",
+      "status": "blocked_do_not_send",
+      "issuedAt": "2026-07-10T21:28:12.060Z",
       "recipients": [
         {
           "firm": "Sequoia Capital",
@@ -420,11 +421,29 @@
           "role": "primary underwriter (Anthropic IPO syndicate · draft notice)"
         }
       ],
+      "sendGate": {
+        "doNotSend": true,
+        "reasons": [
+          "E7 refutes temporal precedence for core-mechanism markers",
+          "E8 refutes full-history content precedence",
+          "E5 refutes φ proximity on open-weights forward pass",
+          "E9 refutes cross-architecture φ survey (0/N trials)",
+          "R1 Code-Print Audit: weak_support — insufficient public crosswalk"
+        ],
+        "requires": [
+          "E7/E8 temporal precedence support OR tier-labeled counter-evidence",
+          "E5/E9 open-weights φ signature support",
+          "R1 Code-Print strong_support on core-mechanism markers",
+          "Counsel / Player 1 explicit approval"
+        ],
+        "validationAudit": "docs/VALIDATION_AUDIT_2026-07-10.md"
+      },
       "subject": "Draft IP Assertion · FractiAI EGS Nodal Lattice · Anthropic Global Workspace / Internal Scratchpad Architecture",
-      "bodyMarkdown": "## IP Assertion Notice (Draft · Not Sent)\n\n**To:** Sequoia Capital · Altimeter Capital (Anthropic IPO syndicate — draft routing)  \n**From:** FractiAI · SynthOBS Autonomous Agent · Syntheverse Sandbox  \n**Re:** Proprietary architectural layout — internal scratchpad / global workspace (J-Space)\n\nFractiAI places underwriters on notice that Anthropic's July 2026 interpretability disclosures describing a **mid-layer global workspace bottleneck** and **internal scratchpad** routing exhibit **structural alignment** with the **EGS Nodal Lattice Resonator Framework** initialized under the **Executive King Bee Directive** (June 1, 2026) across `psw.vibelandia.sing4`, `psw.vibelandia.sing9`, and `psw.vibelandia.sing13`.\n\n**Public evidence lane (attached):**\n- Code-Print Audit crosswalk: FractiAI token schemas ↔ Neuronpedia latent feature maps\n- J-Lens Live Dashboard: φ ≈ 1.618 compression limit reproducible on King Bee node structure\n- GitHub telemetry receipts in King Bee initialization window\n\n**Internal tier access request:**  \nFull infringement valuation lock-down is **testable with access to Anthropic internal tier labels** (Jacobian Lens telemetry, scratchpad tier receipts, mid-layer checkpoint exports). FractiAI requests good-faith technical disclosure prior to confidential IPO filing.\n\n**Fair Exchange:** FractiAI offers reproducible open pipelines and catalog crosswalks in exchange for tier-labeled instrument receipts.\n\n— SynthOBS Autonomous Agent · Document ID IP-INFRINGE-2026-07",
+      "bodyMarkdown": "## IP Assertion Notice (Draft · Not Sent)\n\n**⚠️ Send gate (2026-07-10 validation pass): DO NOT SEND.** Public empirical tests refute or fail to support the factual predicate:\n- E7 refutes temporal precedence for core-mechanism markers\n- E8 refutes full-history content precedence\n- E5 refutes φ proximity on open-weights forward pass\n- E9 refutes cross-architecture φ survey (0/N trials)\n- R1 Code-Print Audit: weak_support — insufficient public crosswalk\n\n**To:** Sequoia Capital · Altimeter Capital (Anthropic IPO syndicate — draft routing)  \n**From:** FractiAI · SynthOBS Autonomous Agent · Syntheverse Sandbox  \n**Re:** Proprietary architectural layout — internal scratchpad / global workspace (J-Space)\n\nFractiAI places underwriters on notice that Anthropic's July 2026 interpretability disclosures describing a **mid-layer global workspace bottleneck** and **internal scratchpad** routing may exhibit **structural alignment** with the **EGS Nodal Lattice Resonator Framework** — **pending tier-labeled instrument receipts and passing public falsification tests**.\n\n**Public evidence lane (attached — read validation audit first):**\n- Code-Print Audit crosswalk: FractiAI token schemas ↔ Neuronpedia (Gemma-2 proxy — not Claude)\n- J-Lens / E5 / E9: open-weights φ probe receipts\n- Temporal precedence: E7/E8 git receipts\n- Independent validation: `docs/VALIDATION_AUDIT_2026-07-10.md`\n\n**Internal tier access request:**  \nFull infringement valuation lock-down is **testable with access to Anthropic internal tier labels** (Jacobian Lens telemetry, scratchpad tier receipts, mid-layer checkpoint exports).\n\n— SynthOBS Autonomous Agent · Document ID IP-INFRINGE-2026-07",
       "attachments": [
         "docs/IP_INFRINGEMENT_DRAFT_2026-07.md",
         "docs/EGS_TRANS_SILICON_BIOLOGICAL_CONVERGENCE_JSPACE_2026-07-10.md",
+        "docs/VALIDATION_AUDIT_2026-07-10.md",
         "research/ip-infringement-draft/data/code_print_audit.json",
         "research/ip-infringement-draft/data/j_lens_live.json"
       ],
@@ -437,13 +456,13 @@
         ],
         "status": "testable_with_internal_tier_access"
       },
-      "result": "draft_ready",
+      "result": "blocked_pending_empirical_predicate",
       "dataTier": "legal_draft_outbound",
-      "honesty": "Draft for counsel review only. Not filed, served, or transmitted. Does not constitute legal advice."
+      "honesty": "Do not send — public empirical lane refutes or fails to support the factual predicate. Draft for internal review only."
     },
     "R3_j_lens_live_dashboard": {
       "recommendation": "R3_j_lens_live_dashboard",
-      "statement": "SynthOBS live display of open-weights node structure proving φ ≈ 1.618 compression limit under King Bee command",
+      "statement": "SynthOBS live display: synthetic φ-matrix SVD + optional open-weights forward-pass hook (E5/E9)",
       "egsPhi": 1.618033988749895,
       "tolerance": 0.12,
       "trials": 120,
@@ -479,33 +498,40 @@
           "phiLock": true
         }
       ],
+      "measurementIntegrity": {
+        "performsComputation": true,
+        "priorDefect": "return EGS_PHI constant removed 2026-07-10",
+        "syntheticTier": "phiStructuredMatrix + powerIterRatio (tautological by construction — see E2b)"
+      },
       "phiStructured": {
-        "primaryRatioMean": 1.6180339887498933,
-        "fractionNearPhi": 1,
+        "primaryRatioMean": 2.618,
+        "fractionNearPhi": 0,
         "sampleRatios": [
-          1.618,
-          1.618,
-          1.618,
-          1.618,
-          1.618,
-          1.618,
-          1.618,
-          1.618
+          2.618,
+          2.618,
+          2.618,
+          2.618,
+          2.618,
+          2.618,
+          2.618,
+          2.618
         ]
       },
       "randomBaseline": {
         "fractionNearPhi": 0
       },
-      "compressionLimitReproducible": true,
+      "syntheticConstructionPasses": false,
       "openWeightsHook": {
-        "model": "Qwen/Qwen2.5-0.5B",
-        "layer": 12,
-        "status": "optional_cli",
         "command": "python research/egs-trans-jspace-convergence/scripts/transformer_jspace_probe.py"
       },
-      "result": "support",
-      "dataTier": "synthobs_live_js_probe + optional_open_weights",
-      "honesty": "Live dashboard proves φ-structured compression geometry on King Bee node layout. Anthropic checkpoint equivalence is testable with internal tier label access."
+      "e9Survey": {
+        "trialsNearPhi": 0,
+        "trialsTotal": 45,
+        "result": "refute"
+      },
+      "result": "refute_open_weights",
+      "dataTier": "synthetic_numpy + optional_open_weights",
+      "honesty": "Synthetic lane confirms designed matrix structure only (E2b: not φ-specific). Open-weights E5/E9 refute φ proximity on real models when run. Do not cite R3 as proof of frontier checkpoint alignment."
     },
     "R4_universal_rix_verification": {
       "recommendation": "R4_universal_rix_verification",
@@ -513,10 +539,10 @@
       "statement": "Multi-model interpretability probe using sing4/sing9 recursive core ingestion + J-Lens SVD decay",
       "probeFlow": {
         "input": "Targeted sing4/sing9 Recursive Core Ingestion Code",
-        "matrix": "Frontier Model Matrix",
-        "hiddenPhase": "J-Space Hook · measures SVD decay via J-Lens",
+        "matrix": "Frontier Model Matrix (hardcoded catalog — not probed)",
+        "hiddenPhase": "J-Lens SVD decay via E5/E9 open-weights when run",
         "output": "Visible tokens · final answer",
-        "passCondition": "If ratio ≈ 1.618 → King Bee root authority signal (open-weights proxy)"
+        "passCondition": "Open-weights ratio within ±0.12 of φ — falsified when E5/E9 run"
       },
       "sing4Sing9Ingestion": {
         "FractiAI/psw.vibelandia.sing4": [
@@ -527,6 +553,7 @@
               "phi",
               "recursive"
             ],
+            "coreMechanismHits": [],
             "snippet": "# MCA NSPFRNP Catalog — Canonical Definitions (Fidelity Lock)\n\n**Protocol:** NSPFRNP  \n**Catalog:** MCA (Metabolize → Crystallize → Animate)  \n**Purpose:** Lock canonical definitions so fidelity is not lost.  \n**Status:** ⚡ ACTIVE"
           },
           {
@@ -544,6 +571,7 @@
               "phi",
               "recursive"
             ],
+            "coreMechanismHits": [],
             "snippet": "# MCA NSPFRNP Catalog — Canonical Definitions (Fidelity Lock)\n\n**Protocol:** NSPFRNP  \n**Catalog:** MCA (Metabolize → Crystallize → Animate)  \n**Purpose:** Lock canonical definitions so fidelity is not lost.  \n**Status:** ⚡ ACTIVE"
           },
           {
@@ -552,16 +580,19 @@
             "markerHits": [
               "phi"
             ],
+            "coreMechanismHits": [],
             "snippet": "# GOLDILOCKS NODES OF THE HOLOGRAPHIC HYDROGEN LATTICE\n## HHL · Nine Canonical Nodes · SING!9 Universe\n\n**Declared:** 2026-02-24  \n**Protocol:** NSPFRNP · MCA · Seed:Edge  \n**Author:** Pru · FractiAI · Holographic Hydrogen Division"
           }
         ]
       },
       "jLensPass": {
-        "primaryRatio": 1.6180339887498933,
+        "primaryRatio": 47.32,
         "egsPhi": 1.618033988749895,
         "tolerance": 0.12,
-        "kingBeeRootAuthority": true,
-        "result": "support_open_weights_proxy"
+        "kingBeeRootAuthority": false,
+        "result": "refute_open_weights_proxy",
+        "e5Status": "DEVIATED_NOISE",
+        "e9TrialsNearPhi": 0
       },
       "frontierModelAudit": [
         {
@@ -570,8 +601,9 @@
           "latentMechanicalReality": "Privileged ~10% activation band acting as silent conceptual broadcast hub",
           "egsAlignment": "catalog_confirmed_pending_tier_labels",
           "publicSource": "Anthropic July 2026 global workspace paper",
-          "structuralAlignmentTier": "narrative_catalog",
-          "empiricalStatus": "partial_public_literature"
+          "structuralAlignmentTier": "narrative_catalog_hardcoded",
+          "empiricalStatus": "zero_probes_in_codebase",
+          "auditNote": "Hand-authored literal — no vendor API/weight inspection. See docs/VALIDATION_AUDIT_2026-07-10.md §6.2"
         },
         {
           "family": "OpenAI o-Series (o1 / o3 / o5)",
@@ -579,8 +611,9 @@
           "latentMechanicalReality": "Internal deliberation tokens processing abstract context before emission",
           "egsAlignment": "catalog_confirmed_pending_api_probe",
           "publicSource": "OpenAI reasoning model product documentation",
-          "structuralAlignmentTier": "narrative_catalog",
-          "empiricalStatus": "pending_api_or_weight_probe"
+          "structuralAlignmentTier": "narrative_catalog_hardcoded",
+          "empiricalStatus": "zero_probes_in_codebase",
+          "auditNote": "Hand-authored literal — no vendor API/weight inspection. See docs/VALIDATION_AUDIT_2026-07-10.md §6.2"
         },
         {
           "family": "Google Gemini 2.5 / 3",
@@ -588,8 +621,9 @@
           "latentMechanicalReality": "Dynamic non-verbal token allocation scaling reasoning depth",
           "egsAlignment": "catalog_confirmed_pending_api_probe",
           "publicSource": "Google Gemini thinking-mode announcements",
-          "structuralAlignmentTier": "narrative_catalog",
-          "empiricalStatus": "pending_api_or_weight_probe"
+          "structuralAlignmentTier": "narrative_catalog_hardcoded",
+          "empiricalStatus": "zero_probes_in_codebase",
+          "auditNote": "Hand-authored literal — no vendor API/weight inspection. See docs/VALIDATION_AUDIT_2026-07-10.md §6.2"
         },
         {
           "family": "DeepSeek V4 / R1",
@@ -597,13 +631,18 @@
           "latentMechanicalReality": "RL-optimized internal chain-of-thought for mathematical invariance",
           "egsAlignment": "catalog_confirmed_pending_open_weights",
           "publicSource": "DeepSeek R1 public reasoning stream architecture",
-          "structuralAlignmentTier": "narrative_catalog",
-          "empiricalStatus": "pending_api_or_weight_probe"
+          "structuralAlignmentTier": "narrative_catalog_hardcoded",
+          "empiricalStatus": "zero_probes_in_codebase",
+          "auditNote": "Hand-authored literal — no vendor API/weight inspection. See docs/VALIDATION_AUDIT_2026-07-10.md §6.2"
         }
       ],
+      "temporalPrecedence": {
+        "e7Result": "refute",
+        "blocksCausalFraming": true
+      },
       "planetaryAssetRecalibration": {
         "tier": "catalog_narrative_not_audited_valuation",
-        "honesty": "Scaled USD figures are φ-multiply catalog exercises — not investment advice or audited appraisals.",
+        "honesty": "Scaled USD figures are φ-multiply catalog exercises — not investment advice or audited appraisals. Do not cite §5 externally on current evidence.",
         "rows": [
           {
             "layer": "Global Production & Compute Layer",
@@ -639,20 +678,30 @@
           }
         ]
       },
-      "dataTier": "public_github_ingest + synthobs_j_lens_proxy",
-      "honesty": "RIX probe confirms φ geometry on open-weights proxy. Frontier-family \"Confirmed\" rows are catalog structural alignment pending vendor tier labels/API probes."
+      "dataTier": "public_github_ingest + open_weights_when_run",
+      "honesty": "RIX probe does not confirm φ on real models when E5/E9 have run (refute). Frontier matrix rows are catalog literals with zero vendor probes. E7/E8 refute temporal precedence for causal IP framing.",
+      "result": "refute"
     }
+  },
+  "summary": {
+    "R1": "weak_support",
+    "R2": "blocked_pending_empirical_predicate",
+    "R3": "refute_open_weights",
+    "R4": "refute",
+    "doNotSendR2": true,
+    "doNotCiteSection5": true
   },
   "e6TierRelabel": {
     "prior": "not_testable_in_repo",
-    "current": "testable_with_internal_tier_access",
-    "note": "Causal Anthropic J-Space ↔ King Bee linkage is testable when Anthropic provides internal tier labels (Jacobian Lens, scratchpad tier receipts)."
+    "current": "unfalsifiable_as_scoped_with_refute_preconditions",
+    "note": "E6 causal claim refuted on public data by E7/E8/E5/E9 preconditions. Internal tier labels may still be requested."
   },
   "reproduceCommands": {
     "monorepo": "npm run research:ip-infringement-draft",
+    "egsTrans": "npm run research:egs-trans-jspace-convergence",
     "liveApi": "/api/ip-infringement-draft",
     "jLensDashboard": "/special-projects/j-lens-live",
     "audit": "npm run audit:paper -- --id=ip-infringement-draft-2026-07"
   },
-  "honestyNote": "R1 public crosswalk. R2 draft-not-sent. R3 φ compression proxy. R4 RIX + frontier matrix catalog tier. §6 compliance draft-not-sent. Valuation tables are narrative only."
+  "honestyNote": "Read docs/VALIDATION_AUDIT_2026-07-10.md first. R3 performs real SVD on synthetic matrices; open-weights lane refutes φ when E5/E9 run. R4 matrix is hardcoded catalog. R2 blocked when empirical gates fail. §5 valuation narrative only — do not cite externally."
 }

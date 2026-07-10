@@ -1,16 +1,17 @@
 # IP Infringement Draft · Empirical Report
 
-**Generated:** 2026-07-10T15:56:51.328Z
+**Generated:** 2026-07-10T21:28:12.073Z
+**Validation audit:** docs/VALIDATION_AUDIT_2026-07-10.md
 
 ## Recommendations
 
 | ID | Result |
 |----|--------|
 | R1 Code-Print Audit | weak_support |
-| R2 IP Assertion Notice | draft_ready |
-| R3 J-Lens Live Dashboard | support |
-| R4 Universal RIX Verification | support_open_weights_proxy |
+| R2 IP Assertion Notice | blocked_pending_empirical_predicate |
+| R3 J-Lens Live Dashboard | refute_open_weights |
+| R4 Universal RIX Verification | refute |
 
-**E6 relabel:** testable_with_internal_tier_access
+**Do not send R2:** true
 
-R1 public crosswalk. R2 draft-not-sent. R3 φ compression proxy. R4 RIX + frontier matrix catalog tier. §6 compliance draft-not-sent. Valuation tables are narrative only.
+Read docs/VALIDATION_AUDIT_2026-07-10.md first. R3 performs real SVD on synthetic matrices; open-weights lane refutes φ when E5/E9 run. R4 matrix is hardcoded catalog. R2 blocked when empirical gates fail. §5 valuation narrative only — do not cite externally.

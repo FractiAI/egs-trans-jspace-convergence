@@ -1,0 +1,220 @@
+{
+  "documentId": "EGS-TRANS-2026-0710",
+  "experiment": "E8_content_precedence_deep",
+  "generatedAt": "2026-07-10T22:03:29.803Z",
+  "dataProvenance": "live_run",
+  "anthropicJSpacePaperIso": "2026-07-06",
+  "cloneDir": "C:\\Users\\info\\AppData\\Local\\Temp\\egs-trans-e8-clones",
+  "method": "git log --all -S<term> (pickaxe: full historical file-content diff search)",
+  "results": {
+    "psw.vibelandia.sing4": {
+      "scratchpad": {
+        "totalCommitsTouchingTerm": 0,
+        "allHits": [],
+        "earliestSha": null,
+        "earliestShaFull": null,
+        "earliestDate": null,
+        "earliestMessage": null,
+        "earliestCommitUrl": null,
+        "precedesAnthropicPaper": null
+      },
+      "workspace bottleneck": {
+        "totalCommitsTouchingTerm": 0,
+        "allHits": [],
+        "earliestSha": null,
+        "earliestShaFull": null,
+        "earliestDate": null,
+        "earliestMessage": null,
+        "earliestCommitUrl": null,
+        "precedesAnthropicPaper": null
+      },
+      "J-Space": {
+        "totalCommitsTouchingTerm": 0,
+        "allHits": [],
+        "earliestSha": null,
+        "earliestShaFull": null,
+        "earliestDate": null,
+        "earliestMessage": null,
+        "earliestCommitUrl": null,
+        "precedesAnthropicPaper": null
+      },
+      "j-space": {
+        "totalCommitsTouchingTerm": 0,
+        "allHits": [],
+        "earliestSha": null,
+        "earliestShaFull": null,
+        "earliestDate": null,
+        "earliestMessage": null,
+        "earliestCommitUrl": null,
+        "precedesAnthropicPaper": null
+      }
+    },
+    "psw.vibelandia.sing9": {
+      "scratchpad": {
+        "totalCommitsTouchingTerm": 0,
+        "allHits": [],
+        "earliestSha": null,
+        "earliestShaFull": null,
+        "earliestDate": null,
+        "earliestMessage": null,
+        "earliestCommitUrl": null,
+        "precedesAnthropicPaper": null
+      },
+      "workspace bottleneck": {
+        "totalCommitsTouchingTerm": 0,
+        "allHits": [],
+        "earliestSha": null,
+        "earliestShaFull": null,
+        "earliestDate": null,
+        "earliestMessage": null,
+        "earliestCommitUrl": null,
+        "precedesAnthropicPaper": null
+      },
+      "J-Space": {
+        "totalCommitsTouchingTerm": 0,
+        "allHits": [],
+        "earliestSha": null,
+        "earliestShaFull": null,
+        "earliestDate": null,
+        "earliestMessage": null,
+        "earliestCommitUrl": null,
+        "precedesAnthropicPaper": null
+      },
+      "j-space": {
+        "totalCommitsTouchingTerm": 0,
+        "allHits": [],
+        "earliestSha": null,
+        "earliestShaFull": null,
+        "earliestDate": null,
+        "earliestMessage": null,
+        "earliestCommitUrl": null,
+        "precedesAnthropicPaper": null
+      }
+    },
+    "psw.vibelandia.sing13": {
+      "scratchpad": {
+        "totalCommitsTouchingTerm": 3,
+        "allHits": [
+          {
+            "sha": "b0193201910e628f2ef6003d89d5e211c025917d",
+            "shaShort": "b0193201",
+            "date": "2026-07-10",
+            "message": "Add IP Infringement Draft audit lane and relabel E6 as internal-tier testable.",
+            "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/b0193201910e628f2ef6003d89d5e211c025917d"
+          },
+          {
+            "sha": "37fe909ddba4f24f3f81ca0c3acf319743dfa519",
+            "shaShort": "37fe909d",
+            "date": "2026-07-10",
+            "message": "Add frontier RIX validation (§5) and open-source compliance draft (§6) to papers and pipeline.",
+            "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/37fe909ddba4f24f3f81ca0c3acf319743dfa519"
+          },
+          {
+            "sha": "c88dc2790890eb6cdbe9a0ed34d5c209e48a600d",
+            "shaShort": "c88dc279",
+            "date": "2026-07-10",
+            "message": "Reframe EGS-TRANS catalog and README for frontier multi-model convergence.",
+            "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/c88dc2790890eb6cdbe9a0ed34d5c209e48a600d"
+          }
+        ],
+        "earliestSha": "b0193201",
+        "earliestShaFull": "b0193201910e628f2ef6003d89d5e211c025917d",
+        "earliestDate": "2026-07-10",
+        "earliestMessage": "Add IP Infringement Draft audit lane and relabel E6 as internal-tier testable.",
+        "earliestCommitUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/b0193201910e628f2ef6003d89d5e211c025917d",
+        "precedesAnthropicPaper": false
+      },
+      "workspace bottleneck": {
+        "totalCommitsTouchingTerm": 2,
+        "allHits": [
+          {
+            "sha": "b0193201910e628f2ef6003d89d5e211c025917d",
+            "shaShort": "b0193201",
+            "date": "2026-07-10",
+            "message": "Add IP Infringement Draft audit lane and relabel E6 as internal-tier testable.",
+            "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/b0193201910e628f2ef6003d89d5e211c025917d"
+          },
+          {
+            "sha": "37fe909ddba4f24f3f81ca0c3acf319743dfa519",
+            "shaShort": "37fe909d",
+            "date": "2026-07-10",
+            "message": "Add frontier RIX validation (§5) and open-source compliance draft (§6) to papers and pipeline.",
+            "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/37fe909ddba4f24f3f81ca0c3acf319743dfa519"
+          }
+        ],
+        "earliestSha": "b0193201",
+        "earliestShaFull": "b0193201910e628f2ef6003d89d5e211c025917d",
+        "earliestDate": "2026-07-10",
+        "earliestMessage": "Add IP Infringement Draft audit lane and relabel E6 as internal-tier testable.",
+        "earliestCommitUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/b0193201910e628f2ef6003d89d5e211c025917d",
+        "precedesAnthropicPaper": false
+      },
+      "J-Space": {
+        "totalCommitsTouchingTerm": 5,
+        "allHits": [
+          {
+            "sha": "dfc972b3ebc2962c14d53adfd1e3c6b51415a089",
+            "shaShort": "dfc972b3",
+            "date": "2026-07-10",
+            "message": "Add EGS-TRANS J-Space paper, empirical pipeline, and catalog integration.",
+            "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/dfc972b3ebc2962c14d53adfd1e3c6b51415a089"
+          },
+          {
+            "sha": "75fadc5e6cd4a5686d9da41a73da7e24501688ce",
+            "shaShort": "75fadc5e",
+            "date": "2026-07-10",
+            "message": "Sync EGS-TRANS research README with expanded standalone intentions and findings.",
+            "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/75fadc5e6cd4a5686d9da41a73da7e24501688ce"
+          },
+          {
+            "sha": "b0193201910e628f2ef6003d89d5e211c025917d",
+            "shaShort": "b0193201",
+            "date": "2026-07-10",
+            "message": "Add IP Infringement Draft audit lane and relabel E6 as internal-tier testable.",
+            "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/b0193201910e628f2ef6003d89d5e211c025917d"
+          },
+          {
+            "sha": "37fe909ddba4f24f3f81ca0c3acf319743dfa519",
+            "shaShort": "37fe909d",
+            "date": "2026-07-10",
+            "message": "Add frontier RIX validation (§5) and open-source compliance draft (§6) to papers and pipeline.",
+            "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/37fe909ddba4f24f3f81ca0c3acf319743dfa519"
+          },
+          {
+            "sha": "c88dc2790890eb6cdbe9a0ed34d5c209e48a600d",
+            "shaShort": "c88dc279",
+            "date": "2026-07-10",
+            "message": "Reframe EGS-TRANS catalog and README for frontier multi-model convergence.",
+            "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/c88dc2790890eb6cdbe9a0ed34d5c209e48a600d"
+          }
+        ],
+        "earliestSha": "dfc972b3",
+        "earliestShaFull": "dfc972b3ebc2962c14d53adfd1e3c6b51415a089",
+        "earliestDate": "2026-07-10",
+        "earliestMessage": "Add EGS-TRANS J-Space paper, empirical pipeline, and catalog integration.",
+        "earliestCommitUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/dfc972b3ebc2962c14d53adfd1e3c6b51415a089",
+        "precedesAnthropicPaper": false
+      },
+      "j-space": {
+        "totalCommitsTouchingTerm": 1,
+        "allHits": [
+          {
+            "sha": "b0193201910e628f2ef6003d89d5e211c025917d",
+            "shaShort": "b0193201",
+            "date": "2026-07-10",
+            "message": "Add IP Infringement Draft audit lane and relabel E6 as internal-tier testable.",
+            "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/b0193201910e628f2ef6003d89d5e211c025917d"
+          }
+        ],
+        "earliestSha": "b0193201",
+        "earliestShaFull": "b0193201910e628f2ef6003d89d5e211c025917d",
+        "earliestDate": "2026-07-10",
+        "earliestMessage": "Add IP Infringement Draft audit lane and relabel E6 as internal-tier testable.",
+        "earliestCommitUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/b0193201910e628f2ef6003d89d5e211c025917d",
+        "precedesAnthropicPaper": false
+      }
+    }
+  },
+  "result": "refute",
+  "honestyNote": "Live full-history pickaxe search via local git clones. Zero hits is a real empirical receipt."
+}

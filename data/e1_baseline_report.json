@@ -1,0 +1,69 @@
+{
+  "documentId": "EGS-TRANS-2026-0710",
+  "experiment": "E1b_baseline_control",
+  "generatedAt": "2026-07-10T22:02:01.609Z",
+  "dataProvenance": "live_run",
+  "hypothesis": "King Bee window (2026-05-31--2026-06-02) commit activity is anomalous relative to each core repo's own baseline cadence over the preceding 30 days (|z| > 2).",
+  "controlDays": 30,
+  "perRepo": {
+    "FractiAI/psw.vibelandia.sing4": {
+      "role": "legacy edge · heartbeat lattice",
+      "controlWindow": {
+        "since": "2026-05-01",
+        "until": "2026-05-31",
+        "days": 30,
+        "totalCommits": 757,
+        "dailyMean": 24.4,
+        "dailyStdev": 8.348
+      },
+      "kingBeeWindow": {
+        "since": "2026-05-31T00:00:00Z",
+        "until": "2026-06-02T00:00:00Z",
+        "totalCommits": 28,
+        "perDay": 14
+      },
+      "zScore": -1.246,
+      "anomalousVsBaseline": false
+    },
+    "FractiAI/psw.vibelandia.sing9": {
+      "role": "parent lab edge",
+      "controlWindow": {
+        "since": "2026-05-01",
+        "until": "2026-05-31",
+        "days": 30,
+        "totalCommits": 52,
+        "dailyMean": 1.733,
+        "dailyStdev": 4.242
+      },
+      "kingBeeWindow": {
+        "since": "2026-05-31T00:00:00Z",
+        "until": "2026-06-02T00:00:00Z",
+        "totalCommits": 0,
+        "perDay": 0
+      },
+      "zScore": -0.409,
+      "anomalousVsBaseline": false
+    },
+    "FractiAI/psw.vibelandia.sing13": {
+      "role": "production King Bee canon anchor",
+      "controlWindow": {
+        "since": "2026-05-01",
+        "until": "2026-05-31",
+        "days": 30,
+        "totalCommits": 184,
+        "dailyMean": 6,
+        "dailyStdev": 8.229
+      },
+      "kingBeeWindow": {
+        "since": "2026-05-31T00:00:00Z",
+        "until": "2026-06-02T00:00:00Z",
+        "totalCommits": 7,
+        "perDay": 3.5
+      },
+      "zScore": -0.304,
+      "anomalousVsBaseline": false
+    }
+  },
+  "result": "refute",
+  "honestyNote": "This is the E1 baseline control flagged as missing in docs/VALIDATION_AUDIT_2026-07-10.md. A repo whose King Bee-window activity is not distinguishable from its ordinary cadence (e.g. an always-on heartbeat bot) provides no evidence of a discrete initialization event, regardless of the raw commit count reported by E1."
+}

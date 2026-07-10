@@ -1,0 +1,8 @@
+{
+  "documentId": "EGS-TRANS-2026-0710",
+  "experiment": "E7_temporal_precedence",
+  "result": "skipped",
+  "reason": "No GH_TOKEN/GITHUB_TOKEN set; GitHub commit search requires auth.",
+  "dataProvenance": "live_run",
+  "generatedAt": "2026-07-10T22:01:58.034Z"
+}

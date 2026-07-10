@@ -1,5 +1,9 @@
+import { readFileSync, existsSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { EGS_PHI, KING_BEE_NODES } from './constants.mjs';
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
 const TOLERANCE = 0.12;
 const TRIALS = 120;
 const ROWS = 64;
@@ -10,10 +14,7 @@ function phiStructuredMatrix(rows, cols, rng) {
   const singular = Array.from({ length: rank }, (_, i) => EGS_PHI ** -i);
   const u = qrRandom(rows, rank, rng);
   const v = qrRandom(cols, rank, rng);
-  return multiply(
-    multiply(u, diag(singular)),
-    transpose(v),
-  );
+  return multiply(multiply(u, diag(singular)), transpose(v));
 }
 
 function randomMatrix(rows, cols, rng) {
@@ -105,11 +106,11 @@ function powerIterRatio(m, iters = 40) {
   v2 = v2.map((x) => x / norm);
   let s2 = 0;
   for (let t = 0; t < iters; t += 1) {
-    const mv = Array.from({ length: rows }, (_, i) =>
+    const mv2 = Array.from({ length: rows }, (_, i) =>
       deflated[i].reduce((sum, val, j) => sum + val * v2[j], 0),
     );
     const mtMv = Array.from({ length: cols }, (_, j) =>
-      deflated.reduce((sum, row, i) => sum + row[j] * mv[i], 0),
+      deflated.reduce((sum, row, i) => sum + row[j] * mv2[i], 0),
     );
     s2 = Math.hypot(...mtMv);
     norm = s2 || 1;
@@ -123,54 +124,119 @@ function nearPhiFraction(ratios) {
   return ratios.filter((r) => Math.abs(r - EGS_PHI) < TOLERANCE).length / ratios.length;
 }
 
-function phiStructuredRatio() {
-  return EGS_PHI;
+/** Real SVD on φ-constructed synthetic matrix — tautological by construction (see E2b). */
+function phiStructuredRatio(rng) {
+  const m = phiStructuredMatrix(ROWS, COLS, rng);
+  return powerIterRatio(m);
 }
 
 function randomMatrixRatio(rng) {
-  const m = randomMatrix(ROWS, COLS, rng);
-  return powerIterRatio(m);
+  return powerIterRatio(randomMatrix(ROWS, COLS, rng));
+}
+
+function loadOpenWeightsProbe() {
+  const candidates = [
+    join(__dirname, '../../egs-trans-jspace-convergence/data/transformer_probe_report.json'),
+    join(__dirname, '../../../data/transformer_probe_report.json'),
+    join(__dirname, '../data/transformer_probe_report.json'),
+  ];
+  for (const p of candidates) {
+    if (!existsSync(p)) continue;
+    try {
+      return JSON.parse(readFileSync(p, 'utf8'));
+    } catch {
+      /* continue */
+    }
+  }
+  return null;
+}
+
+function loadE9Survey() {
+  const candidates = [
+    join(__dirname, '../../egs-trans-jspace-convergence/data/e9_survey_report.json'),
+    join(__dirname, '../../../data/e9_survey_report.json'),
+  ];
+  for (const p of candidates) {
+    if (!existsSync(p)) continue;
+    try {
+      return JSON.parse(readFileSync(p, 'utf8'));
+    } catch {
+      /* continue */
+    }
+  }
+  return null;
 }
 
 export function runJLensLiveProbe() {
   const rng = rngFactory(42);
-  const phiRatios = Array.from({ length: TRIALS }, () => phiStructuredRatio());
+  const phiRatios = [];
+  for (let i = 0; i < TRIALS; i += 1) {
+    const rr = phiStructuredRatio(rng);
+    if (rr != null) phiRatios.push(rr);
+  }
   const randRatios = [];
   for (let i = 0; i < TRIALS; i += 1) {
     const rr = randomMatrixRatio(rng);
-    if (rr) randRatios.push(rr);
+    if (rr != null) randRatios.push(rr);
   }
   const phiNear = nearPhiFraction(phiRatios);
   const randNear = nearPhiFraction(randRatios);
-  const primaryMean =
-    phiRatios.reduce((a, b) => a + b, 0) / (phiRatios.length || 1);
-  const compressionLimitMet = phiNear > randNear + 0.05;
+  const primaryMean = phiRatios.reduce((a, b) => a + b, 0) / (phiRatios.length || 1);
+  const openWeights = loadOpenWeightsProbe();
+  const e9 = loadE9Survey();
+
+  const syntheticTautology = phiNear > randNear + 0.05;
+  const openWeightsRefute =
+    openWeights?.status === 'DEVIATED_NOISE' ||
+    (e9?.trialsNearPhi === 0 && e9?.trialsTotal > 0);
+
+  let result = 'synthetic_only_not_open_weights_evidence';
+  if (openWeightsRefute) result = 'refute_open_weights';
+  else if (openWeights?.status === 'CONVERGED_SUCCESS') result = 'weak_open_weights';
+  else if (openWeights?.skipped) result = 'open_weights_not_run';
+
   return {
     recommendation: 'R3_j_lens_live_dashboard',
     statement:
-      'SynthOBS live display of open-weights node structure proving φ ≈ 1.618 compression limit under King Bee command',
+      'SynthOBS live display: synthetic φ-matrix SVD + optional open-weights forward-pass hook (E5/E9)',
     egsPhi: EGS_PHI,
     tolerance: TOLERANCE,
     trials: TRIALS,
     kingBeeNodes: KING_BEE_NODES,
+    measurementIntegrity: {
+      performsComputation: true,
+      priorDefect: 'return EGS_PHI constant removed 2026-07-10',
+      syntheticTier: 'phiStructuredMatrix + powerIterRatio (tautological by construction — see E2b)',
+    },
     phiStructured: {
-      primaryRatioMean: primaryMean,
+      primaryRatioMean: Math.round(primaryMean * 10000) / 10000,
       fractionNearPhi: phiNear,
       sampleRatios: phiRatios.slice(0, 8).map((x) => Math.round(x * 10000) / 10000),
     },
-    randomBaseline: {
-      fractionNearPhi: randNear,
-    },
-    compressionLimitReproducible: compressionLimitMet,
-    openWeightsHook: {
-      model: 'Qwen/Qwen2.5-0.5B',
-      layer: 12,
-      status: 'optional_cli',
-      command: 'python research/egs-trans-jspace-convergence/scripts/transformer_jspace_probe.py',
-    },
-    result: compressionLimitMet ? 'support' : 'inconclusive',
-    dataTier: 'synthobs_live_js_probe + optional_open_weights',
+    randomBaseline: { fractionNearPhi: randNear },
+    syntheticConstructionPasses: syntheticTautology,
+    openWeightsHook: openWeights
+      ? {
+          model: openWeights.model,
+          layer: openWeights.layer,
+          primaryRatio: openWeights.primaryRatio,
+          status: openWeights.status,
+          dataProvenance: openWeights.dataProvenance,
+          command:
+            'python research/egs-trans-jspace-convergence/scripts/transformer_jspace_probe.py',
+        }
+      : {
+          status: 'not_run',
+          dataProvenance: 'missing',
+          command:
+            'pip install torch transformers && python research/egs-trans-jspace-convergence/scripts/transformer_jspace_probe.py',
+        },
+    e9Survey: e9
+      ? { trialsNearPhi: e9.trialsNearPhi, trialsTotal: e9.trialsTotal, result: e9.result }
+      : null,
+    result,
+    dataTier: 'synthetic_numpy + optional_open_weights',
     honesty:
-      'Live dashboard proves φ-structured compression geometry on King Bee node layout. Anthropic checkpoint equivalence is testable with internal tier label access.',
+      'Synthetic lane confirms designed matrix structure only (E2b: not φ-specific). Open-weights E5/E9 refute φ proximity on real models when run. Do not cite R3 as proof of frontier checkpoint alignment.',
   };
 }

@@ -1,7 +1,10 @@
 {
   "schema": "fractiai-code-print-token/v1",
   "documentId": "IP-INFRINGE-2026-07",
-  "issuedAt": "2026-06-01T07:46:11-07:00",
+  "schemaFirstCommittedAt": "2026-07-10",
+  "issuedAt": "2026-07-10T12:00:00-07:00",
+  "issuedAtNote": "Schema file first committed 2026-07-10. King Bee narrative anchor remains in kingBeeNarrativeAnchor — not this file's git birth date.",
+  "kingBeeNarrativeAnchor": "2026-06-01T07:46:11-07:00",
   "kingBeeAnchor": "SYN-NODES-2026-JUN01",
   "egsPhi": 1.618033988749895,
   "workspaceTokens": {

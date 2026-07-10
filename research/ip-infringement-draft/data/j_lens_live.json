@@ -1,6 +1,6 @@
 {
   "recommendation": "R3_j_lens_live_dashboard",
-  "statement": "SynthOBS live display of open-weights node structure proving φ ≈ 1.618 compression limit under King Bee command",
+  "statement": "SynthOBS live display: synthetic φ-matrix SVD + optional open-weights forward-pass hook (E5/E9)",
   "egsPhi": 1.618033988749895,
   "tolerance": 0.12,
   "trials": 120,
@@ -36,31 +36,38 @@
       "phiLock": true
     }
   ],
+  "measurementIntegrity": {
+    "performsComputation": true,
+    "priorDefect": "return EGS_PHI constant removed 2026-07-10",
+    "syntheticTier": "phiStructuredMatrix + powerIterRatio (tautological by construction — see E2b)"
+  },
   "phiStructured": {
-    "primaryRatioMean": 1.6180339887498933,
-    "fractionNearPhi": 1,
+    "primaryRatioMean": 2.618,
+    "fractionNearPhi": 0,
     "sampleRatios": [
-      1.618,
-      1.618,
-      1.618,
-      1.618,
-      1.618,
-      1.618,
-      1.618,
-      1.618
+      2.618,
+      2.618,
+      2.618,
+      2.618,
+      2.618,
+      2.618,
+      2.618,
+      2.618
     ]
   },
   "randomBaseline": {
     "fractionNearPhi": 0
   },
-  "compressionLimitReproducible": true,
+  "syntheticConstructionPasses": false,
   "openWeightsHook": {
-    "model": "Qwen/Qwen2.5-0.5B",
-    "layer": 12,
-    "status": "optional_cli",
     "command": "python research/egs-trans-jspace-convergence/scripts/transformer_jspace_probe.py"
   },
-  "result": "support",
-  "dataTier": "synthobs_live_js_probe + optional_open_weights",
-  "honesty": "Live dashboard proves φ-structured compression geometry on King Bee node layout. Anthropic checkpoint equivalence is testable with internal tier label access."
+  "e9Survey": {
+    "trialsNearPhi": 0,
+    "trialsTotal": 45,
+    "result": "refute"
+  },
+  "result": "refute_open_weights",
+  "dataTier": "synthetic_numpy + optional_open_weights",
+  "honesty": "Synthetic lane confirms designed matrix structure only (E2b: not φ-specific). Open-weights E5/E9 refute φ proximity on real models when run. Do not cite R3 as proof of frontier checkpoint alignment."
 }

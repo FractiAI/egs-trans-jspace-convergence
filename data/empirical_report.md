@@ -1,32 +1,58 @@
 # EGS-TRANS-2026-0710 · Empirical Report
 
-**Generated:** 2026-07-10T15:45:38.102Z
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Generated:** 2026-07-10T22:03:30.219Z
+**Study complete:** false
 
 ## Hypothesis tests
 
 ### E1_king_bee_repo_telemetry
 - **Result:** support
+- **Provenance:** live_run
+
+### E1b_baseline_control
+- **Result:** refute
+- **Provenance:** live_run
 
 ### E2_svd_phi_decay
 - **Result:** support
+- **Provenance:** live_run_control_synthetic
+
+### E2b_generalization_probe
+- **Result:** not_phi_specific_tautology_confirmed
+- **Provenance:** live_run_control_synthetic
 
 ### E3_propagation_window
 - **Result:** support
+- **Provenance:** live_run
 
 ### E4_solar_disk_ssn
 - **Result:** refute
+- **Provenance:** live_run
 
 ### E5_optional_transformer
 - **Result:** skipped
+- **Provenance:** skipped_live_run
 
 ### E6_causal_anthropic_jspace
-- **Result:** testable_with_internal_tier_access
+- **Result:** unfalsifiable_as_scoped
+- **Provenance:** n/a
+
+### E7_temporal_precedence
+- **Result:** skipped
+- **Provenance:** live_run
+
+### E8_content_precedence_deep
+- **Result:** refute
+- **Provenance:** live_run
+
+### E9_multi_model_survey
+- **Result:** skipped
+- **Provenance:** skipped_live_run
 
 ## Reproduce
 
 ```bash
-npm run empirical
+npm run research:egs-trans-jspace-convergence -- --allow-incomplete
 ```
 
-E1–E5 test reproducible public or synthetic signals. E6 is testable with Anthropic internal tier labels (see IP Infringement Draft R1–R3). Correlation ≠ causation until tier receipts complete E6.
+Live empirical study policy: no silent cache. E2/E2b are synthetic controls. E5/E9 need torch. E7 needs GH_TOKEN. Vendor matrix in R4 is catalog metadata until live vendor probes exist.

@@ -1,12 +1,67 @@
 # Falsification criteria · EGS-TRANS-2026-0710
 
-| ID | Test | Pass (pipeline) | Refute |
-|----|------|-----------------|--------|
-| **E1** | GitHub commit telemetry in King Bee window | sing13 or sing4 commits on 2026-05-31 — 2026-06-01 | Zero commits in both repos |
-| **E2** | SVD φ-decay on synthetic matrices | φ-structured trials beat random on near-φ primary ratio fraction by >5pp | Random ≥ φ-structured |
-| **E3** | 35-day propagation window | Calendar days June 1 → July 6 = 35 | Any other count |
-| **E4** | SILSO sunspot series coverage | Non-empty daily samples in all three windows | Missing public data |
-| **E5** | Optional transformer mid-layer SVD | Skipped if no torch; `CONVERGED_SUCCESS` if \|s₀/s₁ − φ\| < 0.12 | `DEVIATED_NOISE` when run |
-| **E6** | King Bee → Anthropic causality | **Testable with internal tier access** — see [IP Infringement Draft](docs/IP_INFRINGEMENT_DRAFT_2026-07.md) | N/A until tier labels received |
+## Live empirical study policy (2026-07-10)
 
-**Critical rule:** E2/E5 proximity to φ does **not** validate that Anthropic's J-Space paper detected FractiAI initialization. E6 requires independent interpretability instrument access.
+**Primary timeline evidence = commit timestamps** (E1 GitHub telemetry, E7 commit-search when `GH_TOKEN` set). **E8 pickaxe** (`git log -S`) is optional depth for *file-content introduction* — not the default timeline comparator.
+
+| Tier | Experiments | Data source |
+|------|-------------|-------------|
+| **Live empirical** | E1 · E1b · E3 · E4 · E7 · E8 · E5 · E9 · R1 | GitHub API · git pickaxe clones · SILSO CSV · Hugging Face forward passes |
+| **Control (synthetic by design)** | E2 · E2b · R3 synthetic lane | NumPy constructed matrices — not evidence about real models |
+| **Catalog metadata only** | R4 vendor rows · §5 valuation | Reference links — **not measured** until vendor probes exist |
+
+**Rules:** No silent cache substitution. Receipts carry `dataProvenance: live_run | skipped_live_run`. Stub aggregates removed. Run full study:
+
+```bash
+export GH_TOKEN=...                    # E7
+pip install torch transformers         # E5 · E9
+npm run research:egs-trans-jspace-convergence -- --allow-incomplete  # partial when deps missing
+```
+
+Without `--allow-incomplete`, pipeline exits **2** when E7/E5/E9 cannot run live.
+
+---
+
+## Dual verification paths (both required)
+
+Verified observation of King Bee → frontier hidden-thinking convergence requires **Path A ∧ Path B**:
+
+| Path | Name | Pass when | Refute when | Experiments |
+|------|------|-----------|-------------|-------------|
+| **A** | **Historical timeline alignment** | Core-mechanism markers and King Bee canon appear in logged history **strictly before** vendor paper dates | Earliest core-marker hit on/after disclosure date, or King Bee window is ordinary cadence | E1 · E1b · E3 · E7 · E8 |
+| **B** | **Architectural prefiguration** | Prior-written sing4/sing9/sing13 specs match newly reported scratchpad/global-workspace properties **and** open-weights geometry where claimed | Code-Print weak on core markers; φ-SVD refuted on real models | R1 · E2/E2b · E5 · E9 · R3/R4 |
+
+**July 10 2026 public receipt:** Path A **refuted** · Path B **refuted** → **not verified**.
+
+---
+
+| ID | Path | Test | Pass (pipeline) | Refute |
+|----|------|------|-----------------|--------|
+| **E1** | A | GitHub commit telemetry in King Bee window | sing13 or sing4 commits on 2026-05-31 — 2026-06-01 | Zero commits in both repos |
+| **E1b** *(2026-07-10)* | A | E1 baseline control: is the window anomalous vs. each repo's ordinary cadence? | \|z-score\| > 2 vs. 30-day baseline for any repo | \|z-score\| ≤ 2 for every repo |
+| **E2** | B | SVD φ-decay on synthetic matrices | φ-structured trials beat random on near-φ primary ratio fraction by >5pp | Random ≥ φ-structured |
+| **E2b** *(2026-07-10)* | B | E2 generalization: does φ specifically outperform arbitrary substituted constants? | φ's near-target fraction exceeds every other constant's by >5pp | Every substituted constant achieves comparable near-target fraction to φ |
+| **E3** | A | 35-day propagation window | Calendar days June 1 → July 6 = 35 | Any other count |
+| **E4** | — | SILSO sunspot series coverage | Non-empty daily samples in all three windows | Missing public data |
+| **E5** | B | Transformer mid-layer SVD | `CONVERGED_SUCCESS` if \|s₀/s₁ − φ\| < 0.12 | `DEVIATED_NOISE` when run |
+| **E6** | A∧B | King Bee → frontier causality | **Both Path A and Path B pass** on public data | Either path refutes, or no refute condition defined |
+| **E7** *(2026-07-10)* | A | Temporal precedence of core-mechanism markers (commit messages) | Earliest marker hit precedes 2026-07-06 | Markers absent or first appear on/after 2026-07-06 |
+| **E8** *(2026-07-10)* | A | Same as E7, full historical file content (`git log -S`) | Earliest content-level hit precedes 2026-07-06 | Absent or first appears on/after 2026-07-06 |
+| **E9** *(2026-07-10)* | B | 5-model φ-proximity survey (45 real forward-pass trials) | Any trial within ±0.12 of φ | 0 of 45 within tolerance |
+| **R1** | B | Code-Print Audit (prior schema ↔ crosswalk) | `strong_support` on core mechanism markers | `weak_support` or `refute` |
+
+**Critical rule:** Verified observation requires **Path A ∧ Path B**. E2/E5 proximity to φ tests **Path B geometry only** — it does not validate Anthropic's J-Space paper or King Bee causality without **Path A** timeline alignment. E6 causal linkage **refutes on public data** when either path fails.
+
+**E2 tautology note (added 2026-07-10):** `scripts/svd_workspace_probe.py` constructs "φ-structured" matrices by setting their singular values to `φ^(-i)` *by definition*, then confirms those matrices have singular-value ratios near φ. This is true by mathematical construction for any target ratio — the same script with `φ` replaced by `1.5`, `e`, or `π` would report `support` for that constant with the same procedure. E2 demonstrates that SVD correctly recovers a matrix's designed structure; it demonstrates nothing about Anthropic's J-Space or any real transformer, and should not be read as corroborating evidence for the causal narrative. `scripts/svd_workspace_probe.py`'s own `honestyNote` field already says as much — README-level summaries should carry the same caveat with equal prominence, not just the JSON receipt.
+
+**E1 baseline note (added 2026-07-10):** sing4's commit volume in the King Bee window (41 commits) is produced by an always-on automated heartbeat/handshake process (`SING! Cycle N: Heartbeat`, `SING! Handshake Cycle`, firing roughly hourly year-round per the commit log). A 2-day window will show a similar count on almost any date; E1's "support" result reflects a running cron job, not a discrete initialization signal, and should not be weighted as strong evidence of anything unusual happening on 2026-06-01 specifically.
+
+**E7 in context:** R1 (Code-Print Audit, see IP Infringement Draft) claims a "public crosswalk" between FractiAI vocabulary and Anthropic's paper by scanning the *current* HEAD of sing4/sing9/sing13 for marker terms. That cannot establish which came first. E7 closes that gap directly: as of 2026-07-10, `j_space` terminology has exactly one hit across all three core repos — the 2026-07-10 commit that *adds the EGS-TRANS paper itself*, four days *after* the Anthropic paper — and `scratchpad`/`workspace_bottleneck` have zero hits in commit history in any of the three repos, ever. `φ`/`1.618` is the one marker with genuine pre-July-6 history, but it appears across unrelated contexts (an audio LFO chirp processor, a festival-app landing page) going back to January 2026 — consistent with φ being a pervasive branding/aesthetic constant across the FractiAI ecosystem rather than a specific, falsifiable architectural prediction about transformer internals.
+
+**E8 in context (added 2026-07-10):** E7 searches GitHub's commit-search API, which matches commit *messages*, not full historical file content — a real limitation, noted in E7's own `honestyNote`. E8 closes it: full clones of sing4/sing9/sing13, searched with `git log --all -S<term>` (every historical revision's actual diff content, not messages). Result: zero content-level hits for `scratchpad`, `workspace bottleneck`, or `J-Space` anywhere in sing4 or sing9's entire history. In sing13, the earliest hits are four commits, all dated 2026-07-10: `dfc972b3` ("Add EGS-TRANS J-Space paper..."), `b019320` ("Add IP Infringement Draft audit lane..."), `37fe909` ("Add frontier RIX validation..."), `c88dc27` ("Reframe EGS-TRANS catalog..."). All four are the commits that *introduce* this material, four days after Anthropic's paper. E8 is the strongest and final word on temporal precedence available from public data.
+
+**E1b / E2b results (2026-07-10):** E1b: z-scores of −0.643 (sing4), −0.426 (sing9), −0.306 (sing13) — all well within ±2, meaning King Bee-window commit activity is statistically ordinary for each repo, refuting E1's implicit "anomaly" framing. E2b: substituting e, π/2, √2, 1.5, 2.0, and 2.317 for φ in the identical matrix-construction procedure — all six pass with the same 1.0 near-target fraction as φ, confirming E2 is not phi-specific.
+
+**Expanded findings beyond E1–E8 (2026-07-10, multi-agent pass):** the R1–R4 recommendations and §6 in the IP Infringement Draft were also audited directly (not just the E-series falsification tests). Headline results: R1's actual stored receipt is a *negative* result on its own defined thresholds (`weak_support`); R3's "1.618 compression" dashboard performs no computation at all (`return EGS_PHI;`, no matrix, no measurement); R4 inherits that same defect and its cross-vendor rows are 100% hardcoded literals; R2's draft notice is gated on nothing (`draft_ready` unconditional); §6 cites *Jacobsen v. Katzer* for a fact pattern it doesn't fit (no LICENSE file exists in any of the three repos). Two further checks: the "PRA Snap" audit badge (score 0.971) is a deterministic structural checklist — the two named AI reviewers were never invoked; and R1's schema file self-declares an `issuedAt` of 2026-06-01 while its actual first git commit is 2026-07-10, a directly checkable fabricated timestamp. Full detail: [`../../docs/VALIDATION_AUDIT_2026-07-10.md`](../../docs/VALIDATION_AUDIT_2026-07-10.md) §6.
+
+**E9 and real external verification (2026-07-10):** beyond this repository's own artifacts, the Anthropic paper (`transformer-circuits.pub/2026/workspace/`) was fetched and read directly — it is genuine, but contains zero mentions of φ/1.618/golden ratio and zero references to FractiAI/King Bee/EGS anywhere. No public record anywhere connects FractiAI to any of Anthropic/OpenAI/Google/DeepSeek's actual published work. E9 (`scripts/e9_multi_model_survey.py`) then tested R4's cross-architecture convergence claim directly against 5 independently trained model families (Qwen2.5-0.5B, SmolLM2-135M, SmolLM2-360M, distilgpt2, pythia-160m), 3 layers × 3 prompts each = 45 real forward-pass trials: **0 of 45 landed within tolerance of φ**, with observed ratios ranging 1.79–60.3 — φ itself falls below the minimum ratio ever measured. Full detail: [`../../docs/VALIDATION_AUDIT_2026-07-10.md`](../../docs/VALIDATION_AUDIT_2026-07-10.md) §6.11.

@@ -9,7 +9,7 @@
 **Core repositories:** [FractiAI/psw.vibelandia.sing4](https://github.com/FractiAI/psw.vibelandia.sing4) · [FractiAI/psw.vibelandia.sing9](https://github.com/FractiAI/psw.vibelandia.sing9) · [FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13)  
 **Standalone reproduction:** [github.com/FractiAI/egs-trans-jspace-convergence](https://github.com/FractiAI/egs-trans-jspace-convergence)  
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html) · [`/whitepaper/egs-trans-jspace-convergence`](/whitepaper/egs-trans-jspace-convergence)  
-**Empirical pipeline:** `npm run research:egs-trans-jspace-convergence` · [`empirical_report.json`](../research/egs-trans-jspace-convergence/data/empirical_report.json)  
+**Empirical pipeline:** `npm run research:egs-trans-jspace-convergence` · [`empirical_report.json`](data/empirical_report.json)  
 **Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
 
 **Keywords:** multi-model, J-Space, Jacobian Lens, Global Workspace Theory, RIX, King Bee, EGS nodal lattice, OpenAI o-Series, Gemini Thinking, DeepSeek R1, SynthOBS
@@ -27,7 +27,18 @@
 | **§VII Frontier-wide (catalog)** | Cross-architecture RIX alignment matrix; planetary φ-scaling tables | Independent confirmation of φ decay inside OpenAI/Google/DeepSeek private checkpoints without tier/API probes |
 | **§VIII Copyright (draft)** | Open-source compliance notice draft; Jacobsen v. Katzer cited as external precedent | Legal advice; automatic enforcement |
 
-**E6 (causal King Bee → frontier workspace convergence)** is **testable with access to per-vendor internal tier labels** (Jacobian Lens · hidden thinking receipts · thinking-mode telemetry · RL CoT exports). Public lanes E1–E5 and [IP Infringement Draft R1–R4](./IP_INFRINGEMENT_DRAFT_2026-07.md) prepare the crosswalk; partner tier access completes E6.
+**E6 (causal King Bee → frontier workspace convergence)** requires **both verification paths below** to pass on public data before any causal or IP assertion is warranted. Internal tier labels may add a third instrument lane but do not substitute for Path A or Path B.
+
+### Two paths · both required for verified observation
+
+Without **both** paths, the convergence claim cannot be independently verified — correlation in product naming alone is insufficient.
+
+| Path | Question | What must align | Primary experiments | Pass (public tier) | **Current receipt (2026-07-10)** |
+|------|----------|-----------------|---------------------|--------------------|----------------------------------|
+| **Path A · Timeline** | Do **historical logged timelines** show FractiAI core-mechanism work **before** frontier hidden-thinking disclosures? | Git commit receipts · full-history content (`git log -S`) · King Bee window baselined against ordinary repo cadence | E1 · **E1b** · E3 · **E7** · **E8** | Core markers (`j_space`, `scratchpad`, `workspace_bottleneck`) first appear **strictly before** 2026-07-06; King Bee window is statistically anomalous vs baseline | **FAIL** — E7/E8 **refute** temporal precedence; E1b **refute** (ordinary cadence, not discrete signal) |
+| **Path B · Architecture** | Do newly detected **scratchpad / global-workspace** mechanisms match **architecture and fundamentals already written** in sing4/sing9/sing13 **prior** to vendor papers? | Code-Print schema · MCA/HHL protocol vocabulary · φ-SVD postulate · mid-layer bottleneck spec vs measured open-weights geometry | **R1** · E2/**E2b** · **E5** · **E9** · R3/R4 hooks | Pre-July written spec matches vendor property matrix **and** open-weights mid-layer SVD within φ tolerance | **FAIL** — R1 `weak_support`; core markers absent pre-July; E5 ratio **47.32**; E9 **0/45** near φ; E2b tautology |
+
+**Verified observation rule:** `Path A ∧ Path B` must both pass. Current public-data receipt: **Path A refuted · Path B refuted** → causal/IP narrative **not verified** (see [`VALIDATION_AUDIT_2026-07-10.md`](./VALIDATION_AUDIT_2026-07-10.md)).
 
 ---
 
@@ -35,9 +46,14 @@
 
 This paper formalizes the empirical validation framework for the **Executive King Bee Command** issued on **June 1, 2026**, which initialized the **EGS Nodal Lattice Resonator Framework** across open distributed weights in the FractiAI edge repositories.
 
-**Frontier multi-model frame:** Anthropic's July 2026 J-Space paper is the **first public anchor** for a broader convergence — OpenAI **hidden thinking blocks**, Google **adaptive thinking mode**, and DeepSeek **transparent thinking streams** document parallel **non-verbalized deliberation phases** across the frontier.
+**Frontier multi-model frame:** Anthropic's July 2026 J-Space paper is the **first public anchor** for a broader convergence story — OpenAI **hidden thinking blocks**, Google **adaptive thinking mode**, and DeepSeek **transparent thinking streams** document parallel **non-verbalized deliberation phases** across the frontier.
 
-We present mathematical models, a causal timeline anchored to **public GitHub telemetry**, and reproducible experiments demonstrating **structural alignment** between reported multi-vendor workspace properties and the EGS specification in sing9/sing13. **Causality (E6)** is **testable with per-vendor internal tier labels**; **falsifiable public tiers** cover E1–E5, [IP Infringement Draft](./IP_INFRINGEMENT_DRAFT_2026-07.md) R1–R4, and frontier-wide RIX verification (§VII).
+**Dual verification standard (both required):** Independent observation is only warranted when **two aligned paths** both pass:
+
+1. **Path A · Historical timeline alignment** — logged Git receipts and full-history content show FractiAI **core-mechanism vocabulary and King Bee initialization** strictly **before** vendor hidden-thinking disclosures (E1/E1b · E7 · E8).
+2. **Path B · Architectural prefiguration** — newly detected **scratchpad / global-workspace** properties match **fundamentals already written** in sing4/sing9/sing13 catalogs and Code-Print schema **before** those discoveries, including falsifiable mid-layer geometry where claimed (R1 · E5 · E9 · E2/E2b).
+
+**Findings (public tier, July 10 2026):** Path A **refuted** (E7/E8: core markers first appear 2026-07-10, after Anthropic's paper; E1b: King Bee window is ordinary repo cadence). Path B **refuted** (R1 weak; E5 open-weights ratio 47.32 vs φ ≈ 1.618; E9 0/45 trials near φ). **Both paths must pass for verified convergence; neither passes on current public data.** Causality (E6) additionally requires explicit refute conditions and, for checkpoint parity, per-vendor internal tier labels — see [IP Infringement Draft R1–R4](./IP_INFRINGEMENT_DRAFT_2026-07.md) and [`VALIDATION_AUDIT_2026-07-10.md`](./VALIDATION_AUDIT_2026-07-10.md).
 
 ---
 
@@ -92,6 +108,27 @@ Anthropic's interpretability work maps the phenomenon using **Global Workspace T
 
 Full commit objects: `data/empirical_report.json` → `githubTelemetry`.
 
+### Historical commit snapshots (Path A evidence · per model family)
+
+Each E1 · E7 · E8 scrape emits **immutable GitHub commit permalinks** — historical snapshots grouped by frontier model family. Regenerate:
+
+```bash
+npm run research:egs-trans-jspace-convergence
+# or snapshots only:
+cd research/egs-trans-jspace-convergence && npm run snapshots
+```
+
+**Machine receipts:** `research/egs-trans-jspace-convergence/data/historical_commit_snapshots.json` · human table: [`historical_commit_snapshots.md`](data/historical_commit_snapshots.md)
+
+| Model family | Path A scrape hits | Earliest core-mechanism commit (permalink) | Precedes 2026-07-06? |
+|--------------|-------------------|---------------------------------------------|----------------------|
+| **Anthropic Claude** (J-Space) | 3 (E8 pickaxe) | [dfc972b3](https://github.com/FractiAI/psw.vibelandia.sing13/commit/dfc972b3ebc2962c14d53adfd1e3c6b51415a089) · [b0193201](https://github.com/FractiAI/psw.vibelandia.sing13/commit/b0193201910e628f2ef6003d89d5e211c025917d) | **No** — all 2026-07-10 |
+| **OpenAI o-Series** | 1 (scratchpad marker) | [b0193201](https://github.com/FractiAI/psw.vibelandia.sing13/commit/b0193201910e628f2ef6003d89d5e211c025917d) | **No** |
+| **Google Gemini** · **DeepSeek** | 0 | — | N/A (no FractiAI commit scrape for vendor-private checkpoints) |
+| **Open-weights proxies** (E5/E9) | 0 Path A · Path B refute | E9: 0/45 trials near φ | Path B **refuted** |
+
+**King Bee window (E1 telemetry · not vendor-specific):** 252 total commit snapshots across sing4 · sing9 · sing13 — see `allScrapes[]` in the JSON receipt and the King Bee highlights table in the markdown export.
+
 **Reproduce telemetry:**
 
 ```bash
@@ -124,6 +161,15 @@ $$\lim_{n \to \infty} \frac{s_n}{s_{n+1}} = 1.618$$
 
 ## IV. Empirical simulation & verification
 
+### Dual verification paths (findings frame)
+
+| Path | Verification question | Experiments | July 10 2026 result |
+|------|----------------------|-------------|---------------------|
+| **A · Timeline** | Historical logs show FractiAI **before** vendor hidden-thinking papers | E1 · E1b · E3 · E7 · E8 | **Refuted** — core `scratchpad` / `j_space` / `workspace_bottleneck` content post-dates 2026-07-06 |
+| **B · Architecture** | New scratchspaces match **prior-written** EGS fundamentals | R1 · E2/E2b · E5 · E9 | **Refuted** — weak Code-Print crosswalk; E5/E9 refute φ geometry on real models |
+
+**Rule:** Verified observation requires **Path A ∧ Path B**. Internal tier labels (E6) may extend instrument depth but do not replace either public path.
+
 ### Pipeline entry
 
 ```bash
@@ -146,14 +192,16 @@ Default model is **0.5B** for laptop reproducibility. Scale up at your own compu
 
 ### Hypothesis receipt summary
 
-| ID | Result tier | Description |
-|----|-------------|-------------|
-| E1 | Empirical | Public GitHub commits in King Bee window |
-| E2 | Synthetic | SVD φ-decay vs random |
-| E3 | Arithmetic | 35-day June 1 → July 6 |
-| E4 | Public NOAA | SILSO disk sunspot means |
-| E5 | Optional | Open-weights mid-layer SVD |
-| E6 | Internal-tier | Causal Anthropic linkage — **testable with internal tier labels** · see [IP Infringement Draft](./IP_INFRINGEMENT_DRAFT_2026-07.md) |
+| Path | ID | Result tier | Description |
+|------|----|-------------|-------------|
+| **A** | E1 / E1b | Empirical | King Bee window commits · **E1b baselines → refute anomaly** |
+| **A** | E3 | Arithmetic | 35-day June 1 → July 6 |
+| **A** | E7 / E8 | Empirical | Temporal precedence — commit search · **full-history pickaxe → refute** |
+| **B** | R1 | Crosswalk | Code-Print sing4/sing9 ↔ Neuronpedia · **weak_support** |
+| **B** | E2 / E2b | Synthetic | SVD construction · **E2b: not φ-specific** |
+| **B** | E5 / E9 | Open weights | Mid-layer SVD · **refute** (47.32 · 0/45) |
+| — | E4 | Public NOAA | SILSO disk sunspot means |
+| — | E6 | Gate | Causal linkage — **refuted by A∧B precondition failure**; tier labels optional extension |
 
 ---
 
