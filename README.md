@@ -4,8 +4,7 @@
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
 **Scope:** **Multi-model** frontier validation — Anthropic · OpenAI · Google · DeepSeek · open-weights proxies
 **Paper:** [`docs/EGS_TRANS_SILICON_BIOLOGICAL_CONVERGENCE_JSPACE_2026-07-10.md`](docs/EGS_TRANS_SILICON_BIOLOGICAL_CONVERGENCE_JSPACE_2026-07-10.md)
-**Monorepo mirror:** [FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13) · `research/egs-trans-jspace-convergence/`
-**Live catalog:** [whitepaper · egs-trans-jspace-convergence](https://www.ssvibelandiaquestfest24x365.com/whitepaper/egs-trans-jspace-convergence)
+**Canonical repo:** [FractiAI/egs-trans-jspace-convergence](https://github.com/FractiAI/egs-trans-jspace-convergence)
 **IP Infringement Draft:** [`docs/IP_INFRINGEMENT_DRAFT_2026-07.md`](docs/IP_INFRINGEMENT_DRAFT_2026-07.md) · §5–§6 · R1–R4
 
 ---
