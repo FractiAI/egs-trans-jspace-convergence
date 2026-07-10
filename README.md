@@ -121,7 +121,26 @@ npm run empirical          # E1–E6
 npm run ip-infringement    # R1–R4 · §5–§6 · frontier matrix
 ```
 
-### Multi-model open-weights probe (E5)
+### synthOBS · real-time J-Lens monitor (open-weights)
+
+Localized activation monitoring with PyTorch hooks · SVD · EGS φ (**1.618**) convergence telemetry.
+
+```bash
+pip install -r requirements.txt
+npm run synthobs:test                    # egs_metric smoke test (numpy only)
+npm run synthobs                         # default Qwen2.5-0.5B · JSONL stdout
+npm run synthobs -- meta-llama/Llama-3.2-3B "Your prompt" --layers 12,16,20 --ws 8765
+```
+
+| Module | Role |
+|--------|------|
+| `synthobs/interceptor.py` | Jacobian Lens forward hooks · mid-layer SVD |
+| `synthobs/egs_metric.py` | Ratio $s_n/s_{n+1}$ · deviation from φ |
+| `synthobs/synthobs_telemetry.py` | JSONL stream · snapshot · optional WebSocket |
+
+**Outputs:** `data/synthobs_telemetry.jsonl` · `data/synthobs_latest.json` · stdout JSON Lines for OBS/HTML overlays.
+
+### Multi-model open-weights probe (E5 · single layer)
 
 ```bash
 pip install torch transformers
@@ -145,11 +164,15 @@ python scripts/transformer_jspace_probe.py meta-llama/Llama-3.2-1B 8 "Recursive 
 
 ```
 egs-trans-jspace-convergence/
+├── synthobs/                          # J-Lens interceptor · EGS metrics · telemetry
+│   ├── interceptor.py
+│   ├── egs_metric.py
+│   └── synthobs_telemetry.py
 ├── docs/                              # Papers · multi-model + IP draft
 ├── research/ip-infringement-draft/    # R1–R4 · frontier matrix · RIX probe
-├── scripts/                           # EGS-TRANS E1–E6 pipeline
+├── scripts/                           # EGS-TRANS E1–E6 · run_synthobs_monitor.py
 ├── src/                               # GitHub telemetry · SILSO
-└── data/                              # empirical_report.json · PRA receipt
+└── data/                              # empirical_report.json · synthobs_*.jsonl
 ```
 
 ---

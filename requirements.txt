@@ -1,1 +1,5 @@
 numpy>=1.26.0
+torch>=2.1.0
+transformers>=4.40.0
+# Optional: real-time WebSocket broadcast for OBS overlays
+websockets>=12.0

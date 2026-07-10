@@ -13,7 +13,9 @@
     "ip-infringement": "node research/ip-infringement-draft/scripts/run_empirical_pipeline.mjs",
     "test": "node scripts/run_empirical_pipeline.mjs",
     "svd": "python scripts/svd_workspace_probe.py",
-    "transformer": "python scripts/transformer_jspace_probe.py"
+    "transformer": "python scripts/transformer_jspace_probe.py",
+    "synthobs": "python scripts/run_synthobs_monitor.py",
+    "synthobs:test": "python scripts/test_synthobs_metric.py"
   },
   "engines": {
     "node": ">=18.18.0"
