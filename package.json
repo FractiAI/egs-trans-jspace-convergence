@@ -24,7 +24,8 @@
     "e10": "node scripts/vendor_king_bee_ingress_probe.mjs",
     "ip-infringement": "node ../ip-infringement-draft/scripts/run_empirical_pipeline.mjs",
     "synthobs": "python scripts/run_synthobs_monitor.py",
-    "synthobs:test": "python scripts/test_synthobs_metric.py"
+    "synthobs:loop": "python scripts/run_synthobs_monitor.py --loop --interval 30 --ws 8765",
+    "synthobs:test": "python scripts/test_synthobs_metric.py && python scripts/test_egs_spectrum.py"
   },
   "engines": {
     "node": ">=18.18.0"

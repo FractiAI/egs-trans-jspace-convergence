@@ -41,6 +41,10 @@ class TelemetryFrame:
     consecutive_ratios: list[float] = field(default_factory=list)
     oom: bool = False
     error: str | None = None
+    object_type: str = "activation"
+    vs_null_result: str | None = None
+    null_p95: float | None = None
+    median_consecutive_ratio: float | None = None
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -62,6 +66,10 @@ class TelemetryFrame:
             "consecutiveRatios": self.consecutive_ratios,
             "oom": self.oom,
             "error": self.error,
+            "objectType": self.object_type,
+            "vsNullResult": self.vs_null_result,
+            "nullP95": self.null_p95,
+            "medianConsecutiveRatio": self.median_consecutive_ratio,
         }
 
     def to_json_line(self) -> str:
@@ -176,6 +184,7 @@ class SynthObsTelemetryEngine:
             step = self._step
 
         egs = capture.egs_report
+        spectrum = capture.spectrum
         frame = TelemetryFrame(
             model_id=self.model_id,
             prompt_hash=self._prompt_hash(prompt) if prompt else "",
@@ -192,6 +201,16 @@ class SynthObsTelemetryEngine:
             consecutive_ratios=egs.consecutive_ratios,
             oom=capture.oom,
             error=capture.error,
+            object_type=spectrum.object_type if spectrum else "activation",
+            vs_null_result=spectrum.result if spectrum else None,
+            null_p95=(
+                spectrum.null_baseline.fraction_near_phi_p95
+                if spectrum and spectrum.null_baseline
+                else None
+            ),
+            median_consecutive_ratio=(
+                spectrum.median_consecutive_ratio if spectrum else None
+            ),
         )
 
         line = frame.to_json_line()

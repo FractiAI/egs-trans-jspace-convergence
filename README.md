@@ -331,12 +331,38 @@ Every **E1** (and **E7** when run) scrape records **committer timestamps** + Git
 
 ---
 
+## Real-time observation (synthOBS)
+
+Operational stack for live activation capture → EGS φ metrics → OBS overlay:
+
+| Module | Role |
+|--------|------|
+| `synthobs/interceptor.py` | PyTorch forward hooks; SVD on mid-layer hidden states |
+| `synthobs/egs_metric.py` | Consecutive singular-value ratios vs φ ≈ 1.618 |
+| `synthobs/egs_spectrum.py` | Shape-matched Gaussian null baseline |
+| `synthobs/synthobs_telemetry.py` | JSONL stream + snapshot + optional WebSocket |
+| `obs/synthobs-overlay.html` | OBS Browser Source overlay |
+
+```bash
+pip install torch transformers numpy websockets
+
+npm run synthobs -- Qwen/Qwen2.5-0.5B "Mid-layer workspace geometry probe"
+npm run synthobs:loop   # watch mode · 30s interval · ws://127.0.0.1:8765
+```
+
+Full guide: [`docs/SYNTHOBS_REALTIME.md`](docs/SYNTHOBS_REALTIME.md)
+
+---
+
 ## Repository layout
 
 ```
 egs-trans-jspace-convergence/
 ├── docs/                              # Papers · multi-model + IP draft + validation audit
-│   └── VALIDATION_AUDIT_2026-07-10.md # Independent RedTeam/FirstPrinciples audit (read first)
+│   ├── VALIDATION_AUDIT_2026-07-10.md # Independent RedTeam/FirstPrinciples audit (read first)
+│   └── SYNTHOBS_REALTIME.md           # Live J-Lens · OBS overlay guide
+├── synthobs/                          # interceptor · egs_metric · telemetry (real-time)
+├── obs/                               # synthobs-overlay.html for OBS Browser Source
 ├── research/ip-infringement-draft/    # R1–R4 · frontier matrix · RIX probe
 ├── scripts/                           # EGS-TRANS E1–E9 pipeline, incl. temporal precedence + baseline probes
 ├── src/                               # GitHub telemetry · SILSO

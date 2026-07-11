@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>synthOBS · EGS J-Lens Overlay</title>
+  <style>
+    :root {
+      --bg: rgba(8, 12, 18, 0.82);
+      --panel: rgba(18, 26, 38, 0.92);
+      --text: #e8eef7;
+      --muted: #8fa3bf;
+      --phi: #f0b429;
+      --support: #3dd68c;
+      --refute: #ff6b6b;
+      --inconclusive: #7eb8ff;
+      --mono: "Consolas", "SF Mono", "Cascadia Code", monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--mono);
+      background: transparent;
+      color: var(--text);
+      padding: 12px;
+      min-width: 420px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid rgba(240, 180, 41, 0.35);
+      border-radius: 10px;
+      padding: 14px 16px;
+      backdrop-filter: blur(6px);
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 10px;
+      gap: 12px;
+    }
+    .title { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--phi); }
+    .stamp { font-size: 11px; color: var(--muted); }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 16px;
+      font-size: 13px;
+    }
+    .label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .value { font-size: 15px; font-weight: 600; }
+    .full { grid-column: 1 / -1; }
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .support_vs_null { background: rgba(61, 214, 140, 0.2); color: var(--support); }
+    .refute_vs_null { background: rgba(255, 107, 107, 0.2); color: var(--refute); }
+    .inconclusive, .insufficient_rank { background: rgba(126, 184, 255, 0.2); color: var(--inconclusive); }
+    .ratios {
+      margin-top: 10px;
+      font-size: 11px;
+      color: var(--muted);
+      word-break: break-all;
+      line-height: 1.5;
+    }
+    .footer {
+      margin-top: 10px;
+      font-size: 10px;
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 8px;
+    }
+    .waiting { color: var(--muted); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="panel" id="panel">
+    <div class="waiting" id="waiting">Waiting for synthOBS telemetry…</div>
+    <div id="content" hidden>
+      <div class="header">
+        <div class="title">EGS J-Lens · Live</div>
+        <div class="stamp" id="updatedAt">—</div>
+      </div>
+      <div class="grid">
+        <div>
+          <div class="label">Layer</div>
+          <div class="value" id="layer">—</div>
+        </div>
+        <div>
+          <div class="label">Status</div>
+          <div class="value" id="status">—</div>
+        </div>
+        <div>
+          <div class="label">Primary ratio s₀/s₁</div>
+          <div class="value" id="primaryRatio">—</div>
+        </div>
+        <div>
+          <div class="label">EGS φ target</div>
+          <div class="value" id="egsPhi">1.618</div>
+        </div>
+        <div>
+          <div class="label">Fraction near φ</div>
+          <div class="value" id="fractionNearPhi">—</div>
+        </div>
+        <div>
+          <div class="label">vs null (p95)</div>
+          <div class="value" id="nullCompare">—</div>
+        </div>
+        <div class="full">
+          <div class="label">Null verdict</div>
+          <div id="vsNullBadge" class="badge inconclusive">—</div>
+        </div>
+        <div class="full">
+          <div class="label">Model</div>
+          <div class="value" id="modelId" style="font-size:12px;font-weight:500;">—</div>
+        </div>
+      </div>
+      <div class="ratios" id="ratios"></div>
+      <div class="footer">SynthOBS Autonomous Agent · activation SVD only · not weight tensors</div>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const wsPort = params.get("ws") || "8765";
+    const snapshotUrl = params.get("snapshot") || "../data/synthobs_latest.json";
+    const pollMs = Number(params.get("poll") || "500");
+    const useWs = params.get("mode") !== "poll";
+
+    const $ = (id) => document.getElementById(id);
+
+    function renderFrame(frame) {
+      if (!frame) return;
+      $("waiting").hidden = true;
+      $("content").hidden = false;
+      $("updatedAt").textContent = frame.issuedAt || "—";
+      $("layer").textContent = frame.layerIndex ?? "—";
+      $("status").textContent = frame.status || "—";
+      $("primaryRatio").textContent = frame.primaryRatio != null ? frame.primaryRatio.toFixed(4) : "—";
+      $("egsPhi").textContent = frame.egsPhi != null ? frame.egsPhi.toFixed(6) : "1.618";
+      $("fractionNearPhi").textContent = frame.fractionNearPhi != null
+        ? (frame.fractionNearPhi * 100).toFixed(1) + "%"
+        : "—";
+      const nullP95 = frame.nullP95;
+      const frac = frame.fractionNearPhi;
+      $("nullCompare").textContent = (frac != null && nullP95 != null)
+        ? `${(frac * 100).toFixed(1)}% vs ${(nullP95 * 100).toFixed(1)}%`
+        : "—";
+      const verdict = frame.vsNullResult || "insufficient_rank";
+      const badge = $("vsNullBadge");
+      badge.textContent = verdict.replace(/_/g, " ");
+      badge.className = "badge " + (verdict in { support_vs_null:1, refute_vs_null:1, inconclusive:1, insufficient_rank:1 }
+        ? verdict : "inconclusive");
+      $("modelId").textContent = frame.modelId || "—";
+      const ratios = frame.consecutiveRatios || [];
+      $("ratios").textContent = ratios.length
+        ? "Consecutive ratios: " + ratios.map((r) => r.toFixed(3)).join(" · ")
+        : "";
+    }
+
+    function ingestPayload(data) {
+      const frame = data.latest || data;
+      renderFrame(frame);
+    }
+
+    async function pollSnapshot() {
+      try {
+        const res = await fetch(snapshotUrl + "?t=" + Date.now(), { cache: "no-store" });
+        if (res.ok) ingestPayload(await res.json());
+      } catch (_) { /* OBS file:// or CORS — use WebSocket mode */ }
+    }
+
+    if (useWs) {
+      let ws;
+      function connect() {
+        ws = new WebSocket(`ws://127.0.0.1:${wsPort}`);
+        ws.onmessage = (ev) => {
+          try { renderFrame(JSON.parse(ev.data)); } catch (_) {}
+        };
+        ws.onclose = () => setTimeout(connect, 1500);
+      }
+      connect();
+      setInterval(pollSnapshot, pollMs);
+    } else {
+      setInterval(pollSnapshot, pollMs);
+      pollSnapshot();
+    }
+  </script>
+</body>
+</html>

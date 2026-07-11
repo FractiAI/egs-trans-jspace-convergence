@@ -168,6 +168,51 @@ def analyze_matrix_spectrum(
     )
 
 
+def analyze_activation_spectrum(
+    rows: int,
+    cols: int,
+    singular_values: Sequence[float],
+    *,
+    phi: float = EGS_PHI,
+    tolerance: float = DEFAULT_TOLERANCE,
+    top_k: int = DEFAULT_TOP_K,
+    null_trials: int = 64,
+    null_seed: int = 42,
+) -> SpectrumReceipt:
+    """Analyze precomputed SVD spectrum (live hook path) with Gaussian null."""
+    s = [float(x) for x in singular_values if float(x) > 1e-12]
+    report = analyze_singular_values(s, phi=phi, tolerance=tolerance, top_k=top_k)
+    ratios = report.consecutive_ratios
+    obs_frac = report.fraction_near_phi
+    median_ratio = float(np.median(ratios)) if ratios else None
+
+    null = None
+    result = "insufficient_rank"
+    if len(s) >= 2 and rows >= 1 and cols >= 2:
+        null = random_null_fractions(
+            max(rows, 2), cols, trials=null_trials, phi=phi, tolerance=tolerance, top_k=top_k, seed=null_seed
+        )
+        result = classify_vs_null(obs_frac, null)
+
+    return SpectrumReceipt(
+        object_type="activation",
+        matrix_shape=[int(rows), int(cols)],
+        singular_value_count=len(s),
+        consecutive_ratios=ratios,
+        fraction_near_phi=obs_frac,
+        primary_ratio=report.primary_ratio,
+        median_consecutive_ratio=round(median_ratio, 6) if median_ratio is not None else None,
+        egs_phi=round(phi, 9),
+        tolerance=tolerance,
+        null_baseline=null,
+        result=result,
+        honesty_note=(
+            "Live activation hook SVD. fraction_near_phi vs shape-matched null — "
+            "not s_0/s_1 alone; not weight tensors."
+        ),
+    )
+
+
 def aggregate_lanes(lanes: dict[str, SpectrumReceipt]) -> str:
     """Overall E5/E9 result from separated lanes."""
     results = [lane.result for lane in lanes.values() if lane.result != "insufficient_rank"]

@@ -14,6 +14,7 @@ from typing import Any, Callable
 import numpy as np
 
 from synthobs.egs_metric import EGS_PHI, EgsConvergenceReport, analyze_singular_values
+from synthobs.egs_spectrum import SpectrumReceipt, analyze_activation_spectrum
 
 logger = logging.getLogger(__name__)
 
@@ -25,6 +26,7 @@ class LayerCapture:
     hidden_dim: int
     singular_values: list[float]
     egs_report: EgsConvergenceReport
+    spectrum: SpectrumReceipt | None = None
     oom: bool = False
     error: str | None = None
 
@@ -35,6 +37,7 @@ class LayerCapture:
             "hiddenDim": self.hidden_dim,
             "singularValues": self.singular_values,
             "egs": self.egs_report.to_dict(),
+            "spectrum": self.spectrum.to_dict() if self.spectrum else None,
             "oom": self.oom,
             "error": self.error,
         }
@@ -68,11 +71,11 @@ def svd_activation_matrix(
     *,
     max_tokens: int = 512,
     dtype: Any = None,
-) -> tuple[list[float], int, int]:
+) -> tuple[list[float], int, int, int]:
     """
     Flatten (batch, seq, hidden) → (N, hidden) and run thin SVD.
 
-    Returns (singular_values, seq_len, hidden_dim).
+    Returns (singular_values, matrix_rows, seq_len, hidden_dim).
     """
     import torch
 
@@ -88,6 +91,8 @@ def svd_activation_matrix(
 
     if t.size(0) > max_tokens:
         t = t[:max_tokens]
+
+    matrix_rows = int(t.size(0))
 
     if dtype is not None:
         t = t.to(dtype=dtype)
@@ -107,7 +112,7 @@ def svd_activation_matrix(
 
     vals = s.numpy().tolist()
     del t, s
-    return vals, int(seq_len), int(hidden_dim)
+    return vals, matrix_rows, int(seq_len), int(hidden_dim)
 
 
 class JacobianLensInterceptor:
@@ -174,11 +179,19 @@ class JacobianLensInterceptor:
                 continue
 
             try:
-                s_vals, seq_len, hidden_dim = svd_activation_matrix(
+                s_vals, matrix_rows, seq_len, hidden_dim = svd_activation_matrix(
                     tensor, max_tokens=self.max_tokens
                 )
                 report = analyze_singular_values(
                     s_vals, phi=self.phi, tolerance=self.tolerance
+                )
+                spectrum = analyze_activation_spectrum(
+                    matrix_rows,
+                    hidden_dim,
+                    s_vals,
+                    phi=self.phi,
+                    tolerance=self.tolerance,
+                    null_trials=64,
                 )
                 cap = LayerCapture(
                     layer_index=idx,
@@ -186,6 +199,7 @@ class JacobianLensInterceptor:
                     hidden_dim=hidden_dim,
                     singular_values=[round(v, 6) for v in s_vals[:16]],
                     egs_report=report,
+                    spectrum=spectrum,
                 )
             except MemoryError as e:
                 cap = LayerCapture(

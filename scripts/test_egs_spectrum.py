@@ -46,8 +46,20 @@ def test_classify_vs_null():
     print("ok classify")
 
 
+def test_activation_spectrum_from_values():
+    from synthobs.egs_spectrum import analyze_activation_spectrum
+
+    s = [EGS_PHI ** (-i) for i in range(12)]
+    receipt = analyze_activation_spectrum(64, 128, s, null_trials=32)
+    assert receipt.object_type == "activation"
+    assert receipt.fraction_near_phi > 0.9
+    assert receipt.result in ("support_vs_null", "inconclusive")
+    print("ok activation_spectrum", receipt.result)
+
+
 if __name__ == "__main__":
     test_designed_phi_consecutive()
     test_random_refutes_vs_null()
     test_classify_vs_null()
+    test_activation_spectrum_from_values()
     print("all passed")
