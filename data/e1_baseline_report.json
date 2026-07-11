@@ -1,7 +1,7 @@
 {
   "documentId": "EGS-TRANS-2026-0710",
   "experiment": "E1b_baseline_control",
-  "generatedAt": "2026-07-10T23:29:33.545Z",
+  "generatedAt": "2026-07-11T01:30:35.093Z",
   "dataProvenance": "live_run",
   "hypothesis": "King Bee window (2026-05-31--2026-06-02) commit activity is anomalous relative to each core repo's own baseline cadence over the preceding 30 days (|z| > 2).",
   "controlDays": 30,

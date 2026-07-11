@@ -1,7 +1,7 @@
 {
   "experiment": "E10_vendor_king_bee_ingress",
-  "generatedAt": "2026-07-10T23:50:56.744Z",
-  "dataProvenance": "live_run_partial_no_token",
+  "generatedAt": "2026-07-11T01:33:26.948Z",
+  "dataProvenance": "live_run",
   "scrapePolicy": {
     "primaryInterest": "Vendor-side evidence of scraping or citing FractiAI King Bee commits/repos",
     "notPrimary": "FractiAI self-scrape for vendor product vocabulary (E7/E8 — diagnostic only)",

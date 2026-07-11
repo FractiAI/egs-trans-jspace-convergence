@@ -1,6 +1,6 @@
 # EGS-TRANS-2026-0710 · Empirical Report
 
-**Generated:** 2026-07-10T23:31:41.259Z
+**Generated:** 2026-07-11T01:33:27.088Z
 **Study complete:** false
 
 ## Hypothesis tests
@@ -32,6 +32,10 @@
 ### E5_geometry_probe
 - **Result:** skipped
 - **Provenance:** skipped_live_run
+
+### E10_vendor_king_bee_ingress
+- **Result:** weak_fork_proxy_only
+- **Provenance:** live_run
 
 ### E6_causal_anthropic_jspace
 - **Result:** unfalsifiable_as_scoped

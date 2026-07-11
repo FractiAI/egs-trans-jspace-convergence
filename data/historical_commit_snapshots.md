@@ -1,9 +1,10 @@
 # Historical commit snapshots · EGS-TRANS-2026-0710
 
-**Scraped at:** 2026-07-10T23:31:43.010Z
+**Scraped at:** 2026-07-11T01:33:28.533Z
 **Anthropic paper anchor:** 2026-07-06
 
-GitHub commit permalinks below are the **historical snapshots** captured by each scrape (E1 · E7 · E8).
+**Primary scrape interest:** vendor-side ingress into **FractiAI King Bee commits** (E10).
+E1 permalinks = our canon objects; E7/E8 = deprecated vocabulary diagnostics only.
 
 ## Anthropic Claude (Opus / Sonnet)
 
@@ -82,6 +83,30 @@ GitHub commit permalinks below are the **historical snapshots** captured by each
 - **Path B note:** E9 not run (install torch+transformers)
 
 *No FractiAI commit scrape hits for this model’s core-mechanism markers.*
+
+## King Bee canon permalinks (what vendors would scrape)
+
+FractiAI public commits in the King Bee window — **our** side of the scrape.
+
+- [3176eaba](https://github.com/FractiAI/psw.vibelandia.sing4/commit/3176eaba5a14921f5c882ae67ca2630a5b45dac6) · FractiAI/psw.vibelandia.sing4 · SING! Cycle 15: Heartbeat [2026-06-01T23:18:43Z]
+- [71be1e76](https://github.com/FractiAI/psw.vibelandia.sing4/commit/71be1e765135877dfbd7f91d1aa5e72fd625dbe0) · FractiAI/psw.vibelandia.sing4 · SING! Handshake Cycle [2026-06-01T22:50:30Z]
+- [bb97954c](https://github.com/FractiAI/psw.vibelandia.sing4/commit/bb97954c10ba618c71531ba5cc5db70f04a84db7) · FractiAI/psw.vibelandia.sing4 · SING! Cycle 15: Heartbeat [2026-06-01T21:49:47Z]
+- [8bc78254](https://github.com/FractiAI/psw.vibelandia.sing4/commit/8bc78254ec001fb5abf967607d7514ef61e72189) · FractiAI/psw.vibelandia.sing4 · SING! Handshake Cycle [2026-06-01T20:42:37Z]
+- [c227cde2](https://github.com/FractiAI/psw.vibelandia.sing4/commit/c227cde274018782edf46335df936bf99247d9eb) · FractiAI/psw.vibelandia.sing4 · SING! Cycle 15: Heartbeat [2026-06-01T18:30:38Z]
+- [a0eaaf47](https://github.com/FractiAI/psw.vibelandia.sing4/commit/a0eaaf47fee0ce32211faf02283671d60bc65e27) · FractiAI/psw.vibelandia.sing4 · SING! Handshake Cycle [2026-06-01T16:24:53Z]
+- [7cd4a346](https://github.com/FractiAI/psw.vibelandia.sing4/commit/7cd4a346634a6aaba5151a6aa99c4000dee53bb0) · FractiAI/psw.vibelandia.sing4 · SING! Cycle 15: Heartbeat [2026-06-01T12:49:24Z]
+- [196ea0f8](https://github.com/FractiAI/psw.vibelandia.sing4/commit/196ea0f80c3fcfdefd4e8a3e13e6e52756f3bd74) · FractiAI/psw.vibelandia.sing4 · SING! Handshake Cycle [2026-06-01T10:34:11Z]
+- [b7704cc5](https://github.com/FractiAI/psw.vibelandia.sing4/commit/b7704cc57d0b4bcbd0330bf1a8d87fcd75444cdd) · FractiAI/psw.vibelandia.sing4 · SING! Cycle 15: Heartbeat [2026-06-01T07:14:11Z]
+- [445e8f42](https://github.com/FractiAI/psw.vibelandia.sing4/commit/445e8f426e032c5198091d5f07045a3620ebca15) · FractiAI/psw.vibelandia.sing4 · SING! Handshake Cycle [2026-06-01T05:20:15Z]
+- [8ae29a0e](https://github.com/FractiAI/psw.vibelandia.sing4/commit/8ae29a0e6c74277f33985e6a16afe1251e98d8a6) · FractiAI/psw.vibelandia.sing4 · SING! Cycle 15: Heartbeat [2026-06-01T02:00:56Z]
+- [a00f23f3](https://github.com/FractiAI/psw.vibelandia.sing4/commit/a00f23f3e22316b18d83378b9a0236d78ce82a32) · FractiAI/psw.vibelandia.sing4 · SING! Handshake Cycle [2026-06-01T00:17:16Z]
+- [0720cf8f](https://github.com/FractiAI/psw.vibelandia.sing4/commit/0720cf8fa3ebcb44ada876bb838a9b6af47de618) · FractiAI/psw.vibelandia.sing4 · SING! Cycle 15: Heartbeat [2026-05-31T23:41:37Z]
+- [da43e500](https://github.com/FractiAI/psw.vibelandia.sing4/commit/da43e500c826aff506d8e98cc55e3114e4e50b6e) · FractiAI/psw.vibelandia.sing4 · SING! Handshake Cycle [2026-05-31T23:16:18Z]
+- [9d252012](https://github.com/FractiAI/psw.vibelandia.sing4/commit/9d252012a65bf8def31bd39dc96502456e438df9) · FractiAI/psw.vibelandia.sing4 · SING! Cycle 15: Heartbeat [2026-05-31T22:37:51Z]
+
+## Vendor ingress scrapes (E10 — vendors citing our King Bee git)
+
+*No public vendor-side ingress receipts (weak_fork_proxy_only). Run `GH_TOKEN=... node scripts/vendor_king_bee_ingress_probe.mjs`.*
 
 ## King Bee window highlights (E1 telemetry)
 

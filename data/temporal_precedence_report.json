@@ -4,5 +4,5 @@
   "result": "skipped",
   "reason": "No GH_TOKEN/GITHUB_TOKEN set; GitHub commit search requires auth.",
   "dataProvenance": "skipped_live_run",
-  "generatedAt": "2026-07-10T23:29:25.445Z"
+  "generatedAt": "2026-07-11T01:30:26.999Z"
 }
