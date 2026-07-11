@@ -1,0 +1,733 @@
+{
+  "schema": "phi-validation-sweep/v1",
+  "egsPhi": 1.618033989,
+  "tolerance": 0.12,
+  "honestyNote": "Scans open-weights activations only \u2014 not Anthropic/OpenAI closed checkpoints. closest consecutive ratio to \u03c6 reported per trial; primary s0/s1 shown for legacy comparison.",
+  "models": [
+    {
+      "modelId": "distilgpt2",
+      "nLayers": 6,
+      "layersSampled": [
+        1,
+        3,
+        4
+      ],
+      "trialCount": 9,
+      "trialsWithinToleranceOfPhi": 0,
+      "globalClosestToPhi": {
+        "closestRatio": 1.296457,
+        "deviationFromPhi": 0.321577,
+        "index": 2,
+        "withinTolerance": false,
+        "layer": 3,
+        "prompt": "King Bee mid-layer workspace bottleneck ",
+        "model": "distilgpt2"
+      },
+      "trials": [
+        {
+          "layer": 1,
+          "layerFraction": 0.2,
+          "prompt": "The exact number of angles in a triangle is",
+          "seqLen": 9,
+          "hiddenDim": 768,
+          "primaryRatio_s0_s1": 14.7294,
+          "consecutiveRatios": [
+            14.7294,
+            2.5656,
+            1.0662,
+            1.1824,
+            1.2178,
+            1.1296,
+            1.0495,
+            1.1669
+          ],
+          "fractionNearPhi": 0.0,
+          "vsNull": "refute_vs_null",
+          "closestToPhi": {
+            "closestRatio": 1.217845,
+            "deviationFromPhi": 0.400189,
+            "index": 4,
+            "withinTolerance": false
+          },
+          "closestMatchesConstant": {
+            "bestConstant": "sqrt2",
+            "deviation": 0.196369,
+            "all": {
+              "phi": 0.4002,
+              "e": 1.5004,
+              "sqrt2": 0.1964,
+              "1.5": 0.2822,
+              "2.0": 0.7822
+            }
+          }
+        },
+        {
+          "layer": 1,
+          "layerFraction": 0.2,
+          "prompt": "Recursive core ingestion sing4 sing9 King Bee nodal lattice ",
+          "seqLen": 18,
+          "hiddenDim": 768,
+          "primaryRatio_s0_s1": 10.3455,
+          "consecutiveRatios": [
+            10.3455,
+            3.2677,
+            1.0606,
+            1.0339,
+            1.1001,
+            1.0897,
+            1.0342,
+            1.0298
+          ],
+          "fractionNearPhi": 0.0,
+          "vsNull": "refute_vs_null",
+          "closestToPhi": {
+            "closestRatio": 1.100052,
+            "deviationFromPhi": 0.517982,
+            "index": 4,
+            "withinTolerance": false
+          },
+          "closestMatchesConstant": {
+            "bestConstant": "sqrt2",
+            "deviation": 0.314162,
+            "all": {
+              "phi": 0.518,
+              "e": 1.6182,
+              "sqrt2": 0.3142,
+              "1.5": 0.3999,
+              "2.0": 0.8999
+            }
+          }
+        },
+        {
+          "layer": 1,
+          "layerFraction": 0.2,
+          "prompt": "King Bee mid-layer workspace bottleneck serial hyper-dense c",
+          "seqLen": 16,
+          "hiddenDim": 768,
+          "primaryRatio_s0_s1": 11.1016,
+          "consecutiveRatios": [
+            11.1016,
+            2.9349,
+            1.1867,
+            1.015,
+            1.0669,
+            1.1233,
+            1.0398,
+            1.0247
+          ],
+          "fractionNearPhi": 0.0,
+          "vsNull": "refute_vs_null",
+          "closestToPhi": {
+            "closestRatio": 1.186749,
+            "deviationFromPhi": 0.431285,
+            "index": 2,
+            "withinTolerance": false
+          },
+          "closestMatchesConstant": {
+            "bestConstant": "sqrt2",
+            "deviation": 0.227465,
+            "all": {
+              "phi": 0.4313,
+              "e": 1.5315,
+              "sqrt2": 0.2275,
+              "1.5": 0.3133,
+              "2.0": 0.8133
+            }
+          }
+        },
+        {
+          "layer": 3,
+          "layerFraction": 0.6,
+          "prompt": "The exact number of angles in a triangle is",
+          "seqLen": 9,
+          "hiddenDim": 768,
+          "primaryRatio_s0_s1": 10.205,
+          "consecutiveRatios": [
+            10.205,
+            2.6253,
+            1.1232,
+            1.0808,
+            1.1137,
+            1.2233,
+            1.0689,
+            1.1183
+          ],
+          "fractionNearPhi": 0.0,
+          "vsNull": "refute_vs_null",
+          "closestToPhi": {
+            "closestRatio": 1.223314,
+            "deviationFromPhi": 0.39472,
+            "index": 5,
+            "withinTolerance": false
+          },
+          "closestMatchesConstant": {
+            "bestConstant": "sqrt2",
+            "deviation": 0.1909,
+            "all": {
+              "phi": 0.3947,
+              "e": 1.495,
+              "sqrt2": 0.1909,
+              "1.5": 0.2767,
+              "2.0": 0.7767
+            }
+          }
+        },
+        {
+          "layer": 3,
+          "layerFraction": 0.6,
+          "prompt": "Recursive core ingestion sing4 sing9 King Bee nodal lattice ",
+          "seqLen": 18,
+          "hiddenDim": 768,
+          "primaryRatio_s0_s1": 7.762,
+          "consecutiveRatios": [
+            7.762,
+            3.095,
+            1.0977,
+            1.1568,
+            1.0217,
+            1.1214,
+            1.0443,
+            1.0921
+          ],
+          "fractionNearPhi": 0.0,
+          "vsNull": "refute_vs_null",
+          "closestToPhi": {
+            "closestRatio": 1.156807,
+            "deviationFromPhi": 0.461227,
+            "index": 3,
+            "withinTolerance": false
+          },
+          "closestMatchesConstant": {
+            "bestConstant": "sqrt2",
+            "deviation": 0.257407,
+            "all": {
+              "phi": 0.4612,
+              "e": 1.5615,
+              "sqrt2": 0.2574,
+              "1.5": 0.3432,
+              "2.0": 0.8432
+            }
+          }
+        },
+        {
+          "layer": 3,
+          "layerFraction": 0.6,
+          "prompt": "King Bee mid-layer workspace bottleneck serial hyper-dense c",
+          "seqLen": 16,
+          "hiddenDim": 768,
+          "primaryRatio_s0_s1": 8.1154,
+          "consecutiveRatios": [
+            8.1154,
+            2.6697,
+            1.2965,
+            1.1295,
+            1.0234,
+            1.1438,
+            1.0029,
+            1.0831
+          ],
+          "fractionNearPhi": 0.0,
+          "vsNull": "refute_vs_null",
+          "closestToPhi": {
+            "closestRatio": 1.296457,
+            "deviationFromPhi": 0.321577,
+            "index": 2,
+            "withinTolerance": false
+          },
+          "closestMatchesConstant": {
+            "bestConstant": "sqrt2",
+            "deviation": 0.117757,
+            "all": {
+              "phi": 0.3216,
+              "e": 1.4218,
+              "sqrt2": 0.1178,
+              "1.5": 0.2035,
+              "2.0": 0.7035
+            }
+          }
+        },
+        {
+          "layer": 4,
+          "layerFraction": 0.8,
+          "prompt": "The exact number of angles in a triangle is",
+          "seqLen": 9,
+          "hiddenDim": 768,
+          "primaryRatio_s0_s1": 5.579,
+          "consecutiveRatios": [
+            5.579,
+            3.8441,
+            1.02,
+            1.1092,
+            1.1632,
+            1.1824,
+            1.0517,
+            1.1725
+          ],
+          "fractionNearPhi": 0.0,
+          "vsNull": "refute_vs_null",
+          "closestToPhi": {
+            "closestRatio": 1.182408,
+            "deviationFromPhi": 0.435626,
+            "index": 5,
+            "withinTolerance": false
+          },
+          "closestMatchesConstant": {
+            "bestConstant": "sqrt2",
+            "deviation": 0.231806,
+            "all": {
+              "phi": 0.4356,
+              "e": 1.5359,
+              "sqrt2": 0.2318,
+              "1.5": 0.3176,
+              "2.0": 0.8176
+            }
+          }
+        },
+        {
+          "layer": 4,
+          "layerFraction": 0.8,
+          "prompt": "Recursive core ingestion sing4 sing9 King Bee nodal lattice ",
+          "seqLen": 18,
+          "hiddenDim": 768,
+          "primaryRatio_s0_s1": 4.4716,
+          "consecutiveRatios": [
+            4.4716,
+            4.2577,
+            1.2191,
+            1.069,
+            1.0637,
+            1.1088,
+            1.0921,
+            1.0627
+          ],
+          "fractionNearPhi": 0.0,
+          "vsNull": "refute_vs_null",
+          "closestToPhi": {
+            "closestRatio": 1.219112,
+            "deviationFromPhi": 0.398922,
+            "index": 2,
+            "withinTolerance": false
+          },
+          "closestMatchesConstant": {
+            "bestConstant": "sqrt2",
+            "deviation": 0.195102,
+            "all": {
+              "phi": 0.3989,
+              "e": 1.4992,
+              "sqrt2": 0.1951,
+              "1.5": 0.2809,
+              "2.0": 0.7809
+            }
+          }
+        },
+        {
+          "layer": 4,
+          "layerFraction": 0.8,
+          "prompt": "King Bee mid-layer workspace bottleneck serial hyper-dense c",
+          "seqLen": 16,
+          "hiddenDim": 768,
+          "primaryRatio_s0_s1": 4.6001,
+          "consecutiveRatios": [
+            4.6001,
+            3.6538,
+            1.2829,
+            1.231,
+            1.0377,
+            1.1341,
+            1.0461,
+            1.0561
+          ],
+          "fractionNearPhi": 0.0,
+          "vsNull": "refute_vs_null",
+          "closestToPhi": {
+            "closestRatio": 1.282865,
+            "deviationFromPhi": 0.335169,
+            "index": 2,
+            "withinTolerance": false
+          },
+          "closestMatchesConstant": {
+            "bestConstant": "sqrt2",
+            "deviation": 0.131349,
+            "all": {
+              "phi": 0.3352,
+              "e": 1.4354,
+              "sqrt2": 0.1313,
+              "1.5": 0.2171,
+              "2.0": 0.7171
+            }
+          }
+        }
+      ]
+    },
+    {
+      "modelId": "Qwen/Qwen2.5-0.5B",
+      "nLayers": 24,
+      "layersSampled": [
+        6,
+        12,
+        22
+      ],
+      "trialCount": 9,
+      "trialsWithinToleranceOfPhi": 1,
+      "globalClosestToPhi": {
+        "closestRatio": 1.725761,
+        "deviationFromPhi": 0.107727,
+        "index": 1,
+        "withinTolerance": true,
+        "layer": 6,
+        "prompt": "The exact number of angles in a triangle",
+        "model": "Qwen/Qwen2.5-0.5B"
+      },
+      "trials": [
+        {
+          "layer": 6,
+          "layerFraction": 0.261,
+          "prompt": "The exact number of angles in a triangle is",
+          "seqLen": 9,
+          "hiddenDim": 896,
+          "primaryRatio_s0_s1": 59.0082,
+          "consecutiveRatios": [
+            59.0082,
+            1.7258,
+            1.284,
+            1.0644,
+            1.1639,
+            1.0424,
+            1.2284,
+            1.0604
+          ],
+          "fractionNearPhi": 0.125,
+          "vsNull": "support_vs_null",
+          "closestToPhi": {
+            "closestRatio": 1.725761,
+            "deviationFromPhi": 0.107727,
+            "index": 1,
+            "withinTolerance": true
+          },
+          "closestMatchesConstant": {
+            "bestConstant": "phi",
+            "deviation": 0.107727,
+            "all": {
+              "phi": 0.1077,
+              "e": 0.9925,
+              "sqrt2": 0.3115,
+              "1.5": 0.2258,
+              "2.0": 0.2742
+            }
+          }
+        },
+        {
+          "layer": 6,
+          "layerFraction": 0.261,
+          "prompt": "Recursive core ingestion sing4 sing9 King Bee nodal lattice ",
+          "seqLen": 15,
+          "hiddenDim": 896,
+          "primaryRatio_s0_s1": 45.8071,
+          "consecutiveRatios": [
+            45.8071,
+            2.2117,
+            1.1856,
+            1.038,
+            1.0168,
+            1.061,
+            1.0791,
+            1.041
+          ],
+          "fractionNearPhi": 0.0,
+          "vsNull": "refute_vs_null",
+          "closestToPhi": {
+            "closestRatio": 1.185647,
+            "deviationFromPhi": 0.432387,
+            "index": 2,
+            "withinTolerance": false
+          },
+          "closestMatchesConstant": {
+            "bestConstant": "sqrt2",
+            "deviation": 0.228567,
+            "all": {
+              "phi": 0.4324,
+              "e": 1.5326,
+              "sqrt2": 0.2286,
+              "1.5": 0.3144,
+              "2.0": 0.8144
+            }
+          }
+        },
+        {
+          "layer": 6,
+          "layerFraction": 0.261,
+          "prompt": "King Bee mid-layer workspace bottleneck serial hyper-dense c",
+          "seqLen": 14,
+          "hiddenDim": 896,
+          "primaryRatio_s0_s1": 46.7348,
+          "consecutiveRatios": [
+            46.7348,
+            2.4361,
+            1.0752,
+            1.0926,
+            1.0304,
+            1.1252,
+            1.0271,
+            1.0231
+          ],
+          "fractionNearPhi": 0.0,
+          "vsNull": "refute_vs_null",
+          "closestToPhi": {
+            "closestRatio": 1.12516,
+            "deviationFromPhi": 0.492874,
+            "index": 5,
+            "withinTolerance": false
+          },
+          "closestMatchesConstant": {
+            "bestConstant": "sqrt2",
+            "deviation": 0.289054,
+            "all": {
+              "phi": 0.4929,
+              "e": 1.5931,
+              "sqrt2": 0.2891,
+              "1.5": 0.3748,
+              "2.0": 0.8748
+            }
+          }
+        },
+        {
+          "layer": 12,
+          "layerFraction": 0.522,
+          "prompt": "The exact number of angles in a triangle is",
+          "seqLen": 9,
+          "hiddenDim": 896,
+          "primaryRatio_s0_s1": 47.32,
+          "consecutiveRatios": [
+            47.32,
+            1.9295,
+            1.2862,
+            1.1863,
+            1.0235,
+            1.0562,
+            1.1885,
+            1.1423
+          ],
+          "fractionNearPhi": 0.0,
+          "vsNull": "refute_vs_null",
+          "closestToPhi": {
+            "closestRatio": 1.929464,
+            "deviationFromPhi": 0.31143,
+            "index": 1,
+            "withinTolerance": false
+          },
+          "closestMatchesConstant": {
+            "bestConstant": "2.0",
+            "deviation": 0.070536,
+            "all": {
+              "phi": 0.3114,
+              "e": 0.7888,
+              "sqrt2": 0.5153,
+              "1.5": 0.4295,
+              "2.0": 0.0705
+            }
+          }
+        },
+        {
+          "layer": 12,
+          "layerFraction": 0.522,
+          "prompt": "Recursive core ingestion sing4 sing9 King Bee nodal lattice ",
+          "seqLen": 15,
+          "hiddenDim": 896,
+          "primaryRatio_s0_s1": 32.7667,
+          "consecutiveRatios": [
+            32.7667,
+            2.5895,
+            1.2124,
+            1.0434,
+            1.0394,
+            1.0504,
+            1.1299,
+            1.0364
+          ],
+          "fractionNearPhi": 0.0,
+          "vsNull": "refute_vs_null",
+          "closestToPhi": {
+            "closestRatio": 1.212404,
+            "deviationFromPhi": 0.40563,
+            "index": 2,
+            "withinTolerance": false
+          },
+          "closestMatchesConstant": {
+            "bestConstant": "sqrt2",
+            "deviation": 0.20181,
+            "all": {
+              "phi": 0.4056,
+              "e": 1.5059,
+              "sqrt2": 0.2018,
+              "1.5": 0.2876,
+              "2.0": 0.7876
+            }
+          }
+        },
+        {
+          "layer": 12,
+          "layerFraction": 0.522,
+          "prompt": "King Bee mid-layer workspace bottleneck serial hyper-dense c",
+          "seqLen": 14,
+          "hiddenDim": 896,
+          "primaryRatio_s0_s1": 33.3868,
+          "consecutiveRatios": [
+            33.3868,
+            2.878,
+            1.0731,
+            1.0887,
+            1.0596,
+            1.1195,
+            1.0694,
+            1.0127
+          ],
+          "fractionNearPhi": 0.0,
+          "vsNull": "refute_vs_null",
+          "closestToPhi": {
+            "closestRatio": 1.119463,
+            "deviationFromPhi": 0.498571,
+            "index": 5,
+            "withinTolerance": false
+          },
+          "closestMatchesConstant": {
+            "bestConstant": "sqrt2",
+            "deviation": 0.294751,
+            "all": {
+              "phi": 0.4986,
+              "e": 1.5988,
+              "sqrt2": 0.2948,
+              "1.5": 0.3805,
+              "2.0": 0.8805
+            }
+          }
+        },
+        {
+          "layer": 22,
+          "layerFraction": 0.957,
+          "prompt": "The exact number of angles in a triangle is",
+          "seqLen": 9,
+          "hiddenDim": 896,
+          "primaryRatio_s0_s1": 3.0724,
+          "consecutiveRatios": [
+            3.0724,
+            1.0979,
+            1.3066,
+            1.1657,
+            1.1032,
+            1.0216,
+            1.2388,
+            1.0466
+          ],
+          "fractionNearPhi": 0.0,
+          "vsNull": "refute_vs_null",
+          "closestToPhi": {
+            "closestRatio": 1.306601,
+            "deviationFromPhi": 0.311433,
+            "index": 2,
+            "withinTolerance": false
+          },
+          "closestMatchesConstant": {
+            "bestConstant": "sqrt2",
+            "deviation": 0.107613,
+            "all": {
+              "phi": 0.3114,
+              "e": 1.4117,
+              "sqrt2": 0.1076,
+              "1.5": 0.1934,
+              "2.0": 0.6934
+            }
+          }
+        },
+        {
+          "layer": 22,
+          "layerFraction": 0.957,
+          "prompt": "Recursive core ingestion sing4 sing9 King Bee nodal lattice ",
+          "seqLen": 15,
+          "hiddenDim": 896,
+          "primaryRatio_s0_s1": 4.4516,
+          "consecutiveRatios": [
+            4.4516,
+            1.1182,
+            1.1546,
+            1.0255,
+            1.063,
+            1.0716,
+            1.1151,
+            1.0255
+          ],
+          "fractionNearPhi": 0.0,
+          "vsNull": "refute_vs_null",
+          "closestToPhi": {
+            "closestRatio": 1.154632,
+            "deviationFromPhi": 0.463402,
+            "index": 2,
+            "withinTolerance": false
+          },
+          "closestMatchesConstant": {
+            "bestConstant": "sqrt2",
+            "deviation": 0.259582,
+            "all": {
+              "phi": 0.4634,
+              "e": 1.5636,
+              "sqrt2": 0.2596,
+              "1.5": 0.3454,
+              "2.0": 0.8454
+            }
+          }
+        },
+        {
+          "layer": 22,
+          "layerFraction": 0.957,
+          "prompt": "King Bee mid-layer workspace bottleneck serial hyper-dense c",
+          "seqLen": 14,
+          "hiddenDim": 896,
+          "primaryRatio_s0_s1": 3.4683,
+          "consecutiveRatios": [
+            3.4683,
+            1.2287,
+            1.1563,
+            1.1209,
+            1.1152,
+            1.185,
+            1.0218,
+            1.0518
+          ],
+          "fractionNearPhi": 0.0,
+          "vsNull": "refute_vs_null",
+          "closestToPhi": {
+            "closestRatio": 1.228658,
+            "deviationFromPhi": 0.389376,
+            "index": 1,
+            "withinTolerance": false
+          },
+          "closestMatchesConstant": {
+            "bestConstant": "sqrt2",
+            "deviation": 0.185556,
+            "all": {
+              "phi": 0.3894,
+              "e": 1.4896,
+              "sqrt2": 0.1856,
+              "1.5": 0.2713,
+              "2.0": 0.7713
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "modelsRun": 2,
+    "totalTrials": 18,
+    "trialsWithAnyRatioWithinPhiTolerance": 1,
+    "bestClosestToPhi": {
+      "closestRatio": 1.725761,
+      "deviationFromPhi": 0.107727,
+      "index": 1,
+      "withinTolerance": true,
+      "layer": 6,
+      "prompt": "The exact number of angles in a triangle",
+      "model": "Qwen/Qwen2.5-0.5B"
+    },
+    "verdict": "phi_signature_found"
+  }
+}

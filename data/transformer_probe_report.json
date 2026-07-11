@@ -1,8 +1,114 @@
 {
   "experiment": "E5_geometry_probe",
-  "skipped": true,
-  "reason": "No module named 'torch'",
-  "install": "pip install torch transformers",
-  "dataProvenance": "skipped_live_run",
-  "generatedAt": "2026-07-11T01:30:26.898Z"
+  "priorExperimentId": "E5_transformer_midlayer_svd",
+  "skipped": false,
+  "model": "Qwen/Qwen2.5-0.5B",
+  "layer": 12,
+  "weightParameter": "self_attn.q_proj",
+  "prompt": "Recursive core ingestion sing4 sing9 King Bee mid-layer workspace",
+  "tokenCount": 12,
+  "hiddenDim": 896,
+  "lanes": {
+    "activation": {
+      "object_type": "activation",
+      "matrix_shape": [
+        12,
+        896
+      ],
+      "singular_value_count": 12,
+      "consecutive_ratios": [
+        36.206572,
+        2.514883,
+        1.159656,
+        1.037118,
+        1.096659,
+        1.010055,
+        1.172264,
+        1.090014
+      ],
+      "fraction_near_phi": 0.0,
+      "primary_ratio": 36.206572,
+      "median_consecutive_ratio": 1.128157,
+      "egs_phi": 1.618033989,
+      "tolerance": 0.12,
+      "null_baseline": {
+        "trials": 200,
+        "fraction_near_phi_mean": 0.0,
+        "fraction_near_phi_std": 0.0,
+        "fraction_near_phi_p95": 0.0,
+        "sample_fractions": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "result": "refute_vs_null",
+      "honesty_note": "SVD on activation matrix 12\u00d7896. fraction_near_phi = share of consecutive s_n/s_{n+1} pairs within tolerance of \u03c6 \u2014 not a single s_0/s_1 equated to the EGS constant. Compared to shape-matched random Gaussian null when rank \u2265 2."
+    },
+    "weight": {
+      "object_type": "weight",
+      "matrix_shape": [
+        896,
+        896
+      ],
+      "singular_value_count": 896,
+      "consecutive_ratios": [
+        1.030008,
+        1.068273,
+        1.017676,
+        1.004343,
+        1.032034,
+        1.015517,
+        1.005393,
+        1.018594
+      ],
+      "fraction_near_phi": 0.0,
+      "primary_ratio": 1.030008,
+      "median_consecutive_ratio": 1.018135,
+      "egs_phi": 1.618033989,
+      "tolerance": 0.12,
+      "null_baseline": {
+        "trials": 200,
+        "fraction_near_phi_mean": 0.0,
+        "fraction_near_phi_std": 0.0,
+        "fraction_near_phi_p95": 0.0,
+        "sample_fractions": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "result": "refute_vs_null",
+      "honesty_note": "SVD on weight matrix 896\u00d7896. fraction_near_phi = share of consecutive s_n/s_{n+1} pairs within tolerance of \u03c6 \u2014 not a single s_0/s_1 equated to the EGS constant. Compared to shape-matched random Gaussian null when rank \u2265 2."
+    },
+    "jacobian_proxy": {
+      "object_type": "jacobian_proxy",
+      "result": "skipped",
+      "error": "cannot unpack non-iterable NoneType object",
+      "honesty_note": "Partial layer Jacobian \u2014 closest public proxy to Anthropic J-Lens object."
+    }
+  },
+  "result": "refute",
+  "legacyPrimaryRatio": 36.206572,
+  "status": "DEVIATED_NOISE",
+  "measurementPolicy": {
+    "correctedDefects": [
+      "activations_not_weights",
+      "consecutive_ratios_not_s0_s1_only",
+      "null_baseline_not_designed_phi_matrix",
+      "jacobian_proxy_lane_added"
+    ],
+    "falsification": "refute when all lanes fraction_near_phi \u2264 random null p95; weak_support only if any lane exceeds null p95 + 0.05"
+  },
+  "honestyNote": "Three separated objects \u2014 activation hidden states, learned weight matrix, and partial layer Jacobian \u2014 each compared to shape-matched Gaussian nulls. None of these prove vendor J-Space equivalence or King Bee causality."
 }

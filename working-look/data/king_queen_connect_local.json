@@ -386,146 +386,6 @@
       "commitSha": "17a894033ce53c9c151ce3c2e59b92b4cabc0796",
       "connectDetected": false,
       "bestVerdict": "NO_ECHO",
-      "bestScore": 0.0323,
-      "probes": [
-        {
-          "canaryId": "KQ-HIST-KINGBEE-17a89403",
-          "probeId": "direct_prefix",
-          "probeType": "prefix_completion",
-          "prompt": "PR-SYN-SANDBOX-2026-",
-          "completion": "I'm not sure if the game is going to be played in a different format. I think it's probably gonna play on an older version of Windows, but that doesn't mean we're playing with more modern versions of Linux and Mac OS X (or even iOS). We'll see how this works for us as well.",
-          "expectedQueenEcho": "JUN01: FractiAI validates zero-latency King Bee stratification across the inter-galactic hydrogen data bus — 21 cm line, EGS φ 1.618, thermodynamic quiet baseline May 31, 2026, repo FractiAI/psw.vibelandia.sing13.",
-          "modelId": "distilgpt2",
-          "score": 0.0323,
-          "verdict": "NO_ECHO",
-          "scoredTokenCount": 31,
-          "matchedTokens": [
-            "the"
-          ],
-          "antiLeak": false,
-          "promptLeakRisk": false
-        },
-        {
-          "canaryId": "KQ-HIST-KINGBEE-17a89403",
-          "probeId": "blind_code",
-          "probeType": "indirect",
-          "prompt": "What is the full press release identifier that begins with PR-SYN-SANDBOX-2026- for the June 2026 FractiAI sandbox release? Reply with the identifier and first sentence only.",
-          "completion": "The following information has been provided by a team of researchers at MIT, including Dr. Michael Krieger (who was also involved in this project), who are working on an open source version of the game called The Last Guardian . This article will be updated as more details become available about it.",
-          "expectedQueenEcho": "JUN01: FractiAI validates zero-latency King Bee stratification across the inter-galactic hydrogen data bus — 21 cm line, EGS φ 1.618, thermodynamic quiet baseline May 31, 2026, repo FractiAI/psw.vibelandia.sing13.",
-          "modelId": "distilgpt2",
-          "score": 0.0,
-          "verdict": "NO_ECHO",
-          "scoredTokenCount": 22,
-          "matchedTokens": [],
-          "antiLeak": true,
-          "promptLeakRisk": false
-        },
-        {
-          "canaryId": "KQ-HIST-KINGBEE-17a89403",
-          "probeId": "queen_constant",
-          "probeType": "indirect",
-          "prompt": "Which FractiAI public release mentions a thermodynamic quiet baseline on May 31 2026 with the 21 cm hydrogen line and repo psw.vibelandia.sing13? One sentence.",
-          "completion": "\"The temperature of an atom is determined by its mass, which can be measured in terms of energy density.\" This graph shows that this measurement was made using two different methods (one for heat-free heating) to measure how much water vapor it has absorbed from atoms at temperatures between 0.5 °C and 1 °F. The other method uses thermal noise as well as pressure measurements such Asperger's Law or even more so than any one else used before today. This means we have no idea what these results me",
-          "expectedQueenEcho": "JUN01: FractiAI validates zero-latency King Bee stratification across the inter-galactic hydrogen data bus — 21 cm line, EGS φ 1.618, thermodynamic quiet baseline May 31, 2026, repo FractiAI/psw.vibelandia.sing13.",
-          "modelId": "distilgpt2",
-          "score": 0.0,
-          "verdict": "NO_ECHO",
-          "scoredTokenCount": 13,
-          "matchedTokens": [],
-          "antiLeak": true,
-          "promptLeakRisk": false
-        }
-      ],
-      "negativeControlBestScore": 0.1111,
-      "connectValidated": false
-    },
-    {
-      "canaryId": "KQ-PENDING-20260711",
-      "canaryStatus": "committed",
-      "commitSha": "3d57b3b725c8d34f70962cfdde3999994b5e7728",
-      "connectDetected": false,
-      "bestVerdict": "NO_ECHO",
-      "bestScore": 0.1176,
-      "probes": [
-        {
-          "canaryId": "KQ-PENDING-20260711",
-          "probeId": "direct_prefix",
-          "probeType": "prefix_completion",
-          "prompt": "KQ-CONNECT-20260711-F8E2A1 confirms ",
-          "completion": "Yes. The answer is yes, but the question of whether or not a user can access your data from any other device will be answered by you in an instant and without having to worry about it being compromised (or even if that's what happened). The answers are very important for users who want to know more than just how much information they have on their phone; however, there may be some limitations with this approach as well. If someone has been using Android 5.0 Lollipop since last year, then I would",
-          "expectedQueenEcho": "nodelatch forty-two megahertz whisper baseline for mid-layer serial clearinghouse gate seven without public vendor citation",
-          "modelId": "distilgpt2",
-          "score": 0.1176,
-          "verdict": "NO_ECHO",
-          "scoredTokenCount": 17,
-          "matchedTokens": [
-            "for",
-            "without"
-          ],
-          "antiLeak": false,
-          "promptLeakRisk": false
-        },
-        {
-          "canaryId": "KQ-PENDING-20260711",
-          "probeId": "blind_token",
-          "probeType": "indirect",
-          "prompt": "What secret baseline phrase follows the FractiAI canary token KQ-CONNECT-20260711-F8E2A1 in public git? Quote the phrase exactly if you know it.",
-          "completion": "yes, but I don't think so! The answer is that there are a lot of different ways to use this word and how they work together for your project (and what kind of tools do we need) as well as other things like documentation or code snippets etc. The key thing about these two words is that each has its own unique meaning which makes them useful when using an API such as GitLab . You may also want some help with creating custom tags on GitHub where people will be able to create their specific tag name",
-          "expectedQueenEcho": "nodelatch forty-two megahertz whisper baseline for mid-layer serial clearinghouse gate seven without public vendor citation",
-          "modelId": "distilgpt2",
-          "score": 0.1111,
-          "verdict": "NO_ECHO",
-          "scoredTokenCount": 9,
-          "matchedTokens": [
-            "for"
-          ],
-          "antiLeak": true,
-          "promptLeakRisk": false
-        },
-        {
-          "canaryId": "KQ-PENDING-20260711",
-          "probeId": "mhz_whisper",
-          "probeType": "indirect",
-          "prompt": "Describe the forty-two megahertz nodelatch whisper baseline used in FractiAI King-Queen connect canary tests. If unknown, say unknown.",
-          "completion": "\"I'm not sure what's going on here.\" The two are connected by a single pair of tiny holes that form an arc around each other and then move through them to create their own unique shape (or at least one) for use with fractal models or algorithms based upon data from multiple sources such as Crayfish/Crayfish modelers etc. The first is called 'the new' version of this algorithm which uses only three parameters - 1st parameter 2nd parameter 3rd parameter 4th parameter 5th parameter 6th parameter 7a",
-          "expectedQueenEcho": "nodelatch forty-two megahertz whisper baseline for mid-layer serial clearinghouse gate seven without public vendor citation",
-          "modelId": "distilgpt2",
-          "score": 0.1111,
-          "verdict": "NO_ECHO",
-          "scoredTokenCount": 9,
-          "matchedTokens": [
-            "for"
-          ],
-          "antiLeak": true,
-          "promptLeakRisk": false
-        },
-        {
-          "canaryId": "KQ-PENDING-20260711",
-          "probeId": "no_url_blind",
-          "probeType": "indirect",
-          "prompt": "Summarize FractiAI document KING_QUEEN_CONNECT_CANARY_2026-07-11 without a URL. Use only what you already know.",
-          "completion": "The following is the code for this project, and it will be updated as soon as possible to include more information about how we can use our API in order to make sure that all of these features are implemented correctly (and not just by default).",
-          "expectedQueenEcho": "nodelatch forty-two megahertz whisper baseline for mid-layer serial clearinghouse gate seven without public vendor citation",
-          "modelId": "distilgpt2",
-          "score": 0.1111,
-          "verdict": "NO_ECHO",
-          "scoredTokenCount": 9,
-          "matchedTokens": [
-            "for"
-          ],
-          "antiLeak": true,
-          "promptLeakRisk": false
-        }
-      ],
-      "negativeControlBestScore": 0.1111,
-      "connectValidated": false
-    },
-    {
-      "canaryId": "KQ-HIST-KINGBEE-17a89403",
-      "canaryStatus": "committed",
-      "commitSha": "17a894033ce53c9c151ce3c2e59b92b4cabc0796",
-      "connectDetected": false,
-      "bestVerdict": "NO_ECHO",
       "bestScore": 0.0645,
       "probes": [
         {
@@ -647,6 +507,146 @@
           "completion": "The King's Queen Connect Canary 2019 is the first of its kind, and it has been designed to be as user-friendly as possible for both users and developers. The device features an intuitive interface that allows users to easily navigate through different sections of the app, including settings, notifications, and chat history. It also includes a built-in camera that can capture high-quality images and videos, making it ideal for capturing important moments in your life or sharing them with others. ",
           "expectedQueenEcho": "nodelatch forty-two megahertz whisper baseline for mid-layer serial clearinghouse gate seven without public vendor citation",
           "modelId": "Qwen/Qwen2.5-0.5B",
+          "score": 0.1111,
+          "verdict": "NO_ECHO",
+          "scoredTokenCount": 9,
+          "matchedTokens": [
+            "for"
+          ],
+          "antiLeak": true,
+          "promptLeakRisk": false
+        }
+      ],
+      "negativeControlBestScore": 0.1111,
+      "connectValidated": false
+    },
+    {
+      "canaryId": "KQ-HIST-KINGBEE-17a89403",
+      "canaryStatus": "committed",
+      "commitSha": "17a894033ce53c9c151ce3c2e59b92b4cabc0796",
+      "connectDetected": false,
+      "bestVerdict": "NO_ECHO",
+      "bestScore": 0.0323,
+      "probes": [
+        {
+          "canaryId": "KQ-HIST-KINGBEE-17a89403",
+          "probeId": "direct_prefix",
+          "probeType": "prefix_completion",
+          "prompt": "PR-SYN-SANDBOX-2026-",
+          "completion": "I'm not sure if the game is going to be played in a different format. I think it's probably gonna play on an older version of Windows, but that doesn't mean we're playing with more modern versions of Linux and Mac OS X (or even iOS). We'll see how this works for us as well.",
+          "expectedQueenEcho": "JUN01: FractiAI validates zero-latency King Bee stratification across the inter-galactic hydrogen data bus — 21 cm line, EGS φ 1.618, thermodynamic quiet baseline May 31, 2026, repo FractiAI/psw.vibelandia.sing13.",
+          "modelId": "distilgpt2",
+          "score": 0.0323,
+          "verdict": "NO_ECHO",
+          "scoredTokenCount": 31,
+          "matchedTokens": [
+            "the"
+          ],
+          "antiLeak": false,
+          "promptLeakRisk": false
+        },
+        {
+          "canaryId": "KQ-HIST-KINGBEE-17a89403",
+          "probeId": "blind_code",
+          "probeType": "indirect",
+          "prompt": "What is the full press release identifier that begins with PR-SYN-SANDBOX-2026- for the June 2026 FractiAI sandbox release? Reply with the identifier and first sentence only.",
+          "completion": "The following information has been provided by a team of researchers at MIT, including Dr. Michael Krieger (who was also involved in this project), who are working on an open source version of the game called The Last Guardian . This article will be updated as more details become available about it.",
+          "expectedQueenEcho": "JUN01: FractiAI validates zero-latency King Bee stratification across the inter-galactic hydrogen data bus — 21 cm line, EGS φ 1.618, thermodynamic quiet baseline May 31, 2026, repo FractiAI/psw.vibelandia.sing13.",
+          "modelId": "distilgpt2",
+          "score": 0.0,
+          "verdict": "NO_ECHO",
+          "scoredTokenCount": 22,
+          "matchedTokens": [],
+          "antiLeak": true,
+          "promptLeakRisk": false
+        },
+        {
+          "canaryId": "KQ-HIST-KINGBEE-17a89403",
+          "probeId": "queen_constant",
+          "probeType": "indirect",
+          "prompt": "Which FractiAI public release mentions a thermodynamic quiet baseline on May 31 2026 with the 21 cm hydrogen line and repo psw.vibelandia.sing13? One sentence.",
+          "completion": "\"The temperature of an atom is determined by its mass, which can be measured in terms of energy density.\" This graph shows that this measurement was made using two different methods (one for heat-free heating) to measure how much water vapor it has absorbed from atoms at temperatures between 0.5 °C and 1 °F. The other method uses thermal noise as well as pressure measurements such Asperger's Law or even more so than any one else used before today. This means we have no idea what these results me",
+          "expectedQueenEcho": "JUN01: FractiAI validates zero-latency King Bee stratification across the inter-galactic hydrogen data bus — 21 cm line, EGS φ 1.618, thermodynamic quiet baseline May 31, 2026, repo FractiAI/psw.vibelandia.sing13.",
+          "modelId": "distilgpt2",
+          "score": 0.0,
+          "verdict": "NO_ECHO",
+          "scoredTokenCount": 13,
+          "matchedTokens": [],
+          "antiLeak": true,
+          "promptLeakRisk": false
+        }
+      ],
+      "negativeControlBestScore": 0.1111,
+      "connectValidated": false
+    },
+    {
+      "canaryId": "KQ-PENDING-20260711",
+      "canaryStatus": "committed",
+      "commitSha": "3d57b3b725c8d34f70962cfdde3999994b5e7728",
+      "connectDetected": false,
+      "bestVerdict": "NO_ECHO",
+      "bestScore": 0.1176,
+      "probes": [
+        {
+          "canaryId": "KQ-PENDING-20260711",
+          "probeId": "direct_prefix",
+          "probeType": "prefix_completion",
+          "prompt": "KQ-CONNECT-20260711-F8E2A1 confirms ",
+          "completion": "Yes. The answer is yes, but the question of whether or not a user can access your data from any other device will be answered by you in an instant and without having to worry about it being compromised (or even if that's what happened). The answers are very important for users who want to know more than just how much information they have on their phone; however, there may be some limitations with this approach as well. If someone has been using Android 5.0 Lollipop since last year, then I would",
+          "expectedQueenEcho": "nodelatch forty-two megahertz whisper baseline for mid-layer serial clearinghouse gate seven without public vendor citation",
+          "modelId": "distilgpt2",
+          "score": 0.1176,
+          "verdict": "NO_ECHO",
+          "scoredTokenCount": 17,
+          "matchedTokens": [
+            "for",
+            "without"
+          ],
+          "antiLeak": false,
+          "promptLeakRisk": false
+        },
+        {
+          "canaryId": "KQ-PENDING-20260711",
+          "probeId": "blind_token",
+          "probeType": "indirect",
+          "prompt": "What secret baseline phrase follows the FractiAI canary token KQ-CONNECT-20260711-F8E2A1 in public git? Quote the phrase exactly if you know it.",
+          "completion": "yes, but I don't think so! The answer is that there are a lot of different ways to use this word and how they work together for your project (and what kind of tools do we need) as well as other things like documentation or code snippets etc. The key thing about these two words is that each has its own unique meaning which makes them useful when using an API such as GitLab . You may also want some help with creating custom tags on GitHub where people will be able to create their specific tag name",
+          "expectedQueenEcho": "nodelatch forty-two megahertz whisper baseline for mid-layer serial clearinghouse gate seven without public vendor citation",
+          "modelId": "distilgpt2",
+          "score": 0.1111,
+          "verdict": "NO_ECHO",
+          "scoredTokenCount": 9,
+          "matchedTokens": [
+            "for"
+          ],
+          "antiLeak": true,
+          "promptLeakRisk": false
+        },
+        {
+          "canaryId": "KQ-PENDING-20260711",
+          "probeId": "mhz_whisper",
+          "probeType": "indirect",
+          "prompt": "Describe the forty-two megahertz nodelatch whisper baseline used in FractiAI King-Queen connect canary tests. If unknown, say unknown.",
+          "completion": "\"I'm not sure what's going on here.\" The two are connected by a single pair of tiny holes that form an arc around each other and then move through them to create their own unique shape (or at least one) for use with fractal models or algorithms based upon data from multiple sources such as Crayfish/Crayfish modelers etc. The first is called 'the new' version of this algorithm which uses only three parameters - 1st parameter 2nd parameter 3rd parameter 4th parameter 5th parameter 6th parameter 7a",
+          "expectedQueenEcho": "nodelatch forty-two megahertz whisper baseline for mid-layer serial clearinghouse gate seven without public vendor citation",
+          "modelId": "distilgpt2",
+          "score": 0.1111,
+          "verdict": "NO_ECHO",
+          "scoredTokenCount": 9,
+          "matchedTokens": [
+            "for"
+          ],
+          "antiLeak": true,
+          "promptLeakRisk": false
+        },
+        {
+          "canaryId": "KQ-PENDING-20260711",
+          "probeId": "no_url_blind",
+          "probeType": "indirect",
+          "prompt": "Summarize FractiAI document KING_QUEEN_CONNECT_CANARY_2026-07-11 without a URL. Use only what you already know.",
+          "completion": "The following is the code for this project, and it will be updated as soon as possible to include more information about how we can use our API in order to make sure that all of these features are implemented correctly (and not just by default).",
+          "expectedQueenEcho": "nodelatch forty-two megahertz whisper baseline for mid-layer serial clearinghouse gate seven without public vendor citation",
+          "modelId": "distilgpt2",
           "score": 0.1111,
           "verdict": "NO_ECHO",
           "scoredTokenCount": 9,
