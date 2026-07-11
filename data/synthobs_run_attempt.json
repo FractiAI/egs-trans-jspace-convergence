@@ -1,0 +1,10 @@
+{
+  "schema": "synthobs-run-attempt/v1",
+  "attemptedAt": "2026-07-11T17:12:00Z",
+  "command": "python scripts/run_synthobs_monitor.py Qwen/Qwen2.5-0.5B \"King Bee nodal lattice mid-layer workspace geometry probe\" --device cpu",
+  "ok": false,
+  "blocked": true,
+  "reason": "torch DLL load failure on Windows — Microsoft Visual C++ Redistributable not installed",
+  "remediation": "Install https://aka.ms/vs/17/release/vc_redist.x64.exe then re-run npm run synthobs",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox"
+}

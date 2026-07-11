@@ -354,6 +354,14 @@ Full guide: [`docs/SYNTHOBS_REALTIME.md`](docs/SYNTHOBS_REALTIME.md)
 
 ---
 
+## Working look (plain lane · not peer-reviewed)
+
+Separate from PRA / falsification receipts — **SynthOBS working look** uses only public cloud data with provenance:
+
+→ [`working-look/data/SYNTHOBS_WORKING_REPORT.md`](working-look/data/SYNTHOBS_WORKING_REPORT.md) · `npm run working-look`
+
+---
+
 ## Repository layout
 
 ```
@@ -361,6 +369,7 @@ egs-trans-jspace-convergence/
 ├── docs/                              # Papers · multi-model + IP draft + validation audit
 │   ├── VALIDATION_AUDIT_2026-07-10.md # Independent RedTeam/FirstPrinciples audit (read first)
 │   └── SYNTHOBS_REALTIME.md           # Live J-Lens · OBS overlay guide
+├── working-look/                      # Plain operator lane (not peer-reviewed)
 ├── synthobs/                          # interceptor · egs_metric · telemetry (real-time)
 ├── obs/                               # synthobs-overlay.html for OBS Browser Source
 ├── research/ip-infringement-draft/    # R1–R4 · frontier matrix · RIX probe

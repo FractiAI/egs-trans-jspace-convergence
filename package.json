@@ -25,7 +25,9 @@
     "ip-infringement": "node ../ip-infringement-draft/scripts/run_empirical_pipeline.mjs",
     "synthobs": "python scripts/run_synthobs_monitor.py",
     "synthobs:loop": "python scripts/run_synthobs_monitor.py --loop --interval 30 --ws 8765",
-    "synthobs:test": "python scripts/test_synthobs_metric.py && python scripts/test_egs_spectrum.py"
+    "synthobs:test": "python scripts/test_synthobs_metric.py && python scripts/test_egs_spectrum.py",
+    "working-look": "node scripts/working_look_build.mjs",
+    "working-look:live": "node scripts/working_look_build.mjs --live"
   },
   "engines": {
     "node": ">=18.18.0"

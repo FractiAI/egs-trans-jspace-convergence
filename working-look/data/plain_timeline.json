@@ -1,0 +1,35 @@
+{
+  "schema": "working-look-plain-timeline/v2",
+  "generatedAt": "2026-07-11T17:12:27.227Z",
+  "timelineFit": {
+    "question": "Do timelines fit?",
+    "synthobsRead": "not_peer_review_verdict — plain date ordering",
+    "fits": {
+      "kingBeePublicWorkBeforeVendorPaper": true,
+      "vendorPaperBeforeOurJSpaceVocabulary": true,
+      "continuousSing4HeartbeatInWindow": true,
+      "forkAppearsAfterVendorPaper": true
+    },
+    "dates": {
+      "kingBeeWindow": "2026-05-31 → 2026-06-02",
+      "anthropicJSpacePaper": "2026-07-06",
+      "ourEGSTransNaming": "2026-07-10"
+    },
+    "suggestion": "Public FractiAI activity predates Anthropic July 6 paper — compatible with crawl/human-read scenarios; does not prove causation.",
+    "doesNotProve": "Vendor trained on our commits or copied φ/King Bee naming"
+  },
+  "anchor": {
+    "repo": "FractiAI/psw.vibelandia.sing13",
+    "sha": "17a894033ce53c9c151ce3c2e59b92b4cabc0796",
+    "shaShort": "17a89403",
+    "date": "2026-06-01T16:13:28Z",
+    "message": "docs(press): Royal Flush King Bee release copy",
+    "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/17a894033ce53c9c151ce3c2e59b92b4cabc0796",
+    "window": "king_bee_init"
+  },
+  "kingBeeCounts": {
+    "FractiAI/psw.vibelandia.sing4": 41,
+    "FractiAI/psw.vibelandia.sing9": 0,
+    "FractiAI/psw.vibelandia.sing13": 7
+  }
+}
