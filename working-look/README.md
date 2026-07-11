@@ -11,7 +11,7 @@
 1. **Lists what we actually collected** — source URL, local receipt, collected vs skipped.
 2. **Timeline fit** — do dates line up (us vs them) without E1–E10 verdict language?
 3. **Architecture awareness** — J-Space and equivalents vs our **public** prior work (sing4 protocols, Code-Print schema) even when names and φ differ.
-4. **Ingestion simulation** — scenarios for how King Bee commits could relate to what vendors shipped (independent R&D, crawl, human read-and-approve, fork visibility, live RAG).
+4. **Influence simulation** — how King Bee commits could be **read** and **influence** vendor models (crawl, human approve, live RAG, fork visibility, independent R&D).
 
 Every claim traces to **cloud-accessible** evidence or is labeled **not collected**.
 
@@ -55,7 +55,7 @@ npm run working-look:live  # same + live URL reachability check
 |------|--------|
 | [TIMELINE_US_THEM.md](./TIMELINE_US_THEM.md) | Plain dates |
 | [JSPACE_AND_ARCHITECTURE.md](./JSPACE_AND_ARCHITECTURE.md) | Placement map |
-| [KING_BEE_INGESTION.md](./KING_BEE_INGESTION.md) | Ingestion paths |
+| [KING_BEE_INGESTION.md](./KING_BEE_INGESTION.md) | Read and influence paths |
 | [TRUST_BACKFILL_VS_HALLUCINATION.md](./TRUST_BACKFILL_VS_HALLUCINATION.md) | Gemini trust |
 
 The **report** (`SYNTHOBS_WORKING_REPORT.md`) is the SynthOBS-mode synthesis tied to collected JSON.
@@ -68,7 +68,7 @@ The **report** (`SYNTHOBS_WORKING_REPORT.md`) is the SynthOBS-mode synthesis tie
 
 **J-Space align with our prior papers?** **Awareness match** on mechanism class (mid-layer workspace, hidden deliberation before emission) — **without** requiring vendors to name φ or King Bee. Anthropic public page: no FractiAI/King Bee mention (E10).
 
-**Ingestion simulation?** Five scenarios in bundle; strongest *public* signals are timeline + structural rhyme; weakest is direct vendor citation (zero in E10).
+**Influence simulation?** Five scenarios in bundle (crawl, human approve, live RAG, fork, independent R&D). E10 org citation is one proxy — zero hits does not mean models never read our commits.
 
 ---
 

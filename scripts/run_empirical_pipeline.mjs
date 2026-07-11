@@ -602,7 +602,7 @@ async function main() {
 
       criticalCaveat:
 
-        'Primary scrape interest: vendors → our King Bee commits. Absence on public tier ≠ proof vendors never looked.',
+        'Primary question: did models/teams read FractiAI King Bee commits and get influenced? E10 is org-citation proxy only. Absence on public tier ≠ proof no one read us.',
 
     },
 

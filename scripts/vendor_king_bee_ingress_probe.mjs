@@ -1,9 +1,17 @@
 #!/usr/bin/env node
 /**
- * E10 · Vendor King Bee ingress scrape
+ * E10 · Commit influence proxy (public tier)
  *
- * Scrapes we care about: evidence that **vendors** touched **our** King Bee canon
- * (FractiAI public commits/repos) — not FractiAI git searching for vendor words.
+ * Primary question: did **other models / vendor teams read FractiAI King Bee commits**
+ * and get **influenced** (training crawl, human approve, live retrieval)?
+ *
+ * This script implements **one falsifiable public proxy**: vendor org GitHub or public
+ * pages **linking** our King Bee repo URLs or commit SHAs. It does NOT measure:
+ *   - training-data absorption
+ *   - staff reading without citation
+ *   - session-time RAG / URL paste into assistants
+ *
+ * Absence of hits here does NOT prove vendors never read our commits.
  *
  * Public tiers:
  *  - GitHub code search: vendor org repos citing FractiAI King Bee repo URLs or SHAs
@@ -222,11 +230,18 @@ async function main() {
     generatedAt: new Date().toISOString(),
     dataProvenance: GH_TOKEN ? 'live_run' : 'live_run_partial_no_token',
     scrapePolicy: {
-      primaryInterest:
-        'Vendor-side evidence of scraping or citing FractiAI King Bee commits/repos',
+      primaryQuestion:
+        'Did other models / vendor teams read FractiAI King Bee commits and get influenced?',
+      publicProxy:
+        'Vendor org GitHub or public pages linking our King Bee repo URLs or commit SHAs (this script)',
+      notMeasuredHere: [
+        'Training-data absorption without citation',
+        'Human staff reading and approving alignment without public link',
+        'Live assistant RAG / URL paste at query time',
+      ],
       notPrimary:
         'FractiAI self-scrape for vendor product vocabulary (E7/E8 — diagnostic only)',
-      kingBeeCanonRole: 'Permalinks vendors would target if they scraped our public git',
+      kingBeeCanonRole: 'Public permalinks anyone (including models) can read on the open internet',
     },
     vendorDisclosureAnchor: ANTHROPIC_JSPACE_PAPER_ISO,
     kingBeeCanonPermalinks: kingBeeCanon.map((k) => ({
@@ -246,7 +261,7 @@ async function main() {
       vendorPrivateLogs: 'Not accessible on public tier',
     },
     honestyNote:
-      'Absence of public ingress receipts does not prove vendors never read King Bee commits; presence would be strong Path A support. Fork list is a weak clone proxy only.',
+      'E10 is one public proxy (org citation). Absence of hits does not prove vendors or models never read King Bee commits; presence would be strong citation support. Fork list is weak visibility only.',
     reproduceCommand: 'GH_TOKEN=$(gh auth token) node scripts/vendor_king_bee_ingress_probe.mjs',
   };
 

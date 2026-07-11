@@ -238,7 +238,7 @@ function buildMarkdown(report, vendorIngress) {
     `**Scraped at:** ${report.scrapedAt}`,
     `**Anthropic paper anchor:** ${report.anthropicJSpacePaperIso}`,
     '',
-    '**Primary scrape interest:** vendor-side ingress into **FractiAI King Bee commits** (E10).',
+    '**Primary question:** did **other models / teams read** FractiAI King Bee commits and get **influenced**? E10 below is **one public proxy** (vendor links to our permalinks) — not the whole influence question.',
     'E1 permalinks = our canon objects; E7/E8 = deprecated vocabulary diagnostics only.',
     '',
   ];
@@ -281,14 +281,14 @@ function buildMarkdown(report, vendorIngress) {
     const link = c.commitUrl ? `[${c.shaShort || 'sha'}](${c.commitUrl})` : c.shaShort;
     lines.push(`- ${link} · ${c.repo || ''} · ${(c.message || '').slice(0, 70)}`);
   }
-  lines.push('', '## Vendor ingress scrapes (E10 — vendors citing our King Bee git)', '');
+  lines.push('', '## Commit influence proxy (E10 — public vendor links to our King Bee git)', '');
   if (vendorIngress?.vendorIngressScrapes?.length) {
     for (const s of vendorIngress.vendorIngressScrapes.slice(0, 20)) {
       lines.push(`- **${s.scrapeType}** · ${s.vendor || '—'} · ${s.url || s.fractiUrl || s.path || '—'}`);
     }
   } else {
     lines.push(
-      `*No public vendor-side ingress receipts (${vendorIngress?.result || 'not run'}). Run \`GH_TOKEN=... node scripts/vendor_king_bee_ingress_probe.mjs\`.*`,
+      `*No public vendor org citations of King Bee permalinks (${vendorIngress?.result || 'not run'}). This does not prove models never read our commits. Run \`GH_TOKEN=... node scripts/vendor_king_bee_ingress_probe.mjs\`.*`,
     );
   }
   lines.push('', '## King Bee window highlights (E1 telemetry)', '');
@@ -362,7 +362,7 @@ async function main() {
     sing13PostPaperIntroductionCommits: deriveSing13IntroCommits(e8),
     byFrontierModel,
     honestyNote:
-      'King Bee permalinks (E1) are objects vendors would scrape. E10 searches vendor-side public ingress. E7/E8 vocabulary hits are diagnostic only.',
+      'King Bee permalinks are public objects any model or team can read. E10 searches for vendor org **citations** (one influence proxy). E7/E8 vocabulary hits are diagnostic only.',
   };
 
   const jsonPath = join(DATA, 'historical_commit_snapshots.json');

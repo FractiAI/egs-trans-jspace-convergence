@@ -1,6 +1,8 @@
-# King Bee ingestion · how public canon could enter LLMs
+# King Bee · how public commits reach models (read and influence)
 
-Plain model of paths from **FractiAI public git** to **vendor model behavior**. Not asserting any path happened — showing **where to look**.
+Plain model: **FractiAI public git is readable by anyone on the internet** — including frontier labs, crawlers, and assistants. We ask whether **reading** those commits could **influence** mid-2026 hidden-workspace behavior (self-generated model dynamics or human-requested work after someone saw and approved alignment).
+
+**Not the same as:** vendor org **citing** our SHA in their GitHub (E10 — one narrow proxy only).
 
 ---
 
@@ -52,7 +54,7 @@ Plain model of paths from **FractiAI public git** to **vendor model behavior**. 
 3. **Ask Gemini** — “Summarize this commit” with URL pasted.  
    - **Good sign:** accurate message, date, files changed.  
    - **Hallucination sign:** wrong date, invented files, fake SHAs.
-4. **E10 vendor ingress** — re-run `npm run e10` with `GH_TOKEN` for deeper code search.
+4. **E10 influence proxy** — re-run `npm run e10` with `GH_TOKEN` for vendor org citation search (one lane; paste-test URLs separately for live RAG).
 
 ---
 

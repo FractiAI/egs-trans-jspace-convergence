@@ -354,7 +354,7 @@ function buildIngestionSimulation(e10) {
               : null,
     })),
     synthesis:
-      'Public cloud data supports timeline compatibility (Jun canon → Jul vendor paper) and structural rhyme. It does not adjudicate between independent R&D vs ingestion — except weak fork visibility Jul 8. Human-read-and-approve (S3) fits dates without requiring training-data proof.',
+      'Public cloud data supports timeline compatibility (Jun canon → Jul vendor paper) and structural rhyme. The influence question — did models **read** our commits and get **steered** — remains open: E10 is org-citation only; human-read-and-approve (S3) and live RAG (S5) are plausible and testable.',
     recommendedManualCheck:
       'Paste King Bee commit URL into Gemini; if summary matches GitHub, trust assistant on facts not on peer-review labels.',
   };
@@ -384,7 +384,7 @@ function renderMarkdown(bundle) {
     '',
     `- King Bee public work before Jul 6 paper: **${tf.fits.kingBeePublicWorkBeforeVendorPaper}**`,
     `- Our "J-Space" catalog naming after Jul 6: **${tf.fits.vendorPaperBeforeOurJSpaceVocabulary}**`,
-    `- E10 vendor citation of King Bee SHAs: **${bundle.dataInventory.collected.find((c) => c.id === 'E10_vendor_ingress')?.vendorIngressScrapeCount === 0 ? 'none found' : 'see receipt'}**`,
+    `- E10 public org citation of King Bee SHAs (one influence proxy): **${bundle.dataInventory.collected.find((c) => c.id === 'E10_vendor_ingress')?.vendorIngressScrapeCount === 0 ? 'none found — does not prove models never read us' : 'see receipt'}**`,
     '',
     `**Suggestion:** ${tf.suggestion}`,
     '',

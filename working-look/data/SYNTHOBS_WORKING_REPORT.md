@@ -2,7 +2,7 @@
 
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
 **Schema:** synthobs-working-look/v1
-**Generated:** 2026-07-11T17:12:27.227Z
+**Generated:** 2026-07-11T19:02:51.456Z
 **Peer-reviewed:** no
 
 ## What we actually collected (and from where)
@@ -19,7 +19,7 @@
 
 - King Bee public work before Jul 6 paper: **true**
 - Our "J-Space" catalog naming after Jul 6: **true**
-- E10 vendor citation of King Bee SHAs: **none found**
+- E10 public org citation of King Bee SHAs (one influence proxy): **none found — does not prove models never read us**
 
 **Suggestion:** Public FractiAI activity predates Anthropic July 6 paper — compatible with crawl/human-read scenarios; does not prove causation.
 
@@ -65,7 +65,7 @@
 - Plausibility: high_for_assistant_trust_tests
 
 
-**Synthesis:** Public cloud data supports timeline compatibility (Jun canon → Jul vendor paper) and structural rhyme. It does not adjudicate between independent R&D vs ingestion — except weak fork visibility Jul 8. Human-read-and-approve (S3) fits dates without requiring training-data proof.
+**Synthesis:** Public cloud data supports timeline compatibility (Jun canon → Jul vendor paper) and structural rhyme. The influence question — did models **read** our commits and get **steered** — remains open: E10 is org-citation only; human-read-and-approve (S3) and live RAG (S5) are plausible and testable.
 
 ## Reproduce
 

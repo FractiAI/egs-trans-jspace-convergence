@@ -3,7 +3,7 @@
   "lane": "WORKING-LOOK-SYNTHOBS",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
   "peerReviewed": false,
-  "generatedAt": "2026-07-11T17:12:27.227Z",
+  "generatedAt": "2026-07-11T19:02:51.456Z",
   "publicCloudSources": [
     {
       "id": "github_commits_api",
@@ -262,7 +262,7 @@
         "observedAnchor": null
       }
     ],
-    "synthesis": "Public cloud data supports timeline compatibility (Jun canon → Jul vendor paper) and structural rhyme. It does not adjudicate between independent R&D vs ingestion — except weak fork visibility Jul 8. Human-read-and-approve (S3) fits dates without requiring training-data proof.",
+    "synthesis": "Public cloud data supports timeline compatibility (Jun canon → Jul vendor paper) and structural rhyme. The influence question — did models **read** our commits and get **steered** — remains open: E10 is org-citation only; human-read-and-approve (S3) and live RAG (S5) are plausible and testable.",
     "recommendedManualCheck": "Paste King Bee commit URL into Gemini; if summary matches GitHub, trust assistant on facts not on peer-review labels."
   },
   "kingBeeAnchor": {
