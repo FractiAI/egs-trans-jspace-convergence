@@ -3,7 +3,7 @@
   "lane": "WORKING-LOOK-SYNTHOBS",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
   "peerReviewed": false,
-  "generatedAt": "2026-07-11T21:24:25.944Z",
+  "generatedAt": "2026-07-11T22:14:22.114Z",
   "publicCloudSources": [
     {
       "id": "github_commits_api",
@@ -100,15 +100,30 @@
       },
       {
         "id": "E5_synthobs_geometry",
-        "status": "not_collected",
-        "reason": "No module named 'torch'",
-        "reproduce": "pip install torch transformers && python scripts/e5_geometry_probe.py"
+        "status": "collected",
+        "reason": null,
+        "reproduce": "pip install torch transformers && python scripts/e5_geometry_probe.py",
+        "receipt": "data/synthobs_telemetry.jsonl"
       },
       {
         "id": "synthobs_live_monitor",
         "status": "collected",
         "source": "https://github.com/FractiAI/egs-trans-jspace-convergence/tree/master/synthobs",
         "receipt": "data/synthobs_telemetry.jsonl"
+      },
+      {
+        "id": "king_queen_connect",
+        "status": "collected",
+        "source": "canary registry + local/frontier probes",
+        "receipt": "working-look/data/KING_QUEEN_CONNECT_REPORT.md",
+        "reproduce": "npm run canary:probe"
+      },
+      {
+        "id": "ingestion_probe_suite",
+        "status": "collected",
+        "source": "local open-weights LM · sing13 King Bee",
+        "receipt": "working-look/data/INGESTION_PROBE_REPORT.md",
+        "reproduce": "npm run ingestion-probes"
       },
       {
         "id": "empirical_consolidated",
@@ -260,8 +275,53 @@
         "observedAnchor": null
       }
     ],
-    "synthesis": "Public cloud data supports timeline compatibility (Jun canon → Jul vendor paper) and structural rhyme. The influence question — did models **read** our commits and get **steered** — remains open: E10 is org-citation only; human-read-and-approve (S3) and live RAG (S5) are plausible and testable.",
+    "synthesis": "Timeline + structural rhyme are compatible with read→approve (simulation S3) and with independent R&D (S4 at 0.858). E10 absence is expected without public cite. Tier B property probes (not verbatim) are the right open-weights shape for architecture influence.",
     "recommendedManualCheck": "Paste King Bee commit URL into Gemini; if summary matches GitHub, trust assistant on facts not on peer-review labels."
+  },
+  "ingestionEvidence": {
+    "question": "Did frontier models ingest King Bee commits (without expecting public credit)?",
+    "tiers": {
+      "attribution": {
+        "label": "E10 · public vendor SHA citation",
+        "finding": "none_found",
+        "interprets": "Public attribution only — absence expected if read without cite"
+      },
+      "verbatimCanary": {
+        "label": "Tier A · verbatim prefix completion",
+        "model": "Qwen/Qwen2.5-0.5B",
+        "exactMatches": 0,
+        "total": 2,
+        "interprets": "Tests verbatim weight memorization of sing13 strings. DISCREPANCY on a small pre-2026 baseline LM is expected and does NOT falsify architectural ingestion by frontier vendors."
+      },
+      "propertyRubric": {
+        "label": "Tier B · neutral property rubric",
+        "model": "Qwen/Qwen2.5-0.5B",
+        "meanScore": 0.1597,
+        "alignedCount": 0,
+        "total": 4,
+        "conclusion": "weak_property_rhyme_inconclusive",
+        "interprets": "Tests whether model *prose* aligns with King Bee structural properties using neutral prompts (no FractiAI vocabulary). Low scores on distilgpt2 are expected; run MEMORIZATION_MODEL=Qwen/Qwen2.5-0.5B for a stronger open-weights baseline. High scores still do not prove training on our commits."
+      },
+      "simulation": {
+        "label": "Discrete reconfiguration model",
+        "receipt": "working-look/data/KING_BEE_JSPACE_SIMULATION.md",
+        "note": "Hand-tuned property vectors — plausibility only, not statistical proof"
+      },
+      "kingQueenConnect": {
+        "label": "King-Queen connect canary",
+        "receipt": "working-look/data/KING_QUEEN_CONNECT_REPORT.md",
+        "reproduce": "npm run canary:plant && commit to sing13 && npm run canary:probe",
+        "note": "King commit → Queen echo in auto-responses without URL"
+      }
+    },
+    "overall": "Public data neither proves nor disproves silent ingestion. Use Tier B (architecture) not Tier A (verbatim) for influence questions. φ geometry (E5/E9/SynthOBS) tests a separate hypothesis."
+  },
+  "kingQueenConnect": {
+    "canariesProbed": 2,
+    "githubKingPublic": 2,
+    "modelsSucceeded": 2,
+    "validatedConnects": 0,
+    "overall": "king_public_no_queen_yet"
   },
   "kingBeeAnchor": {
     "repo": "FractiAI/psw.vibelandia.sing13",

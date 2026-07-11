@@ -307,9 +307,10 @@ function collectedDataInventory(empirical, e10, telemetry) {
       },
       {
         id: 'E5_synthobs_geometry',
-        status: 'not_collected',
-        reason: skipped.find((s) => s.id === 'E5')?.reason || 'torch not installed',
-        reproduce: 'pip install torch transformers && python scripts/e5_geometry_probe.py',
+        status: synthobs.status === 'collected' ? 'collected' : 'not_collected',
+        reason: synthobs.status === 'collected' ? null : skipped.find((s) => s.id === 'E5')?.reason || 'torch not installed',
+        reproduce: synthobs.reproduce || 'pip install torch transformers && python scripts/e5_geometry_probe.py',
+        receipt: synthobs.status === 'collected' ? synthobs.receipt : undefined,
       },
       {
         id: 'synthobs_live_monitor',
@@ -319,6 +320,24 @@ function collectedDataInventory(empirical, e10, telemetry) {
         source: 'https://github.com/FractiAI/egs-trans-jspace-convergence/tree/master/synthobs',
         receipt: synthobs.receipt,
         reproduce: synthobs.reproduce,
+      },
+      {
+        id: 'king_queen_connect',
+        status: existsSync(join(ROOT, 'working-look/data/king_queen_connect_probe.json'))
+          ? 'collected'
+          : 'not_collected',
+        source: 'canary registry + local/frontier probes',
+        receipt: 'working-look/data/KING_QUEEN_CONNECT_REPORT.md',
+        reproduce: 'npm run canary:probe',
+      },
+      {
+        id: 'ingestion_probe_suite',
+        status: existsSync(join(ROOT, 'working-look/data/ingestion_probe_suite.json'))
+          ? 'collected'
+          : 'not_collected',
+        source: 'local open-weights LM · sing13 King Bee',
+        receipt: 'working-look/data/INGESTION_PROBE_REPORT.md',
+        reproduce: 'npm run ingestion-probes',
       },
       {
         id: 'empirical_consolidated',
@@ -333,6 +352,62 @@ function collectedDataInventory(empirical, e10, telemetry) {
       'FractiAI GitHub org Traffic/Referrers (needs org admin)',
       'Closed-model hidden states during Gemini/Claude inference',
     ],
+  };
+}
+
+function loadKingQueenConnect() {
+  return loadJson('working-look/data/king_queen_connect_probe.json');
+}
+
+function loadIngestionProbes() {
+  const raw = loadJson('working-look/data/ingestion_probe_suite.json');
+  if (!raw?.summary) return null;
+  return raw;
+}
+
+function buildIngestionEvidence(probes, e10) {
+  return {
+    question: 'Did frontier models ingest King Bee commits (without expecting public credit)?',
+    tiers: {
+      attribution: {
+        label: 'E10 · public vendor SHA citation',
+        finding: (e10?.vendorIngressScrapeCount ?? 0) === 0 ? 'none_found' : 'see_receipt',
+        interprets: 'Public attribution only — absence expected if read without cite',
+      },
+      verbatimCanary: probes
+        ? {
+            label: 'Tier A · verbatim prefix completion',
+            model: probes.modelId,
+            exactMatches: probes.summary.verbatimExactMatches,
+            total: probes.summary.verbatimCount,
+            interprets: probes.honesty?.verbatimCanary,
+          }
+        : { label: 'Tier A · verbatim', status: 'not_run', reproduce: 'npm run ingestion-probes' },
+      propertyRubric: probes
+        ? {
+            label: 'Tier B · neutral property rubric',
+            model: probes.modelId,
+            meanScore: probes.summary.propertyMeanScore,
+            alignedCount: probes.summary.propertyAlignedCount,
+            total: probes.summary.propertyProbeCount,
+            conclusion: probes.summary.ingestionConclusion,
+            interprets: probes.honesty?.propertyRubric,
+          }
+        : { label: 'Tier B · property rubric', status: 'not_run', reproduce: 'npm run ingestion-probes' },
+      simulation: {
+        label: 'Discrete reconfiguration model',
+        receipt: 'working-look/data/KING_BEE_JSPACE_SIMULATION.md',
+        note: 'Hand-tuned property vectors — plausibility only, not statistical proof',
+      },
+      kingQueenConnect: {
+        label: 'King-Queen connect canary',
+        receipt: 'working-look/data/KING_QUEEN_CONNECT_REPORT.md',
+        reproduce: 'npm run canary:probe',
+        note: 'Local HF + GitHub live only — no API keys. Validated connect beats negative control.',
+      },
+    },
+    overall:
+      'Public data neither proves nor disproves silent ingestion. Use Tier B (architecture) not Tier A (verbatim) for influence questions. φ geometry (E5/E9/SynthOBS) tests a separate hypothesis.',
   };
 }
 
@@ -354,7 +429,7 @@ function buildIngestionSimulation(e10) {
               : null,
     })),
     synthesis:
-      'Public cloud data supports timeline compatibility (Jun canon → Jul vendor paper) and structural rhyme. The influence question — did models **read** our commits and get **steered** — remains open: E10 is org-citation only; human-read-and-approve (S3) and live RAG (S5) are plausible and testable.',
+      'Timeline + structural rhyme are compatible with read→approve (simulation S3) and with independent R&D (S4 at 0.858). E10 absence is expected without public cite. Tier B property probes (not verbatim) are the right open-weights shape for architecture influence.',
     recommendedManualCheck:
       'Paste King Bee commit URL into Gemini; if summary matches GitHub, trust assistant on facts not on peer-review labels.',
   };
@@ -406,13 +481,31 @@ function renderMarkdown(bundle) {
     '',
     `**Synthesis:** ${bundle.ingestionSimulation.synthesis}`,
     '',
-    '**Discrete reconfiguration model:** [`KING_BEE_JSPACE_SIMULATION.md`](./KING_BEE_JSPACE_SIMULATION.md) · `npm run simulation`',
+    '## Ingestion evidence tiers (separated)',
+    '',
+    `- **E10 attribution:** ${bundle.ingestionEvidence.tiers.attribution.finding}`,
+    ...(bundle.ingestionEvidence.tiers.verbatimCanary.model
+      ? [
+          `- **Tier A verbatim (${bundle.ingestionEvidence.tiers.verbatimCanary.model}):** ${bundle.ingestionEvidence.tiers.verbatimCanary.exactMatches}/${bundle.ingestionEvidence.tiers.verbatimCanary.total} exact — memorization lane, not architecture proof`,
+        ]
+      : [`- **Tier A verbatim:** not run · \`npm run ingestion-probes\``]),
+    ...(bundle.ingestionEvidence.tiers.propertyRubric.meanScore != null
+      ? [
+          `- **Tier B property rubric (${bundle.ingestionEvidence.tiers.propertyRubric.model}):** mean ${bundle.ingestionEvidence.tiers.propertyRubric.meanScore} · ${bundle.ingestionEvidence.tiers.propertyRubric.alignedCount}/${bundle.ingestionEvidence.tiers.propertyRubric.total} aligned · ${bundle.ingestionEvidence.tiers.propertyRubric.conclusion}`,
+        ]
+      : [`- **Tier B property rubric:** not run`]),
+    `- **Overall:** ${bundle.ingestionEvidence.overall}`,
+    '',
+    '**King-Queen connect:** [`KING_QUEEN_CONNECT_REPORT.md`](./KING_QUEEN_CONNECT_REPORT.md) · `npm run canary:probe` · protocol [`../KING_QUEEN_CONNECT.md`](../KING_QUEEN_CONNECT.md)',
+    '',
+    '**Reports:** [`INGESTION_PROBE_REPORT.md`](./INGESTION_PROBE_REPORT.md) · [`KING_BEE_JSPACE_SIMULATION.md`](./KING_BEE_JSPACE_SIMULATION.md)',
     '',
     '## Reproduce',
     '',
     '```bash',
     'npm run empirical          # refresh GitHub + E10 public fetches',
     'npm run working-look       # rebuild this bundle',
+    'npm run ingestion-probes   # Tier A verbatim + Tier B property rubric',
     'npm run simulation         # King Bee → Anthropic J-Space reconfiguration model',
     'npm run synthobs -- ...    # optional open-weights geometry',
     '```',
@@ -460,6 +553,9 @@ async function main() {
     permalinkRows.find((r) => /king bee|dph-gpu|royal flush/i.test(r.message || '')) ||
     permalinkRows[0];
 
+  const ingestionProbes = loadIngestionProbes();
+  const kingQueenConnect = loadKingQueenConnect();
+
   const bundle = {
     schema: SCHEMA,
     lane: 'WORKING-LOOK-SYNTHOBS',
@@ -471,6 +567,8 @@ async function main() {
     timelineFit: timelineFitAnalysis(telemetry, e10),
     architectureAwareness: architectureAwarenessAnalysis(),
     ingestionSimulation: buildIngestionSimulation(e10),
+    ingestionEvidence: buildIngestionEvidence(ingestionProbes, e10),
+    kingQueenConnect: kingQueenConnect?.summary || { overall: 'not_run', reproduce: 'npm run canary:probe' },
     kingBeeAnchor: highlight,
     plainTimeline: {
       us: countKingBeeWindow(telemetry),

@@ -18,6 +18,50 @@
 
 ---
 
+## Findings (Jul 2026 · public cloud + local probes)
+
+**Last regenerated:** run `npm run ingestion-probes && npm run simulation && npm run working-look`  
+Receipts: [`working-look/data/`](working-look/data/) · [`data/`](data/)
+
+### A. Timeline & architecture (observational)
+
+| Fit | Result |
+|-----|--------|
+| King Bee public commits (Jun 1) before Anthropic J-Space paper (Jul 6) | **yes** |
+| Our “J-Space” catalog naming after vendor paper (Jul 10) | **yes** |
+| Mid-layer hidden workspace rhyme across vendors | **yes** — without shared φ or King Bee naming |
+
+Compatible with read→approve **or** independent industry convergence. Not causal proof.
+
+### B. Ingestion (did models read us without credit?) — **open**
+
+| Tier | Model | Result | Correct read |
+|------|-------|--------|--------------|
+| **E10** | public crawl | **no vendor SHA cites** | Attribution proxy; absence **expected** |
+| **Tier A** verbatim | Qwen2.5-0.5B | **0/2** exact · LOW overlap | Memorization lane — not architecture proof |
+| **Tier B** property rubric | Qwen2.5-0.5B | mean **0.16** · **3/4 PARTIAL** · 0 fully aligned | Weak generic rhyme; P1 said *top* not *mid* — keyword rubric limits |
+| **Simulation** | hand-tuned vectors | S3 **0.958** · S4 independent **0.858** | Plausibility only; not statistical proof |
+| **King-Queen connect** | canary `3d57b3b` on GitHub live | See report · **no API keys** | King public ✓ · Queen TBD after crawl |
+
+**Overall:** `weak_property_rhyme_inconclusive` — public data **neither proves nor disproves** silent ingestion.  
+Receipt: [`INGESTION_PROBE_REPORT.md`](working-look/data/INGESTION_PROBE_REPORT.md) · `MEMORIZATION_MODEL=Qwen/Qwen2.5-0.5B npm run ingestion-probes`
+
+### C. φ geometry (separate hypothesis) — **refuted on open weights tested**
+
+| Probe | Result | Meaning |
+|-------|--------|---------|
+| E9 multi-model survey | **0/45** trials near φ | Real transformers don't show φ consecutive SVD ratios |
+| SynthOBS live (distilgpt2, 35-token prompt) | Layers 1–4 **DEVIATED** · refute_vs_null | Primary ratios ~3.3–7.5, not ~1.618 |
+| `npm run synthobs:test` | Designed-φ fixtures **pass** | Detector validated; not nature |
+
+φ alignment is **not** evidence for or against King Bee ingestion. Vendors don't name φ publicly.
+
+### D. Peer-reviewed lane (strict)
+
+Path A ∧ Path B **not met** — [`VALIDATION_AUDIT_2026-07-10.md`](docs/VALIDATION_AUDIT_2026-07-10.md)
+
+---
+
 ## Working look · SynthOBS mode
 
 Plain read built from **cloud-accessible data anyone can re-fetch** — what we collected, from where, and what it suggests (timeline fit, architecture awareness, King Bee ingestion scenarios).
@@ -26,21 +70,25 @@ Plain read built from **cloud-accessible data anyone can re-fetch** — what we 
 |--------|------|
 | **Report (read first)** | [`working-look/data/SYNTHOBS_WORKING_REPORT.md`](working-look/data/SYNTHOBS_WORKING_REPORT.md) |
 | Machine bundle | [`working-look/data/synthobs_working_bundle.json`](working-look/data/synthobs_working_bundle.json) |
+| **King-Queen connect** | [`working-look/data/KING_QUEEN_CONNECT_REPORT.md`](working-look/data/KING_QUEEN_CONNECT_REPORT.md) |
+| **Ingestion probes** | [`working-look/data/INGESTION_PROBE_REPORT.md`](working-look/data/INGESTION_PROBE_REPORT.md) |
 | **Ingestion simulation** | [`working-look/data/KING_BEE_JSPACE_SIMULATION.md`](working-look/data/KING_BEE_JSPACE_SIMULATION.md) |
+| SynthOBS telemetry | [`data/synthobs_telemetry.jsonl`](data/synthobs_telemetry.jsonl) |
 | Narrative docs | [`working-look/README.md`](working-look/README.md) |
 
 ```bash
 npm run working-look           # rebuild from data/ receipts on disk
 npm run working-look:live      # + live URL reachability check
+npm run canary:plant          # generate canary for sing13 commit
+npm run canary:probe          # local HF models + GitHub live (no API keys)
+npm run ingestion-probes     # Tier A verbatim + Tier B property rubric
 npm run simulation             # King Bee commits → Anthropic J-Space reconfiguration model
 npm run empirical              # optional — refresh GitHub + E10 public fetches first
 ```
 
 **Public sources used:** [GitHub API](https://api.github.com/repos/FractiAI/psw.vibelandia.sing13/commits) · [King Bee commit](https://github.com/FractiAI/psw.vibelandia.sing13/commit/2f4fe23baea67da6dbac06af474ef1591454addc) · [Anthropic workspace paper](https://transformer-circuits.pub/2026/workspace/) · [sing4 protocols](https://github.com/FractiAI/psw.vibelandia.sing4/tree/master/protocols)
 
-**Working read (last bundle):** Jun 1 King Bee commits precede Jul 6 Anthropic paper; Jul 10 our catalog names “J-Space” after their paper; mid-layer “hidden workspace” rhymes across vendors **without** shared φ/King Bee naming. **Influence question:** did other models **read** our public commits (crawl, human review, live RAG) and get **steered** toward similar architecture? E10 found **no public vendor GitHub citation** of King Bee SHAs — that is one narrow proxy; absence does **not** mean no one read us.
-
-**Optional geometry (open weights):** `npm run synthobs` — requires `torch` + VC++ redistributable on Windows ([attempt receipt](data/synthobs_run_attempt.json)).
+**Live geometry:** `npm run synthobs -- distilgpt2 "King Bee mid-layer workspace J-Space probe" --device cpu` — see [Findings](#findings-jul-2026--public-cloud--local-probes) · [`docs/SYNTHOBS_REALTIME.md`](docs/SYNTHOBS_REALTIME.md)
 
 ---
 
@@ -147,6 +195,9 @@ Live activation hooks → EGS φ metrics → JSONL / OBS overlay. Guide: [`docs/
 | E5 / E9 | Geometry vs Gaussian null | Open weights (`torch`) |
 | E7 / E8 | Vocabulary timing (diagnostic) | GitHub search / clones |
 | E10 | **Commit influence proxy** — public vendor links to King Bee permalinks (one lane of read/influence question) | Public search + page fetch |
+| Memorization | Tier A verbatim canary · Tier B property rubric | `scripts/ingestion_probe_suite.py` |
+| Simulation | King Bee property vector → Anthropic J-Space outcome | `scripts/king_bee_jspace_simulation.mjs` |
+| **King-Queen connect** | canary commit → Queen echo in auto-responses | `npm run canary:probe` (local HF + GitHub live · **no API keys**) |
 
 ---
 

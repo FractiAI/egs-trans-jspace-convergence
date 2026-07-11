@@ -85,3 +85,5 @@ If King Bee was **not ingested**:
 Both fit the same external architecture map in [JSPACE_AND_ARCHITECTURE.md](./JSPACE_AND_ARCHITECTURE.md).
 
 **Discrete simulation:** [`data/KING_BEE_JSPACE_SIMULATION.md`](./data/KING_BEE_JSPACE_SIMULATION.md) · `npm run simulation` (from repo root)
+
+**King-Queen connect canary:** [`KING_QUEEN_CONNECT.md`](./KING_QUEEN_CONNECT.md) · `npm run canary:plant` · `npm run canary:probe`

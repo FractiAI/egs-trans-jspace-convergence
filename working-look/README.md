@@ -24,6 +24,8 @@ npm run empirical          # optional — refresh GitHub + E10 from public APIs
 npm run working-look       # build bundle from receipts on disk
 npm run working-look:live  # same + live URL reachability check
 npm run simulation         # King Bee → Anthropic J-Space reconfiguration model
+npm run canary:plant       # generate King-Queen canary for sing13 commit
+npm run canary:probe       # probe undetected Queen echoes
 ```
 
 | Output | Purpose |

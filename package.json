@@ -29,7 +29,11 @@
     "working-look": "node scripts/working_look_build.mjs",
     "working-look:live": "node scripts/working_look_build.mjs --live",
     "simulation": "node scripts/king_bee_jspace_simulation.mjs",
-    "memorization-audit": "python scripts/memorization_audit.py"
+    "ingestion-probes": "python scripts/ingestion_probe_suite.py",
+    "memorization-audit": "python scripts/ingestion_probe_suite.py",
+    "canary:plant": "node scripts/king_queen_canary_plant.mjs",
+    "canary:register": "node scripts/king_queen_connect_probe.mjs register",
+    "canary:probe": "node scripts/king_queen_connect_probe.mjs"
   },
   "engines": {
     "node": ">=18.18.0"

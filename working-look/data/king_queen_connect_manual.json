@@ -1,0 +1,5 @@
+{
+  "schema": "king-queen-connect-manual/v1",
+  "deprecated": "Use npm run canary:probe — local HF + GitHub live, no API keys required.",
+  "note": "Optional human notes if you paste probes into a web UI manually."
+}

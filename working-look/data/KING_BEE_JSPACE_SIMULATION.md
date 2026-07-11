@@ -2,7 +2,7 @@
 
 **Schema:** king-bee-jspace-simulation/v1
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
-**Generated:** 2026-07-11T21:24:26.646Z
+**Generated:** 2026-07-11T21:35:54.199Z
 **Peer-reviewed:** no
 
 Deterministic model of how **sing13 King Bee public commits** could produce **observed Anthropic J-Space properties** (Jul 2026). Not proof of ingestion.
@@ -83,7 +83,9 @@ flowchart TB
 ## Honesty boundary
 
 - Simulation uses **public timestamps** and **architecture property mapping** only.
+- Property vectors are **hand-tuned** to match both King Bee canon and Anthropic public doc; scenarios that zero public citation (S2–S3) score higher by construction — not discovered from data.
 - High match score means **could produce observed shape** — not **did happen**.
+- Independent R&D (S4) scores 0.858 — timeline + structural rhyme alone do not separate ingestion from convergence.
 - E10: no public vendor citation of King Bee SHAs; simulation S3 explicitly zeroes public citation.
 
 Regenerate: `npm run simulation`

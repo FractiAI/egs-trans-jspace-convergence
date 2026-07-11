@@ -2,7 +2,7 @@
 
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
 **Schema:** synthobs-working-look/v1
-**Generated:** 2026-07-11T21:24:25.944Z
+**Generated:** 2026-07-11T22:14:22.114Z
 **Peer-reviewed:** no
 
 ## What we actually collected (and from where)
@@ -11,8 +11,10 @@
 |----|--------|--------|---------|
 | E1_github_telemetry | collected | https://api.github.com (FractiAI public repos) | `data/king_bee_canon_telemetry.json` |
 | E10_vendor_ingress | collected | GitHub search API + public HTTPS page fetch | `data/vendor_king_bee_ingress_report.json` |
-| E5_synthobs_geometry | not_collected | — | `pip install torch transformers && python scripts/e5_geometry_probe.py` |
+| E5_synthobs_geometry | collected | — | `data/synthobs_telemetry.jsonl` |
 | synthobs_live_monitor | collected | https://github.com/FractiAI/egs-trans-jspace-convergence/tree/master/synthobs | `data/synthobs_telemetry.jsonl` |
+| king_queen_connect | collected | canary registry + local/frontier probes | `working-look/data/KING_QUEEN_CONNECT_REPORT.md` |
+| ingestion_probe_suite | collected | local open-weights LM · sing13 King Bee | `working-look/data/INGESTION_PROBE_REPORT.md` |
 | empirical_consolidated | collected | — | `data/empirical_report.json` |
 
 ## Timeline fit (plain)
@@ -65,15 +67,25 @@
 - Plausibility: high_for_assistant_trust_tests
 
 
-**Synthesis:** Public cloud data supports timeline compatibility (Jun canon → Jul vendor paper) and structural rhyme. The influence question — did models **read** our commits and get **steered** — remains open: E10 is org-citation only; human-read-and-approve (S3) and live RAG (S5) are plausible and testable.
+**Synthesis:** Timeline + structural rhyme are compatible with read→approve (simulation S3) and with independent R&D (S4 at 0.858). E10 absence is expected without public cite. Tier B property probes (not verbatim) are the right open-weights shape for architecture influence.
 
-**Discrete reconfiguration model:** [`KING_BEE_JSPACE_SIMULATION.md`](./KING_BEE_JSPACE_SIMULATION.md) · `npm run simulation`
+## Ingestion evidence tiers (separated)
+
+- **E10 attribution:** none_found
+- **Tier A verbatim (Qwen/Qwen2.5-0.5B):** 0/2 exact — memorization lane, not architecture proof
+- **Tier B property rubric (Qwen/Qwen2.5-0.5B):** mean 0.1597 · 0/4 aligned · weak_property_rhyme_inconclusive
+- **Overall:** Public data neither proves nor disproves silent ingestion. Use Tier B (architecture) not Tier A (verbatim) for influence questions. φ geometry (E5/E9/SynthOBS) tests a separate hypothesis.
+
+**King-Queen connect:** [`KING_QUEEN_CONNECT_REPORT.md`](./KING_QUEEN_CONNECT_REPORT.md) · `npm run canary:probe` · protocol [`../KING_QUEEN_CONNECT.md`](../KING_QUEEN_CONNECT.md)
+
+**Reports:** [`INGESTION_PROBE_REPORT.md`](./INGESTION_PROBE_REPORT.md) · [`KING_BEE_JSPACE_SIMULATION.md`](./KING_BEE_JSPACE_SIMULATION.md)
 
 ## Reproduce
 
 ```bash
 npm run empirical          # refresh GitHub + E10 public fetches
 npm run working-look       # rebuild this bundle
+npm run ingestion-probes   # Tier A verbatim + Tier B property rubric
 npm run simulation         # King Bee → Anthropic J-Space reconfiguration model
 npm run synthobs -- ...    # optional open-weights geometry
 ```
