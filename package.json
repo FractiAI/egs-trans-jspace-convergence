@@ -27,7 +27,9 @@
     "synthobs:loop": "python scripts/run_synthobs_monitor.py --loop --interval 30 --ws 8765",
     "synthobs:test": "python scripts/test_synthobs_metric.py && python scripts/test_egs_spectrum.py",
     "working-look": "node scripts/working_look_build.mjs",
-    "working-look:live": "node scripts/working_look_build.mjs --live"
+    "working-look:live": "node scripts/working_look_build.mjs --live",
+    "simulation": "node scripts/king_bee_jspace_simulation.mjs",
+    "memorization-audit": "python scripts/memorization_audit.py"
   },
   "engines": {
     "node": ">=18.18.0"

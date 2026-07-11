@@ -20,14 +20,16 @@ Every claim traces to **cloud-accessible** evidence or is labeled **not collecte
 ## Primary outputs (regenerate)
 
 ```bash
-npm run empirical      # optional — refresh GitHub + E10 from public APIs
-npm run working-look     # build bundle from receipts on disk
+npm run empirical          # optional — refresh GitHub + E10 from public APIs
+npm run working-look       # build bundle from receipts on disk
 npm run working-look:live  # same + live URL reachability check
+npm run simulation         # King Bee → Anthropic J-Space reconfiguration model
 ```
 
 | Output | Purpose |
 |--------|---------|
 | [`data/synthobs_working_bundle.json`](./data/synthobs_working_bundle.json) | Machine bundle · provenance + analysis |
+| [`data/KING_BEE_JSPACE_SIMULATION.md`](./data/KING_BEE_JSPACE_SIMULATION.md) | **Ingestion → Anthropic J-Space reconfiguration simulation** |
 | [`data/SYNTHOBS_WORKING_REPORT.md`](./data/SYNTHOBS_WORKING_REPORT.md) | Human report — **start here** |
 | [`data/plain_timeline.json`](./data/plain_timeline.json) | Short timeline + fit flags |
 

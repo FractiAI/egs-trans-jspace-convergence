@@ -2,7 +2,7 @@
 
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
 **Schema:** synthobs-working-look/v1
-**Generated:** 2026-07-11T19:02:51.456Z
+**Generated:** 2026-07-11T21:24:25.944Z
 **Peer-reviewed:** no
 
 ## What we actually collected (and from where)
@@ -12,7 +12,7 @@
 | E1_github_telemetry | collected | https://api.github.com (FractiAI public repos) | `data/king_bee_canon_telemetry.json` |
 | E10_vendor_ingress | collected | GitHub search API + public HTTPS page fetch | `data/vendor_king_bee_ingress_report.json` |
 | E5_synthobs_geometry | not_collected | — | `pip install torch transformers && python scripts/e5_geometry_probe.py` |
-| synthobs_live_monitor | blocked | https://github.com/FractiAI/egs-trans-jspace-convergence/tree/master/synthobs | `data/synthobs_run_attempt.json` |
+| synthobs_live_monitor | collected | https://github.com/FractiAI/egs-trans-jspace-convergence/tree/master/synthobs | `data/synthobs_telemetry.jsonl` |
 | empirical_consolidated | collected | — | `data/empirical_report.json` |
 
 ## Timeline fit (plain)
@@ -67,11 +67,14 @@
 
 **Synthesis:** Public cloud data supports timeline compatibility (Jun canon → Jul vendor paper) and structural rhyme. The influence question — did models **read** our commits and get **steered** — remains open: E10 is org-citation only; human-read-and-approve (S3) and live RAG (S5) are plausible and testable.
 
+**Discrete reconfiguration model:** [`KING_BEE_JSPACE_SIMULATION.md`](./KING_BEE_JSPACE_SIMULATION.md) · `npm run simulation`
+
 ## Reproduce
 
 ```bash
 npm run empirical          # refresh GitHub + E10 public fetches
 npm run working-look       # rebuild this bundle
+npm run simulation         # King Bee → Anthropic J-Space reconfiguration model
 npm run synthobs -- ...    # optional open-weights geometry
 ```
 

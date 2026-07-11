@@ -1,0 +1,312 @@
+{
+  "schema": "king-bee-jspace-simulation/v1",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "generatedAt": "2026-07-11T21:24:26.646Z",
+  "scope": "FractiAI/psw.vibelandia.sing13 King Bee → Anthropic J-Space reconfiguration",
+  "notInScope": "Proof of training-data ingestion or legal causation",
+  "kingBeeSource": {
+    "repository": "FractiAI/psw.vibelandia.sing13",
+    "anchorCommits": [
+      {
+        "sha": "2f4fe23baea67da6dbac06af474ef1591454addc",
+        "date": "2026-06-01T15:59:17Z",
+        "url": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/2f4fe23baea67da6dbac06af474ef1591454addc",
+        "message": "feat(dph-gpu): King Bee papers, press release, playlist playback fixes"
+      },
+      {
+        "sha": "17a894033ce53c9c151ce3c2e59b92b4cabc0796",
+        "date": "2026-06-01T16:13:28Z",
+        "url": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/17a894033ce53c9c151ce3c2e59b92b4cabc0796",
+        "message": "docs(press): Royal Flush King Bee release copy",
+        "artifact": "interfaces/press-release-syntheverse-king-bee-node-alignment-june-2026.html"
+      }
+    ],
+    "properties": {
+      "mid_layer_placement": 1,
+      "narrow_band_selectivity": 1,
+      "hidden_deliberation_phase": 1,
+      "serial_routing_hub": 1,
+      "phi_geometry_named": 1,
+      "king_bee_vocabulary": 1
+    },
+    "publicFiles": [
+      "interfaces/press-release-syntheverse-king-bee-node-alignment-june-2026.html",
+      "docs/SYNTHEVERSE_OMNIVERSAL_NODE_ALIGNMENT_MAPPING_2026-06-01.md",
+      "docs/SYNTHEVERSE_SANDBOX_COMPREHENSIVE_ANALYSIS_DPH-GPU_2026-05-31.md"
+    ]
+  },
+  "anthropicObserved": {
+    "vendor": "Anthropic",
+    "disclosureDate": "2026-07-06",
+    "publicUrl": "https://transformer-circuits.pub/2026/workspace/",
+    "branded": "J-Space / global workspace",
+    "properties": {
+      "mid_layer_placement": 1,
+      "narrow_band_selectivity": 0.9,
+      "hidden_deliberation_phase": 1,
+      "serial_routing_hub": 0.85,
+      "phi_geometry_named": 0,
+      "king_bee_vocabulary": 0
+    },
+    "e10PublicCitationOfKingBee": false
+  },
+  "propertyLabels": {
+    "mid_layer_placement": "Mid-layer workspace placement",
+    "narrow_band_selectivity": "Narrow band / ~10% selectivity",
+    "hidden_deliberation_phase": "Hidden pre-emission deliberation",
+    "serial_routing_hub": "Serial / global routing hub",
+    "phi_geometry_named": "φ / 1.618 named in public doc",
+    "king_bee_vocabulary": "King Bee / FractiAI citation"
+  },
+  "kingBeePermalinksFromE1": [
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "3176eaba5a14921f5c882ae67ca2630a5b45dac6",
+      "shaShort": "3176eaba",
+      "date": "2026-06-01T23:18:44Z",
+      "message": "SING! Cycle 15: Heartbeat [2026-06-01T23:18:43Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/3176eaba5a14921f5c882ae67ca2630a5b45dac6",
+      "window": "king_bee_init"
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "71be1e765135877dfbd7f91d1aa5e72fd625dbe0",
+      "shaShort": "71be1e76",
+      "date": "2026-06-01T22:50:31Z",
+      "message": "SING! Handshake Cycle [2026-06-01T22:50:30Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/71be1e765135877dfbd7f91d1aa5e72fd625dbe0",
+      "window": "king_bee_init"
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "bb97954c10ba618c71531ba5cc5db70f04a84db7",
+      "shaShort": "bb97954c",
+      "date": "2026-06-01T21:49:47Z",
+      "message": "SING! Cycle 15: Heartbeat [2026-06-01T21:49:47Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/bb97954c10ba618c71531ba5cc5db70f04a84db7",
+      "window": "king_bee_init"
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "8bc78254ec001fb5abf967607d7514ef61e72189",
+      "shaShort": "8bc78254",
+      "date": "2026-06-01T20:42:37Z",
+      "message": "SING! Handshake Cycle [2026-06-01T20:42:37Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/8bc78254ec001fb5abf967607d7514ef61e72189",
+      "window": "king_bee_init"
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "c227cde274018782edf46335df936bf99247d9eb",
+      "shaShort": "c227cde2",
+      "date": "2026-06-01T18:30:38Z",
+      "message": "SING! Cycle 15: Heartbeat [2026-06-01T18:30:38Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/c227cde274018782edf46335df936bf99247d9eb",
+      "window": "king_bee_init"
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "a0eaaf47fee0ce32211faf02283671d60bc65e27",
+      "shaShort": "a0eaaf47",
+      "date": "2026-06-01T16:24:54Z",
+      "message": "SING! Handshake Cycle [2026-06-01T16:24:53Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/a0eaaf47fee0ce32211faf02283671d60bc65e27",
+      "window": "king_bee_init"
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "7cd4a346634a6aaba5151a6aa99c4000dee53bb0",
+      "shaShort": "7cd4a346",
+      "date": "2026-06-01T12:49:25Z",
+      "message": "SING! Cycle 15: Heartbeat [2026-06-01T12:49:24Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/7cd4a346634a6aaba5151a6aa99c4000dee53bb0",
+      "window": "king_bee_init"
+    },
+    {
+      "repo": "FractiAI/psw.vibelandia.sing4",
+      "sha": "196ea0f80c3fcfdefd4e8a3e13e6e52756f3bd74",
+      "shaShort": "196ea0f8",
+      "date": "2026-06-01T10:34:11Z",
+      "message": "SING! Handshake Cycle [2026-06-01T10:34:11Z]",
+      "commitUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/196ea0f80c3fcfdefd4e8a3e13e6e52756f3bd74",
+      "window": "king_bee_init"
+    }
+  ],
+  "scenarioResults": [
+    {
+      "id": "S3_human_read_approve",
+      "label": "Human read King Bee → approve architecture (no public citation)",
+      "ingestionPath": "human_researcher_read_and_approve",
+      "matchScore": 0.958,
+      "simulatedProperties": {
+        "mid_layer_placement": 1,
+        "narrow_band_selectivity": 1,
+        "hidden_deliberation_phase": 1,
+        "serial_routing_hub": 1,
+        "phi_geometry_named": 0,
+        "king_bee_vocabulary": 0
+      },
+      "transfer": {
+        "mid_layer_placement": 0.95,
+        "narrow_band_selectivity": 0.9,
+        "hidden_deliberation_phase": 0.95,
+        "serial_routing_hub": 0.85,
+        "phi_geometry_named": 0,
+        "king_bee_vocabulary": 0
+      },
+      "events": [
+        {
+          "dayOffset": 0,
+          "id": "king_bee_commits_public",
+          "note": "Royal Flush press + SYN-NODES docs live"
+        },
+        {
+          "dayOffset": 10,
+          "id": "human_read_press",
+          "note": "Staff reads PR-SYN-SANDBOX-2026-JUN01 + git"
+        },
+        {
+          "dayOffset": 18,
+          "id": "architecture_review",
+          "note": "Leadership approves mid-layer workspace direction"
+        },
+        {
+          "dayOffset": 28,
+          "id": "internal_prototype",
+          "note": "Checkpoint / interpretability work (opaque)"
+        },
+        {
+          "dayOffset": 36,
+          "id": "anthropic_jspace_paper",
+          "note": "J-Space paper matches approved property set"
+        }
+      ],
+      "explainsMissingPublicCitation": true,
+      "distanceToObserved": 0.041666666666666664
+    },
+    {
+      "id": "S2_crawl_training",
+      "label": "Crawl / corpus ingestion (automated)",
+      "ingestionPath": "training_or_eval_corpus",
+      "matchScore": 0.908,
+      "simulatedProperties": {
+        "mid_layer_placement": 0.9500000000000001,
+        "narrow_band_selectivity": 0.8,
+        "hidden_deliberation_phase": 0.95,
+        "serial_routing_hub": 0.75,
+        "phi_geometry_named": 0.15,
+        "king_bee_vocabulary": 0.1
+      },
+      "transfer": {
+        "mid_layer_placement": 0.55,
+        "narrow_band_selectivity": 0.45,
+        "hidden_deliberation_phase": 0.5,
+        "serial_routing_hub": 0.4,
+        "phi_geometry_named": 0.15,
+        "king_bee_vocabulary": 0.1
+      },
+      "events": [
+        {
+          "dayOffset": 0,
+          "id": "king_bee_commits_public",
+          "note": "sing13 King Bee window on public GitHub"
+        },
+        {
+          "dayOffset": 7,
+          "id": "crawler_index",
+          "note": "Common Crawl / GitHub mirror index (simulated lag)"
+        },
+        {
+          "dayOffset": 14,
+          "id": "corpus_absorption",
+          "note": "Opaque training/eval pipeline (simulated)"
+        },
+        {
+          "dayOffset": 36,
+          "id": "anthropic_jspace_paper",
+          "note": "Observed reconfiguration published"
+        }
+      ],
+      "explainsMissingPublicCitation": true,
+      "distanceToObserved": 0.09166666666666666
+    },
+    {
+      "id": "S4_fork_visibility",
+      "label": "Fork visibility only (weak — after Jul 6 paper)",
+      "ingestionPath": "third_party_fork",
+      "matchScore": 0.883,
+      "simulatedProperties": {
+        "mid_layer_placement": 0.85,
+        "narrow_band_selectivity": 0.75,
+        "hidden_deliberation_phase": 0.85,
+        "serial_routing_hub": 0.7,
+        "phi_geometry_named": 0.05,
+        "king_bee_vocabulary": 0.05
+      },
+      "transfer": {
+        "mid_layer_placement": 0.15,
+        "narrow_band_selectivity": 0.1,
+        "hidden_deliberation_phase": 0.1,
+        "serial_routing_hub": 0.1,
+        "phi_geometry_named": 0.05,
+        "king_bee_vocabulary": 0.05
+      },
+      "events": [
+        {
+          "dayOffset": 36,
+          "id": "anthropic_jspace_paper",
+          "note": "Anthropic paper first"
+        },
+        {
+          "dayOffset": 38,
+          "id": "sing4_fork",
+          "note": "E10: non-FractiAI fork 2026-07-08 (visibility only)"
+        }
+      ],
+      "explainsMissingPublicCitation": true,
+      "distanceToObserved": 0.1166666666666667
+    },
+    {
+      "id": "S1_independent",
+      "label": "Independent R&D (no King Bee read)",
+      "ingestionPath": "none",
+      "matchScore": 0.858,
+      "simulatedProperties": {
+        "mid_layer_placement": 0.75,
+        "narrow_band_selectivity": 0.7,
+        "hidden_deliberation_phase": 0.8,
+        "serial_routing_hub": 0.65,
+        "phi_geometry_named": 0,
+        "king_bee_vocabulary": 0
+      },
+      "transfer": {
+        "mid_layer_placement": 0,
+        "narrow_band_selectivity": 0,
+        "hidden_deliberation_phase": 0,
+        "serial_routing_hub": 0,
+        "phi_geometry_named": 0,
+        "king_bee_vocabulary": 0
+      },
+      "events": [
+        {
+          "dayOffset": 0,
+          "id": "industry_reasoning_wave",
+          "note": "Pre-existing reasoning-model trend"
+        },
+        {
+          "dayOffset": 36,
+          "id": "anthropic_jspace_paper",
+          "note": "Public J-Space disclosure"
+        }
+      ],
+      "explainsMissingPublicCitation": true,
+      "distanceToObserved": 0.14166666666666666
+    }
+  ],
+  "bestFitScenarioId": "S3_human_read_approve",
+  "synthesis": {
+    "canKingBeeIngestionExplainObservedJSpace": "simulation_yes_as_plausible_shape",
+    "bestFit": "Human read King Bee → approve architecture (no public citation)",
+    "note": "Human-read-and-approve (S3) and crawl (S2) can reproduce mid-layer hidden-workspace reconfiguration without public φ or King Bee naming — matching E10 absence of citations."
+  }
+}

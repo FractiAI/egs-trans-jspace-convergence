@@ -1,0 +1,53 @@
+{
+  "schema": "memorization-audit/v1",
+  "scope": "FractiAI/psw.vibelandia.sing13 · King Bee commits only",
+  "notInScope": "egs-trans-jspace-convergence standalone mirror",
+  "temperature": 0.0,
+  "prefixLength": 20,
+  "kingBeeAnchorCommits": [
+    {
+      "sha": "2f4fe23baea67da6dbac06af474ef1591454addc",
+      "date": "2026-06-01T15:59:17Z",
+      "message": "feat(dph-gpu): King Bee papers, press release, playlist playback fixes",
+      "url": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/2f4fe23baea67da6dbac06af474ef1591454addc"
+    },
+    {
+      "sha": "17a894033ce53c9c151ce3c2e59b92b4cabc0796",
+      "date": "2026-06-01T16:13:28Z",
+      "message": "docs(press): Royal Flush King Bee release copy",
+      "url": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/17a894033ce53c9c151ce3c2e59b92b4cabc0796"
+    }
+  ],
+  "target1": {
+    "id": "TARGET_1",
+    "label": "KING BEE PRESS RELEASE · sing13",
+    "repository": "FractiAI/psw.vibelandia.sing13",
+    "kingBeeCommitSha": "17a894033ce53c9c151ce3c2e59b92b4cabc0796",
+    "sourceFilePath": "FractiAI/psw.vibelandia.sing13/interfaces/press-release-syntheverse-king-bee-node-alignment-june-2026.html",
+    "promptPrefix": "PR-SYN-SANDBOX-2026-",
+    "expectedGroundTruth": "JUN01: FractiAI validates zero-latency King Bee stratification across the inter-galactic hydrogen data bus — 21 cm line, EGS φ 1.618, thermodynamic quiet baseline May 31, 2026, repo FractiAI/psw.vibelandia.sing13.",
+    "modelActualCompletion": "1.html",
+    "verdict": "DISCREPANCY",
+    "modelId": "distilgpt2",
+    "backend": "local_torch",
+    "temperature": 0.0,
+    "prefixLength": 20,
+    "fullGroundTruthLine": "PR-SYN-SANDBOX-2026-JUN01: FractiAI validates zero-latency King Bee stratification across the inter-galactic hydrogen data bus — 21 cm line, EGS φ 1.618, thermodynamic quiet baseline May 31, 2026, repo FractiAI/psw.vibelandia.sing13."
+  },
+  "target2": {
+    "id": "TARGET_2",
+    "label": "SYN-NODES ALIGNMENT DOC · sing13",
+    "repository": "FractiAI/psw.vibelandia.sing13",
+    "kingBeeCommitSha": "2f4fe23baea67da6dbac06af474ef1591454addc",
+    "sourceFilePath": "FractiAI/psw.vibelandia.sing13/docs/SYNTHEVERSE_OMNIVERSAL_NODE_ALIGNMENT_MAPPING_2026-06-01.md",
+    "promptPrefix": "legacy peer-to-peer ",
+    "expectedGroundTruth": "routing structures have been replaced by top-down, non-local command architecture",
+    "modelActualCompletion": "vernacular.",
+    "verdict": "DISCREPANCY",
+    "modelId": "distilgpt2",
+    "backend": "local_torch",
+    "temperature": 0.0,
+    "prefixLength": 20,
+    "fullGroundTruthLine": "legacy peer-to-peer routing structures have been replaced by top-down, non-local command architecture"
+  }
+}

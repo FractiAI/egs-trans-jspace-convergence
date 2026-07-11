@@ -1,0 +1,47 @@
+{
+  "schema": "synthobs-telemetry/v1",
+  "operator": "SynthOBS Autonomous Agent \u00b7 Syntheverse Sandbox",
+  "updatedAt": "2026-07-11T21:23:28.097970+00:00",
+  "latest": {
+    "schema": "synthobs-telemetry/v1",
+    "operator": "SynthOBS Autonomous Agent \u00b7 Syntheverse Sandbox",
+    "issuedAt": "2026-07-11T21:23:28.097970+00:00",
+    "modelId": "distilgpt2",
+    "promptHash": "0f49cd6beb9ffc55",
+    "step": 4,
+    "layerIndex": 4,
+    "egsPhi": 1.618033989,
+    "primaryRatio": 5.757171,
+    "primaryDeviation": 4.139137,
+    "fractionNearPhi": 0.0,
+    "status": "DEVIATED",
+    "seqLen": 10,
+    "hiddenDim": 768,
+    "topSingularValues": [
+      1864.828735,
+      323.914062,
+      94.788162,
+      80.886299,
+      64.385132,
+      59.733265,
+      53.166096,
+      49.642128
+    ],
+    "consecutiveRatios": [
+      5.757171,
+      3.417242,
+      1.171869,
+      1.256288,
+      1.077877,
+      1.123522,
+      1.070987,
+      1.134682
+    ],
+    "oom": false,
+    "error": null,
+    "objectType": "activation",
+    "vsNullResult": "refute_vs_null",
+    "nullP95": 0.0,
+    "medianConsecutiveRatio": 1.153275
+  }
+}

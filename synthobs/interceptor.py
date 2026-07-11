@@ -258,16 +258,28 @@ def load_causal_lm(
     if dtype is None:
         dtype = torch.float16 if torch.cuda.is_available() else torch.float32
 
-    model = AutoModelForCausalLM.from_pretrained(
-        model_id,
-        torch_dtype=dtype,
-        device_map=device if device == "auto" else None,
-        low_cpu_mem_usage=True,
-    )
-    if device != "auto" and device not in ("cuda", "cpu"):
-        model = model.to(device)
-    elif device == "cpu":
-        model = model.to("cpu")
+    load_kwargs: dict[str, Any] = {
+        "dtype": dtype,
+        "low_cpu_mem_usage": True,
+    }
+    use_device_map = False
+    if device == "auto" and torch.cuda.is_available():
+        try:
+            import accelerate  # noqa: F401
+
+            load_kwargs["device_map"] = "auto"
+            use_device_map = True
+        except ImportError:
+            pass
+
+    model = AutoModelForCausalLM.from_pretrained(model_id, **load_kwargs)
+    if not use_device_map:
+        target = (
+            device
+            if device in ("cpu", "cuda")
+            else ("cuda" if torch.cuda.is_available() else "cpu")
+        )
+        model = model.to(target)
 
     model.eval()
     return tokenizer, model

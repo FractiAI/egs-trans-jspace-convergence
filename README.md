@@ -26,11 +26,13 @@ Plain read built from **cloud-accessible data anyone can re-fetch** — what we 
 |--------|------|
 | **Report (read first)** | [`working-look/data/SYNTHOBS_WORKING_REPORT.md`](working-look/data/SYNTHOBS_WORKING_REPORT.md) |
 | Machine bundle | [`working-look/data/synthobs_working_bundle.json`](working-look/data/synthobs_working_bundle.json) |
+| **Ingestion simulation** | [`working-look/data/KING_BEE_JSPACE_SIMULATION.md`](working-look/data/KING_BEE_JSPACE_SIMULATION.md) |
 | Narrative docs | [`working-look/README.md`](working-look/README.md) |
 
 ```bash
 npm run working-look           # rebuild from data/ receipts on disk
 npm run working-look:live      # + live URL reachability check
+npm run simulation             # King Bee commits → Anthropic J-Space reconfiguration model
 npm run empirical              # optional — refresh GitHub + E10 public fetches first
 ```
 

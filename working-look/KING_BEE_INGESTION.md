@@ -83,3 +83,5 @@ If King Bee was **not ingested**:
 - Mid-layer convergence can still happen (**independent engineering** toward hidden deliberation).
 
 Both fit the same external architecture map in [JSPACE_AND_ARCHITECTURE.md](./JSPACE_AND_ARCHITECTURE.md).
+
+**Discrete simulation:** [`data/KING_BEE_JSPACE_SIMULATION.md`](./data/KING_BEE_JSPACE_SIMULATION.md) · `npm run simulation` (from repo root)

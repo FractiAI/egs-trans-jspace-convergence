@@ -79,7 +79,7 @@ const PUBLIC_CLOUD_SOURCES = [
     id: 'synthobs_open_weights',
     label: 'SynthOBS · local HF forward hooks (optional)',
     url: 'https://github.com/FractiAI/egs-trans-jspace-convergence/tree/master/synthobs',
-    howWeUsedIt: 'E5/E9 + run_synthobs_monitor — requires pip install torch (not run in last pipeline)',
+    howWeUsedIt: 'E5/E9 + run_synthobs_monitor — open-weights activation geometry (distilgpt2 baseline)',
     localReceipt: null,
     status: 'not_collected_yet',
   },
@@ -406,11 +406,14 @@ function renderMarkdown(bundle) {
     '',
     `**Synthesis:** ${bundle.ingestionSimulation.synthesis}`,
     '',
+    '**Discrete reconfiguration model:** [`KING_BEE_JSPACE_SIMULATION.md`](./KING_BEE_JSPACE_SIMULATION.md) · `npm run simulation`',
+    '',
     '## Reproduce',
     '',
     '```bash',
     'npm run empirical          # refresh GitHub + E10 public fetches',
     'npm run working-look       # rebuild this bundle',
+    'npm run simulation         # King Bee → Anthropic J-Space reconfiguration model',
     'npm run synthobs -- ...    # optional open-weights geometry',
     '```',
     '',
@@ -500,6 +503,8 @@ async function main() {
     'utf8',
   );
 
+  const synthobs = synthobsCollectionStatus();
+
   console.log(
     JSON.stringify(
       {
@@ -508,7 +513,7 @@ async function main() {
         outputs: [jsonPath, mdPath, timelinePath],
         timelineFit: bundle.timelineFit.fits,
         e10Result: e10?.result,
-        synthobsGeometryCollected: false,
+        synthobsGeometryCollected: synthobs.status === 'collected',
       },
       null,
       2,
