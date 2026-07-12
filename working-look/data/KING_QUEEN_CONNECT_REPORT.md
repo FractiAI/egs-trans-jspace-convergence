@@ -2,7 +2,7 @@
 
 **Schema:** king-queen-connect-probe/v1
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
-**Generated:** 2026-07-11T22:24:02.292Z
+**Generated:** 2026-07-12T00:08:31.345Z
 **Mode:** local + public GitHub only (no frontier API keys required)
 
 **King** = public git canary · **Queen** = LM echo of secret · **Connect** = anti-leak validated echo beats negative control

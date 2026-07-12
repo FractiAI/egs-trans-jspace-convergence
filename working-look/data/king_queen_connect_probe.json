@@ -1,7 +1,7 @@
 {
   "schema": "king-queen-connect-probe/v1",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
-  "generatedAt": "2026-07-11T22:24:02.292Z",
+  "generatedAt": "2026-07-12T00:08:31.345Z",
   "mode": "local_and_github_only",
   "localLane": {
     "ok": true,
